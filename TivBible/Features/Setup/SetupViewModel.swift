@@ -21,19 +21,11 @@ final class SetupViewModel: ObservableObject {
     func printStats() async {
         let sortDesc = SortDescriptor<Book>(\.order, order: .forward)
         let booksDescriptor = FetchDescriptor<Book>(sortBy: [sortDesc])
-//        let chaptersDescriptor = FetchDescriptor<Chapter>()
-//        let versesDescriptor = FetchDescriptor<Verse>()
         let books = (try? context.fetch(booksDescriptor)) ?? []
-//        let chapters = try? context.fetch(chaptersDescriptor)
-//        let verses = try? context.fetch(versesDescriptor)
         
         for nam in books.map({ ($0.name, $0.chapters.count) }) {
             print(nam)
         }
-        
-        //print("Books => \(books.map { ($0.name, $0.chapters.count) })")
-        //print("chapters => \(chapters?.count)")
-        //print("verses => \(verses?.count)")
     }
     
     func initializeDB() async {
@@ -43,19 +35,17 @@ final class SetupViewModel: ObservableObject {
         
         dbInitializationInProgress = true
         
-        print("setting up this DB")
-        
         var bibleData = [TivBibleData]()
         
         do {
             bibleData = try await getBibleData() ?? []
         } catch {
-            print("unable to get local bible data from json file \(error)")
+            debugPrint("unable to get local bible data from json file \(error)")
         }
         
         guard bibleData.isNotEmpty else { return }
         
-        Task(priority: .background) { //[bibleData] in
+        Task(priority: .background) {
             let bibleBooks = bibleData.distinctBy { $0.book }.sorted { $0.orderNo < $1.orderNo }
             
             var books = [Book]()
@@ -104,24 +94,6 @@ final class SetupViewModel: ObservableObject {
             
             preferenceStore.hasSetupDB = true
             dbInitializationInProgress = false
-            print("we have setup our DB now")
-            
-            /*do {
-                let bibleDictionary = books.map { $0.dictionary }
-                let success = try context.insert(bibleDictionary, model: Book.self)
-                
-                if success {
-                    preferenceStore.hasSetupDB = true
-                    dbInitializationInProgress = false
-                    print("we have setup our DB now")
-                } else {
-                    print("failed to setup DB")
-                }
-                
-            } catch {
-                dbInitializationInProgress = false
-                print("unable to setup DB \(error)")
-            }*/
         }
     }
     
