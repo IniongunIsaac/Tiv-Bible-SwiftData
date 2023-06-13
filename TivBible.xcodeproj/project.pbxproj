@@ -15,6 +15,30 @@
 		5503AD892A37BF51006E6C79 /* TivBibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD882A37BF51006E6C79 /* TivBibleTests.swift */; };
 		5503AD932A37BF51006E6C79 /* TivBibleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD922A37BF51006E6C79 /* TivBibleUITests.swift */; };
 		5503AD952A37BF51006E6C79 /* TivBibleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD942A37BF51006E6C79 /* TivBibleUITestsLaunchTests.swift */; };
+		5503ADA32A37C077006E6C79 /* TivBibleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADA22A37C077006E6C79 /* TivBibleData.swift */; };
+		5503ADA52A37C095006E6C79 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADA42A37C095006E6C79 /* Chapter.swift */; };
+		5503ADA72A37C09E006E6C79 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADA62A37C09E006E6C79 /* Book.swift */; };
+		5503ADA92A37C0A8006E6C79 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADA82A37C0A8006E6C79 /* Verse.swift */; };
+		5503ADAC2A37C762006E6C79 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADAB2A37C762006E6C79 /* Data+.swift */; };
+		5503ADAE2A37C776006E6C79 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADAD2A37C776006E6C79 /* View+.swift */; };
+		5503ADB02A37C79C006E6C79 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADAF2A37C79C006E6C79 /* Color+.swift */; };
+		5503ADB22A37C7B9006E6C79 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADB12A37C7B9006E6C79 /* Font+.swift */; };
+		5503ADB42A37C7D9006E6C79 /* TivBibleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADB32A37C7D9006E6C79 /* TivBibleError.swift */; };
+		5503ADB62A37C7F8006E6C79 /* Code+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADB52A37C7F8006E6C79 /* Code+.swift */; };
+		5503ADB92A37C857006E6C79 /* PreferenceStoreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADB82A37C857006E6C79 /* PreferenceStoreKey.swift */; };
+		5503ADBB2A37C886006E6C79 /* AppStorage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADBA2A37C886006E6C79 /* AppStorage+.swift */; };
+		5503ADBD2A37C8B3006E6C79 /* PreferenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADBC2A37C8B3006E6C79 /* PreferenceStore.swift */; };
+		5503ADC02A37C8DD006E6C79 /* DependencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADBF2A37C8DD006E6C79 /* DependencyType.swift */; };
+		5503ADC22A37C8F0006E6C79 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADC12A37C8F0006E6C79 /* DependencyContainer.swift */; };
+		5503ADC42A37C914006E6C79 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADC32A37C914006E6C79 /* DependencyProvider.swift */; };
+		5503ADC82A37C9DA006E6C79 /* tivBibleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5503ADC72A37C9DA006E6C79 /* tivBibleData.json */; };
+		5503ADCE2A37C9F4006E6C79 /* GentiumPlus-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5503ADCA2A37C9F4006E6C79 /* GentiumPlus-Bold.ttf */; };
+		5503ADCF2A37C9F4006E6C79 /* GentiumPlus-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5503ADCB2A37C9F4006E6C79 /* GentiumPlus-BoldItalic.ttf */; };
+		5503ADD02A37C9F4006E6C79 /* GentiumPlus-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5503ADCC2A37C9F4006E6C79 /* GentiumPlus-Italic.ttf */; };
+		5503ADD12A37C9F4006E6C79 /* GentiumPlus-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5503ADCD2A37C9F4006E6C79 /* GentiumPlus-Regular.ttf */; };
+		5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADD62A37CACE006E6C79 /* SetupScreen.swift */; };
+		5503ADD92A37CB5D006E6C79 /* SetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */; };
+		55E42F812A38830300DBB619 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42F802A38830300DBB619 /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +70,31 @@
 		5503AD8E2A37BF51006E6C79 /* TivBibleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TivBibleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5503AD922A37BF51006E6C79 /* TivBibleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleUITests.swift; sourceTree = "<group>"; };
 		5503AD942A37BF51006E6C79 /* TivBibleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5503ADA22A37C077006E6C79 /* TivBibleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleData.swift; sourceTree = "<group>"; };
+		5503ADA42A37C095006E6C79 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		5503ADA62A37C09E006E6C79 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		5503ADA82A37C0A8006E6C79 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
+		5503ADAB2A37C762006E6C79 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
+		5503ADAD2A37C776006E6C79 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		5503ADAF2A37C79C006E6C79 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		5503ADB12A37C7B9006E6C79 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		5503ADB32A37C7D9006E6C79 /* TivBibleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleError.swift; sourceTree = "<group>"; };
+		5503ADB52A37C7F8006E6C79 /* Code+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code+.swift"; sourceTree = "<group>"; };
+		5503ADB82A37C857006E6C79 /* PreferenceStoreKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStoreKey.swift; sourceTree = "<group>"; };
+		5503ADBA2A37C886006E6C79 /* AppStorage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+.swift"; sourceTree = "<group>"; };
+		5503ADBC2A37C8B3006E6C79 /* PreferenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStore.swift; sourceTree = "<group>"; };
+		5503ADBF2A37C8DD006E6C79 /* DependencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyType.swift; sourceTree = "<group>"; };
+		5503ADC12A37C8F0006E6C79 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		5503ADC32A37C914006E6C79 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
+		5503ADC72A37C9DA006E6C79 /* tivBibleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tivBibleData.json; sourceTree = "<group>"; };
+		5503ADCA2A37C9F4006E6C79 /* GentiumPlus-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-Bold.ttf"; sourceTree = "<group>"; };
+		5503ADCB2A37C9F4006E6C79 /* GentiumPlus-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-BoldItalic.ttf"; sourceTree = "<group>"; };
+		5503ADCC2A37C9F4006E6C79 /* GentiumPlus-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-Italic.ttf"; sourceTree = "<group>"; };
+		5503ADCD2A37C9F4006E6C79 /* GentiumPlus-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-Regular.ttf"; sourceTree = "<group>"; };
+		5503ADD32A37CA38006E6C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5503ADD62A37CACE006E6C79 /* SetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupScreen.swift; sourceTree = "<group>"; };
+		5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewModel.swift; sourceTree = "<group>"; };
+		55E42F802A38830300DBB619 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +145,14 @@
 		5503AD742A37BF50006E6C79 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
-				5503AD752A37BF50006E6C79 /* TivBibleApp.swift */,
+				5503ADD42A37CA8A006E6C79 /* Features */,
+				5503ADC52A37C975006E6C79 /* App */,
+				5503ADBE2A37C8CC006E6C79 /* DI */,
+				5503ADC62A37C9B3006E6C79 /* Resources */,
+				5503ADB72A37C848006E6C79 /* PreferenceStore */,
+				5503ADAA2A37C74F006E6C79 /* Extensions */,
+				5503ADA12A37C06B006E6C79 /* Models */,
 				5503AD772A37BF50006E6C79 /* ContentView.swift */,
-				5503AD792A37BF50006E6C79 /* Assets.xcassets */,
 				5503AD7E2A37BF50006E6C79 /* Item.swift */,
 				5503AD7B2A37BF50006E6C79 /* Preview Content */,
 			);
@@ -128,6 +182,114 @@
 				5503AD942A37BF51006E6C79 /* TivBibleUITestsLaunchTests.swift */,
 			);
 			path = TivBibleUITests;
+			sourceTree = "<group>";
+		};
+		5503ADA12A37C06B006E6C79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADA22A37C077006E6C79 /* TivBibleData.swift */,
+				5503ADA62A37C09E006E6C79 /* Book.swift */,
+				5503ADA42A37C095006E6C79 /* Chapter.swift */,
+				5503ADA82A37C0A8006E6C79 /* Verse.swift */,
+				5503ADB32A37C7D9006E6C79 /* TivBibleError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5503ADAA2A37C74F006E6C79 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADAB2A37C762006E6C79 /* Data+.swift */,
+				5503ADAD2A37C776006E6C79 /* View+.swift */,
+				5503ADAF2A37C79C006E6C79 /* Color+.swift */,
+				5503ADB12A37C7B9006E6C79 /* Font+.swift */,
+				5503ADB52A37C7F8006E6C79 /* Code+.swift */,
+				55E42F802A38830300DBB619 /* String+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5503ADB72A37C848006E6C79 /* PreferenceStore */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADB82A37C857006E6C79 /* PreferenceStoreKey.swift */,
+				5503ADBA2A37C886006E6C79 /* AppStorage+.swift */,
+				5503ADBC2A37C8B3006E6C79 /* PreferenceStore.swift */,
+			);
+			path = PreferenceStore;
+			sourceTree = "<group>";
+		};
+		5503ADBE2A37C8CC006E6C79 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADBF2A37C8DD006E6C79 /* DependencyType.swift */,
+				5503ADC12A37C8F0006E6C79 /* DependencyContainer.swift */,
+				5503ADC32A37C914006E6C79 /* DependencyProvider.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		5503ADC52A37C975006E6C79 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5503AD752A37BF50006E6C79 /* TivBibleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5503ADC62A37C9B3006E6C79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADC92A37C9E4006E6C79 /* Fonts */,
+				5503ADD32A37CA38006E6C79 /* Info.plist */,
+				5503ADC72A37C9DA006E6C79 /* tivBibleData.json */,
+				5503AD792A37BF50006E6C79 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5503ADC92A37C9E4006E6C79 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADD22A37CA07006E6C79 /* GentiumPlus */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5503ADD22A37CA07006E6C79 /* GentiumPlus */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADCA2A37C9F4006E6C79 /* GentiumPlus-Bold.ttf */,
+				5503ADCB2A37C9F4006E6C79 /* GentiumPlus-BoldItalic.ttf */,
+				5503ADCC2A37C9F4006E6C79 /* GentiumPlus-Italic.ttf */,
+				5503ADCD2A37C9F4006E6C79 /* GentiumPlus-Regular.ttf */,
+			);
+			path = GentiumPlus;
+			sourceTree = "<group>";
+		};
+		5503ADD42A37CA8A006E6C79 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				55E42F822A38A04D00DBB619 /* MainTabs */,
+				5503ADD52A37CA9E006E6C79 /* Setup */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		5503ADD52A37CA9E006E6C79 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				5503ADD62A37CACE006E6C79 /* SetupScreen.swift */,
+				5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		55E42F822A38A04D00DBB619 /* MainTabs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainTabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +397,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5503AD7D2A37BF50006E6C79 /* Preview Assets.xcassets in Resources */,
+				5503ADC82A37C9DA006E6C79 /* tivBibleData.json in Resources */,
+				5503ADD02A37C9F4006E6C79 /* GentiumPlus-Italic.ttf in Resources */,
+				5503ADD12A37C9F4006E6C79 /* GentiumPlus-Regular.ttf in Resources */,
 				5503AD7A2A37BF50006E6C79 /* Assets.xcassets in Resources */,
+				5503ADCF2A37C9F4006E6C79 /* GentiumPlus-BoldItalic.ttf in Resources */,
+				5503ADCE2A37C9F4006E6C79 /* GentiumPlus-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +427,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5503ADB92A37C857006E6C79 /* PreferenceStoreKey.swift in Sources */,
+				5503ADA92A37C0A8006E6C79 /* Verse.swift in Sources */,
+				5503ADB22A37C7B9006E6C79 /* Font+.swift in Sources */,
+				5503ADB02A37C79C006E6C79 /* Color+.swift in Sources */,
+				5503ADD92A37CB5D006E6C79 /* SetupViewModel.swift in Sources */,
+				5503ADBB2A37C886006E6C79 /* AppStorage+.swift in Sources */,
+				5503ADA32A37C077006E6C79 /* TivBibleData.swift in Sources */,
+				5503ADA52A37C095006E6C79 /* Chapter.swift in Sources */,
+				5503ADAC2A37C762006E6C79 /* Data+.swift in Sources */,
+				5503ADAE2A37C776006E6C79 /* View+.swift in Sources */,
+				5503ADA72A37C09E006E6C79 /* Book.swift in Sources */,
+				5503ADC42A37C914006E6C79 /* DependencyProvider.swift in Sources */,
 				5503AD782A37BF50006E6C79 /* ContentView.swift in Sources */,
+				5503ADB62A37C7F8006E6C79 /* Code+.swift in Sources */,
+				5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */,
+				5503ADBD2A37C8B3006E6C79 /* PreferenceStore.swift in Sources */,
+				5503ADC02A37C8DD006E6C79 /* DependencyType.swift in Sources */,
+				5503ADB42A37C7D9006E6C79 /* TivBibleError.swift in Sources */,
+				55E42F812A38830300DBB619 /* String+.swift in Sources */,
 				5503AD7F2A37BF50006E6C79 /* Item.swift in Sources */,
+				5503ADC22A37C8F0006E6C79 /* DependencyContainer.swift in Sources */,
 				5503AD762A37BF50006E6C79 /* TivBibleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +615,8 @@
 				DEVELOPMENT_TEAM = 3W6S8FM5ZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TivBible/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Tiv Bible";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,6 +646,8 @@
 				DEVELOPMENT_TEAM = 3W6S8FM5ZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TivBible/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Tiv Bible";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @StateObject private var viewModel = SetupViewModel()
     
     var body: some View {
         NavigationView {
@@ -34,7 +35,9 @@ struct ContentView: View {
                     }
                 }
             }
-            Text("Select an item")
+            //Text("Select an item")
+        }.task {
+            await viewModel.printStats()
         }
     }
 
