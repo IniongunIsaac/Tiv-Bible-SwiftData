@@ -11,18 +11,23 @@ import SwiftData
 struct ReaderScreen: View {
     
     private var viewModel = ReaderViewModel()
+    @State private var selected = false
     
     var body: some View {
         NavigationView {
-            VStack {
-                List(viewModel.verses) { verse in
-                    Text(verse.attrText)
-                }
-                .scrollIndicators(.never)
-                .listRowSpacing(-10)
-                .listStyle(.plain)
-                .padding(0)
+            List(viewModel.verses) { verse in
+                Text(verse.attrText)
+                    .showUnderline(verse.isSelected)
+                    .onTapGesture {
+                        withAnimation {
+                            verse.isSelected.toggle()
+                            viewModel.refreshVerses()
+                        }
+                    }
             }
+            .scrollIndicators(.never)
+            .listRowSpacing(-10)
+            .listStyle(.plain)
             .onAppear {
                 viewModel.getVerses()
             }
@@ -61,7 +66,3 @@ struct ReaderScreen: View {
         
     }
 }
-
-/*#Preview {
-    ReaderScreen()
-}*/

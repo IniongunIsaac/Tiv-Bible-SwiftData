@@ -40,4 +40,8 @@ final class ReaderViewModel {
             print("unable to get verses")
         }
     }
+    
+    func refreshVerses() {
+        verses = verses
+    }
 }

@@ -18,6 +18,9 @@ final class Verse {
     var number: Int
     var chapter: Chapter?
     
+    @Transient
+    var isSelected: Bool = false
+    
     init(id: String = UUID().uuidString,
         title: String,
         text: String,
@@ -38,7 +41,8 @@ final class Verse {
         let numberDotAttr = AttributedString("\(number). ", attributes: numberDotAttrContainer)
         
         var textAttrContainer = AttributeContainer()
-        textAttrContainer.underlineStyle = .patternDash
+        textAttrContainer.underlineStyle = .thick
+        textAttrContainer.underlineColor = .red
         let textAttr = AttributedString(text, attributes: textAttrContainer)
         
         /*var newContainer = AttributeContainer()

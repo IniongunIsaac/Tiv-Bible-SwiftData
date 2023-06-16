@@ -25,4 +25,13 @@ extension View {
             EmptyView()
         }
     }
+    
+    @ViewBuilder
+    func showUnderline(_ value: Bool) -> some View {
+        if value {
+            self.underline(pattern: .dot)
+        } else {
+            self
+        }
+    }
 }
