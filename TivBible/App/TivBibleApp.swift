@@ -20,12 +20,12 @@ struct TivBibleApp: App {
     var body: some Scene {
         WindowGroup {
             if preferenceStore.hasSetupDB {
-                ContentView()
+                MainContentScreen()
             } else {
                 SetupScreen()
             }
         }
-        .modelContainer(for: [Item.self, Book.self, Chapter.self, Verse.self])
+        .modelContainer(for: [Book.self, Chapter.self, Verse.self])
     }
 }
 

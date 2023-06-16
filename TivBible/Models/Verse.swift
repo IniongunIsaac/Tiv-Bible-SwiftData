@@ -10,13 +10,13 @@ import SwiftData
 
 @Model
 final class Verse {
-    @Attribute(.unique) var id: UUID
+    @Attribute(.unique) var id: String
     var title: String
     var text: String
     var number: Int
     var chapter: Chapter?
     
-    init(id: UUID = UUID(),
+    init(id: String = UUID().uuidString,
         title: String,
         text: String,
         number: Int,

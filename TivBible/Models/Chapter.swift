@@ -10,12 +10,12 @@ import SwiftData
 
 @Model
 final class Chapter {
-    @Attribute(.unique) var id: UUID
+    @Attribute(.unique) var id: String
     var number: Int
     var verses: [Verse]
     var book: Book?
     
-    init(id: UUID = UUID(),
+    init(id: String = UUID().uuidString,
         number: Int,
         verses: [Verse] = [],
         book: Book? = nil
@@ -33,5 +33,10 @@ final class Chapter {
             "verses": verses.map { $0.dictionary },
             "book": book?.dictionary ?? [:]
         ]
+    }
+    
+    var bookNameAndChapterNumber: String {
+        guard let book else { return "None" }
+        return "\(book.name) \(number)"
     }
 }

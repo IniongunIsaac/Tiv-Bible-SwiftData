@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5503AD762A37BF50006E6C79 /* TivBibleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD752A37BF50006E6C79 /* TivBibleApp.swift */; };
-		5503AD782A37BF50006E6C79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD772A37BF50006E6C79 /* ContentView.swift */; };
 		5503AD7A2A37BF50006E6C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5503AD792A37BF50006E6C79 /* Assets.xcassets */; };
 		5503AD7D2A37BF50006E6C79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5503AD7C2A37BF50006E6C79 /* Preview Assets.xcassets */; };
-		5503AD7F2A37BF50006E6C79 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD7E2A37BF50006E6C79 /* Item.swift */; };
 		5503AD892A37BF51006E6C79 /* TivBibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD882A37BF51006E6C79 /* TivBibleTests.swift */; };
 		5503AD932A37BF51006E6C79 /* TivBibleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD922A37BF51006E6C79 /* TivBibleUITests.swift */; };
 		5503AD952A37BF51006E6C79 /* TivBibleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503AD942A37BF51006E6C79 /* TivBibleUITestsLaunchTests.swift */; };
@@ -38,6 +36,11 @@
 		5503ADD12A37C9F4006E6C79 /* GentiumPlus-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5503ADCD2A37C9F4006E6C79 /* GentiumPlus-Regular.ttf */; };
 		5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADD62A37CACE006E6C79 /* SetupScreen.swift */; };
 		5503ADD92A37CB5D006E6C79 /* SetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */; };
+		555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CB2A38DBE100DF230E /* ReaderScreen.swift */; };
+		555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CD2A38DBF100DF230E /* SettingsScreen.swift */; };
+		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
+		555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576D12A38DC2200DF230E /* MainContentScreen.swift */; };
+		555576D42A392B6F00DF230E /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576D32A392B6F00DF230E /* ReaderViewModel.swift */; };
 		55E42F812A38830300DBB619 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42F802A38830300DBB619 /* String+.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,10 +64,8 @@
 /* Begin PBXFileReference section */
 		5503AD722A37BF50006E6C79 /* TivBible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TivBible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5503AD752A37BF50006E6C79 /* TivBibleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleApp.swift; sourceTree = "<group>"; };
-		5503AD772A37BF50006E6C79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5503AD792A37BF50006E6C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5503AD7C2A37BF50006E6C79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5503AD7E2A37BF50006E6C79 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5503AD842A37BF51006E6C79 /* TivBibleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TivBibleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5503AD882A37BF51006E6C79 /* TivBibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleTests.swift; sourceTree = "<group>"; };
 		5503AD8E2A37BF51006E6C79 /* TivBibleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TivBibleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +95,11 @@
 		5503ADD32A37CA38006E6C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5503ADD62A37CACE006E6C79 /* SetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupScreen.swift; sourceTree = "<group>"; };
 		5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewModel.swift; sourceTree = "<group>"; };
+		555576CB2A38DBE100DF230E /* ReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderScreen.swift; sourceTree = "<group>"; };
+		555576CD2A38DBF100DF230E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
+		555576D12A38DC2200DF230E /* MainContentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentScreen.swift; sourceTree = "<group>"; };
+		555576D32A392B6F00DF230E /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
 		55E42F802A38830300DBB619 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,8 +158,6 @@
 				5503ADB72A37C848006E6C79 /* PreferenceStore */,
 				5503ADAA2A37C74F006E6C79 /* Extensions */,
 				5503ADA12A37C06B006E6C79 /* Models */,
-				5503AD772A37BF50006E6C79 /* ContentView.swift */,
-				5503AD7E2A37BF50006E6C79 /* Item.swift */,
 				5503AD7B2A37BF50006E6C79 /* Preview Content */,
 			);
 			path = TivBible;
@@ -270,6 +274,9 @@
 		5503ADD42A37CA8A006E6C79 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				555576CA2A38DB8500DF230E /* Reader */,
+				555576C92A38DB7E00DF230E /* Settings */,
+				555576C82A38DB4900DF230E /* Misc */,
 				55E42F822A38A04D00DBB619 /* MainTabs */,
 				5503ADD52A37CA9E006E6C79 /* Setup */,
 			);
@@ -285,9 +292,35 @@
 			path = Setup;
 			sourceTree = "<group>";
 		};
+		555576C82A38DB4900DF230E /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				555576CF2A38DBF900DF230E /* MiscScreen.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		555576C92A38DB7E00DF230E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				555576CD2A38DBF100DF230E /* SettingsScreen.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		555576CA2A38DB8500DF230E /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				555576CB2A38DBE100DF230E /* ReaderScreen.swift */,
+				555576D32A392B6F00DF230E /* ReaderViewModel.swift */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
 		55E42F822A38A04D00DBB619 /* MainTabs */ = {
 			isa = PBXGroup;
 			children = (
+				555576D12A38DC2200DF230E /* MainContentScreen.swift */,
 			);
 			path = MainTabs;
 			sourceTree = "<group>";
@@ -439,15 +472,18 @@
 				5503ADAE2A37C776006E6C79 /* View+.swift in Sources */,
 				5503ADA72A37C09E006E6C79 /* Book.swift in Sources */,
 				5503ADC42A37C914006E6C79 /* DependencyProvider.swift in Sources */,
-				5503AD782A37BF50006E6C79 /* ContentView.swift in Sources */,
 				5503ADB62A37C7F8006E6C79 /* Code+.swift in Sources */,
 				5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */,
+				555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */,
 				5503ADBD2A37C8B3006E6C79 /* PreferenceStore.swift in Sources */,
+				555576D42A392B6F00DF230E /* ReaderViewModel.swift in Sources */,
+				555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */,
 				5503ADC02A37C8DD006E6C79 /* DependencyType.swift in Sources */,
 				5503ADB42A37C7D9006E6C79 /* TivBibleError.swift in Sources */,
 				55E42F812A38830300DBB619 /* String+.swift in Sources */,
-				5503AD7F2A37BF50006E6C79 /* Item.swift in Sources */,
+				555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */,
 				5503ADC22A37C8F0006E6C79 /* DependencyContainer.swift in Sources */,
+				555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */,
 				5503AD762A37BF50006E6C79 /* TivBibleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

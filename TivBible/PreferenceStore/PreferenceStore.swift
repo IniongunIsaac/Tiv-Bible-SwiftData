@@ -10,4 +10,5 @@ import SwiftUI
 
 final class PreferenceStore: ObservableObject {
     @AppStorage(.hasSetupDB) var hasSetupDB: Bool = false
+    @AppStorage(.currentChapterUUID) var currentChapterUUID: String = ""
 }

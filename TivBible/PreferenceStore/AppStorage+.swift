@@ -32,4 +32,20 @@ extension AppStorage {
     init(wrappedValue: Value, _ key: PreferenceStoreKey, store: UserDefaults? = nil) where Value == Data {
         self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
     }
+    
+    init(wrappedValue: Value, _ key: PreferenceStoreKey, store: UserDefaults? = nil) where Value == UUID {
+        self.init(wrappedValue: wrappedValue, key.rawValue, store: store)
+    }
+}
+
+extension UUID: RawRepresentable {
+    public var rawValue: String {
+        self.uuidString
+    }
+
+    public typealias RawValue = String
+
+    public init?(rawValue: RawValue) {
+        self.init(uuidString: rawValue)
+    }
 }

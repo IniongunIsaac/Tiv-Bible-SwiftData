@@ -10,14 +10,14 @@ import SwiftData
 
 @Model
 final class Book {
-    @Attribute(.unique) var id: UUID
+    @Attribute(.unique) var id: String
     var name: String
     var order: Int
     var testament: Int
     var version: Int
     var chapters: [Chapter]
     
-    init(id: UUID = UUID(),
+    init(id: String = UUID().uuidString,
         name: String,
         order: Int,
         testament: Int,
