@@ -36,6 +36,11 @@
 		5503ADD12A37C9F4006E6C79 /* GentiumPlus-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5503ADCD2A37C9F4006E6C79 /* GentiumPlus-Regular.ttf */; };
 		5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADD62A37CACE006E6C79 /* SetupScreen.swift */; };
 		5503ADD92A37CB5D006E6C79 /* SetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */; };
+		551D0B162A3CDE5B00449307 /* MultiSelectionActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B152A3CDE5B00449307 /* MultiSelectionActionsView.swift */; };
+		551D0B1A2A3CE8F200449307 /* VerseSelectionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B192A3CE8F200449307 /* VerseSelectionAction.swift */; };
+		551D0B1C2A3CF41A00449307 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1B2A3CF41A00449307 /* RoundedCornersShape.swift */; };
+		551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1D2A3CF50E00449307 /* IconTextView.swift */; };
+		551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1F2A3CF54B00449307 /* IconTextButton.swift */; };
 		555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CB2A38DBE100DF230E /* ReaderScreen.swift */; };
 		555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CD2A38DBF100DF230E /* SettingsScreen.swift */; };
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
@@ -95,6 +100,11 @@
 		5503ADD32A37CA38006E6C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5503ADD62A37CACE006E6C79 /* SetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupScreen.swift; sourceTree = "<group>"; };
 		5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewModel.swift; sourceTree = "<group>"; };
+		551D0B152A3CDE5B00449307 /* MultiSelectionActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionActionsView.swift; sourceTree = "<group>"; };
+		551D0B192A3CE8F200449307 /* VerseSelectionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseSelectionAction.swift; sourceTree = "<group>"; };
+		551D0B1B2A3CF41A00449307 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
+		551D0B1D2A3CF50E00449307 /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
+		551D0B1F2A3CF54B00449307 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
 		555576CB2A38DBE100DF230E /* ReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderScreen.swift; sourceTree = "<group>"; };
 		555576CD2A38DBF100DF230E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
@@ -274,6 +284,7 @@
 		5503ADD42A37CA8A006E6C79 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				551D0B172A3CE65300449307 /* Utilities */,
 				555576CA2A38DB8500DF230E /* Reader */,
 				555576C92A38DB7E00DF230E /* Settings */,
 				555576C82A38DB4900DF230E /* Misc */,
@@ -290,6 +301,32 @@
 				5503ADD82A37CB5D006E6C79 /* SetupViewModel.swift */,
 			);
 			path = Setup;
+			sourceTree = "<group>";
+		};
+		551D0B142A3CDE3600449307 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				551D0B152A3CDE5B00449307 /* MultiSelectionActionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		551D0B172A3CE65300449307 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				551D0B182A3CE65E00449307 /* Views */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		551D0B182A3CE65E00449307 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				551D0B1B2A3CF41A00449307 /* RoundedCornersShape.swift */,
+				551D0B1D2A3CF50E00449307 /* IconTextView.swift */,
+				551D0B1F2A3CF54B00449307 /* IconTextButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		555576C82A38DB4900DF230E /* Misc */ = {
@@ -311,8 +348,10 @@
 		555576CA2A38DB8500DF230E /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				551D0B142A3CDE3600449307 /* Views */,
 				555576CB2A38DBE100DF230E /* ReaderScreen.swift */,
 				555576D32A392B6F00DF230E /* ReaderViewModel.swift */,
+				551D0B192A3CE8F200449307 /* VerseSelectionAction.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -465,7 +504,10 @@
 				5503ADB22A37C7B9006E6C79 /* Font+.swift in Sources */,
 				5503ADB02A37C79C006E6C79 /* Color+.swift in Sources */,
 				5503ADD92A37CB5D006E6C79 /* SetupViewModel.swift in Sources */,
+				551D0B1C2A3CF41A00449307 /* RoundedCornersShape.swift in Sources */,
+				551D0B1A2A3CE8F200449307 /* VerseSelectionAction.swift in Sources */,
 				5503ADBB2A37C886006E6C79 /* AppStorage+.swift in Sources */,
+				551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */,
 				5503ADA32A37C077006E6C79 /* TivBibleData.swift in Sources */,
 				5503ADA52A37C095006E6C79 /* Chapter.swift in Sources */,
 				5503ADAC2A37C762006E6C79 /* Data+.swift in Sources */,
@@ -476,7 +518,9 @@
 				5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */,
 				555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */,
 				5503ADBD2A37C8B3006E6C79 /* PreferenceStore.swift in Sources */,
+				551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */,
 				555576D42A392B6F00DF230E /* ReaderViewModel.swift in Sources */,
+				551D0B162A3CDE5B00449307 /* MultiSelectionActionsView.swift in Sources */,
 				555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */,
 				5503ADC02A37C8DD006E6C79 /* DependencyType.swift in Sources */,
 				5503ADB42A37C7D9006E6C79 /* TivBibleError.swift in Sources */,

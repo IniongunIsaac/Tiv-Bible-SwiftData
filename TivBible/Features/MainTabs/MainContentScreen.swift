@@ -31,6 +31,6 @@ struct MainContentScreen: View {
     }
 }
 
-#Preview {
+#Preview("MainContentScreen") {
     MainContentScreen()
 }

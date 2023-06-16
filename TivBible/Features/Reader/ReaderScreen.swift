@@ -12,22 +12,29 @@ struct ReaderScreen: View {
     
     private var viewModel = ReaderViewModel()
     @State private var selected = false
+    @State private var selectedVerse: Verse?
     
     var body: some View {
         NavigationView {
-            List(viewModel.verses) { verse in
-                Text(verse.attrText)
-                    .showUnderline(verse.isSelected)
-                    .onTapGesture {
-                        withAnimation {
-                            verse.isSelected.toggle()
-                            viewModel.refreshVerses()
+            VStack(spacing: 0) {
+                List(viewModel.verses, id: \.id) { verse in
+                    Text(verse.attrText)
+                        .showUnderline(verse.isSelected)
+                        .onTapGesture {
+                            withAnimation {
+                                verse.isSelected.toggle()
+                                viewModel.refreshVerses()
+                            }
                         }
-                    }
+                }
+                .scrollIndicators(.never)
+                .listRowSpacing(-10)
+                .listStyle(.plain)
+                
+                MultiSelectionActionsView()
+                    .visible(viewModel.showVerseSelectionActions)
             }
-            .scrollIndicators(.never)
-            .listRowSpacing(-10)
-            .listStyle(.plain)
+            //.padding(.bottom, -20)
             .onAppear {
                 viewModel.getVerses()
             }
@@ -65,4 +72,8 @@ struct ReaderScreen: View {
         }
         
     }
+}
+
+#Preview("ReaderScreen") {
+    ReaderScreen()
 }

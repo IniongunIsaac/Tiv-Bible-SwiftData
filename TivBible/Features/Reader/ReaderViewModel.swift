@@ -12,6 +12,9 @@ import SwiftData
 final class ReaderViewModel {
     var bookNameAndChapterNumber: String = ""
     var verses = [Verse]()
+    var showVerseSelectionActions: Bool {
+        verses.filter { $0.isSelected }.isNotEmpty
+    }
     
     private let preferenceStore = PreferenceStore()
     private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self])
