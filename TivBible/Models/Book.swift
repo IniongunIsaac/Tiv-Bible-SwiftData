@@ -31,15 +31,4 @@ final class Book {
         self.version = version
         self.chapters = chapters
     }
-    
-    var dictionary: [String : Any] {
-        [
-            "id": id,
-            "name": name,
-            "order": order,
-            "testament": testament,
-            "version": version,
-            "chapters": chapters.map { $0.dictionary }
-        ]
-    }
 }

@@ -18,34 +18,6 @@ final class SetupViewModel: ObservableObject {
         modelContainer.mainContext
     }
     
-    func printStats() async {
-        let sortDesc = SortDescriptor<Book>(\.order, order: .forward)
-        let booksDescriptor = FetchDescriptor<Book>(sortBy: [sortDesc])
-        let books = (try? context.fetch(booksDescriptor)) ?? []
-        let verseId = books.first?.chapters.sorted(by: { $0.number < $1.number }).first?.verses.sorted(by: { $0.number < $1.number }).first?.id ?? ""
-        print(verseId)
-        
-        let chapter = books.first?.chapters.first
-        print("chapter?.book?.name => \(chapter?.book?.name ?? "")")
-        
-        /*for nam in books.map({ ($0.name, $0.chapters.count) }) {
-            print(nam)
-        }*/
-        
-        let versePredicate = #Predicate<Verse> {
-            $0.chapter?.book?.order == 1 // Genese 1:1
-        }
-        var verseDesc = FetchDescriptor(predicate: versePredicate)
-        verseDesc.fetchLimit = 1
-        let verses = (try? context.fetch(verseDesc)) ?? []
-        guard let verseId = verses.first?.id else {
-            print("unable to find first verse")
-            return
-        }
-        print("Genese 1:1 => \(verseId)")
-        saveDefaultChapter()
-    }
-    
     // Saves Genesis 1 as the default chapter
     private func saveDefaultChapter() {
         let bookPredicate = #Predicate<Book> {

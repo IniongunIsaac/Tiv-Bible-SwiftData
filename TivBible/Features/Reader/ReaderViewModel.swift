@@ -11,6 +11,7 @@ import SwiftData
 @Observable
 final class ReaderViewModel {
     var bookNameAndChapterNumber: String = ""
+    var verses = [Verse]()
     
     private let preferenceStore = PreferenceStore()
     private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self])
@@ -34,8 +35,9 @@ final class ReaderViewModel {
                 return
             }
             bookNameAndChapterNumber = chapter.bookNameAndChapterNumber
+            verses = chapter.verses.sorted(by: { $0.number < $1.number })
         } catch {
-            
+            print("unable to get verses")
         }
     }
 }

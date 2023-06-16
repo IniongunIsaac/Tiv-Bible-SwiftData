@@ -26,15 +26,6 @@ final class Chapter {
         self.book = book
     }
     
-    var dictionary: [String : Any] {
-        [
-            "id": id,
-            "number": number,
-            "verses": verses.map { $0.dictionary },
-            "book": book?.dictionary ?? [:]
-        ]
-    }
-    
     var bookNameAndChapterNumber: String {
         guard let book else { return "None" }
         return "\(book.name) \(number)"

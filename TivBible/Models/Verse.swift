@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftData
+import UIKit
+import SwiftUI
 
 @Model
 final class Verse {
@@ -29,13 +31,26 @@ final class Verse {
         self.chapter = chapter
     }
     
-    var dictionary: [String : Any] {
-        [
-            "id": id,
-            "title": title,
-            "text": text,
-            "number": number,
-            "chapter": chapter?.dictionary ?? [:]
-        ]
+    var attrText: AttributedString {
+        var numberDotAttrContainer = AttributeContainer()
+        numberDotAttrContainer.baselineOffset = 6
+        numberDotAttrContainer.font = .gentiumPlus(.bold, size: 10)
+        let numberDotAttr = AttributedString("\(number). ", attributes: numberDotAttrContainer)
+        
+        var textAttrContainer = AttributeContainer()
+        textAttrContainer.underlineStyle = .patternDash
+        let textAttr = AttributedString(text, attributes: textAttrContainer)
+        
+        /*var newContainer = AttributeContainer()
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.paragraphSpacing = 20
+        paragraphStyle.paragraphSpacingBefore = 30
+        paragraphStyle.lineSpacing = 20
+        newContainer.paragraphStyle = paragraphStyle
+        
+        var finalAttrText = numberDotAttr + textAttr
+        finalAttrText.mergeAttributes(newContainer)*/
+        
+        return numberDotAttr + textAttr
     }
 }

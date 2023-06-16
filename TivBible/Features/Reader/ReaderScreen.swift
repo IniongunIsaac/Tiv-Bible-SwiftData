@@ -10,13 +10,18 @@ import SwiftData
 
 struct ReaderScreen: View {
     
-    //@Environment(\.modelContext) private var modelContext
     private var viewModel = ReaderViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                
+                List(viewModel.verses) { verse in
+                    Text(verse.attrText)
+                }
+                .scrollIndicators(.never)
+                .listRowSpacing(-10)
+                .listStyle(.plain)
+                .padding(0)
             }
             .onAppear {
                 viewModel.getVerses()
@@ -57,6 +62,6 @@ struct ReaderScreen: View {
     }
 }
 
-#Preview {
+/*#Preview {
     ReaderScreen()
-}
+}*/
