@@ -12,9 +12,14 @@ import SwiftData
 final class ReaderViewModel {
     var bookNameAndChapterNumber: String = ""
     var verses = [Verse]()
-    var showVerseSelectionActions: Bool {
-        verses.filter { $0.isSelected }.isNotEmpty
+    private var selectedVerses: [Verse] {
+        verses.filter { $0.isSelected }
     }
+    var showVerseSelectionActions: Bool {
+        selectedVerses.isNotEmpty
+    }
+    var shareableSelectedVersesText: String = ""
+    var selectedVersesText: String = ""
     
     private let preferenceStore = PreferenceStore()
     private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self])
@@ -46,5 +51,38 @@ final class ReaderViewModel {
     
     func refreshVerses() {
         verses = verses
+        getSelectedVersesText()
+    }
+    
+    private func getSelectedVersesText() {
+        let selectedVersesList = selectedVerses.sorted { $0.number < $1.number }
+        let verses = selectedVersesList.map { $0.number }
+
+        var left: Int?
+        var right: Int?
+        var groups = [String]()
+
+        for index in (verses.first ?? 0)...(verses.last ?? 0) + 1 {
+            if verses.contains(index) {
+                if left == nil {
+                    left = index
+                } else {
+                    right = index
+                }
+            } else {
+                guard let leftx = left else { continue }
+                
+                if let right = right {
+                    groups.append("\(leftx)-\(right)")
+                } else {
+                    groups.append("\(leftx)")
+                }
+                left = nil
+                right = nil
+            }
+        }
+        
+        selectedVersesText = "\(bookNameAndChapterNumber.replacingOccurrences(of: ":", with: " ")) : \(groups.joined(separator: ", "))"
+        shareableSelectedVersesText = "\(bookNameAndChapterNumber)\n\(selectedVersesList.map { "\($0.number). \($0.text)" }.joined(separator: "\n\n"))"
     }
 }

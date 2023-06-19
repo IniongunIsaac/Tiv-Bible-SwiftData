@@ -7,28 +7,34 @@
 
 import SwiftUI
 
-struct MultiSelectionActionsView: View {
+struct VerseTapActionsView: View {
+    let viewModel: ReaderViewModel
+    
     var body: some View {
         VStack(alignment: .center) {
             
-            Text("Genese 11:1-25; 8:15-24")
+            Text(viewModel.selectedVersesText)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .padding(.trailing, 30)
             
             ScrollView(.horizontal) {
-                LazyHGrid(rows: [GridItem(.flexible())], spacing:10) {
-                    ForEach(VerseSelectionAction.allCases, id: \.self) { action in
+                LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                    ForEach(VerseTapAction.allCases, id: \.self) { action in
                         IconTextButton(title: action.rawValue, icon: action.iconName)
                     }
                 }
             }
             
             ScrollView(.horizontal) {
-                LazyHGrid(rows: [GridItem(.flexible())], spacing:10) {
-                    ForEach(0 ..< 10) { item in
-                        Circle().fill(.blue)
-                            .frame(width: 50, height: 50)
+                LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                    ForEach(ColorHex.allCases, id: \.self) { color in
+                        Button {
+                            
+                        } label: {
+                            Circle().fill(color.color)
+                                .frame(width: 50, height: 50)
+                        }
                     }
                 }
             }
@@ -55,6 +61,6 @@ struct MultiSelectionActionsView: View {
 }
 
 #Preview("MultiSelectionActionsView") {
-    MultiSelectionActionsView()
+    VerseTapActionsView(viewModel: ReaderViewModel())
         .previewLayout(.sizeThatFits)
 }

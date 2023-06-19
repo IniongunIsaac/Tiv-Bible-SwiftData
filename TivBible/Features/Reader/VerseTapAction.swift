@@ -1,5 +1,5 @@
 //
-//  VerseSelectionAction.swift
+//  VerseTapAction.swift
 //  TivBible
 //
 //  Created by Isaac Iniongun on 16/06/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum VerseSelectionAction: String, CaseIterable {
+enum VerseTapAction: String, CaseIterable {
     case share = "Share"
     case bookmark = "Bookmark"
     case copy = "Copy"
@@ -23,7 +23,7 @@ enum VerseSelectionAction: String, CaseIterable {
         case .copy:
             return "doc.on.doc"
         case .takeNotes:
-            return "pencil.circle" //"list.bullet.clipboard"
+            return "pencil.circle"
         }
     }
 }

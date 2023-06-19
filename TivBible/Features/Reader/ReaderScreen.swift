@@ -21,7 +21,7 @@ struct ReaderScreen: View {
                     Text(verse.attrText)
                         .showUnderline(verse.isSelected)
                         .onTapGesture {
-                            withAnimation {
+                            withAnimation(.spring) {
                                 verse.isSelected.toggle()
                                 viewModel.refreshVerses()
                             }
@@ -31,10 +31,11 @@ struct ReaderScreen: View {
                 .listRowSpacing(-10)
                 .listStyle(.plain)
                 
-                MultiSelectionActionsView()
+                VerseTapActionsView(viewModel: viewModel)
+                    .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }
-            //.padding(.bottom, -20)
+            .padding(.bottom, -20)
             .onAppear {
                 viewModel.getVerses()
             }
