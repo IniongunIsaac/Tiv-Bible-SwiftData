@@ -42,6 +42,7 @@
 		551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1D2A3CF50E00449307 /* IconTextView.swift */; };
 		551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1F2A3CF54B00449307 /* IconTextButton.swift */; };
 		552BB2642A409DC800BB3A86 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2632A409DC800BB3A86 /* ColorHex.swift */; };
+		552BB2672A40C24000BB3A86 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 552BB2662A40C24000BB3A86 /* AlertToast */; };
 		555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CB2A38DBE100DF230E /* ReaderScreen.swift */; };
 		555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CD2A38DBF100DF230E /* SettingsScreen.swift */; };
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
@@ -120,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552BB2672A40C24000BB3A86 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +205,7 @@
 		5503ADA12A37C06B006E6C79 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				551D0B192A3CE8F200449307 /* VerseTapAction.swift */,
 				5503ADA22A37C077006E6C79 /* TivBibleData.swift */,
 				5503ADA62A37C09E006E6C79 /* Book.swift */,
 				5503ADA42A37C095006E6C79 /* Chapter.swift */,
@@ -354,7 +357,6 @@
 				551D0B142A3CDE3600449307 /* Views */,
 				555576CB2A38DBE100DF230E /* ReaderScreen.swift */,
 				555576D32A392B6F00DF230E /* ReaderViewModel.swift */,
-				551D0B192A3CE8F200449307 /* VerseTapAction.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -383,6 +385,9 @@
 			dependencies = (
 			);
 			name = TivBible;
+			packageProductDependencies = (
+				552BB2662A40C24000BB3A86 /* AlertToast */,
+			);
 			productName = TivBible;
 			productReference = 5503AD722A37BF50006E6C79 /* TivBible.app */;
 			productType = "com.apple.product-type.application";
@@ -455,6 +460,9 @@
 				Base,
 			);
 			mainGroup = 5503AD692A37BF50006E6C79;
+			packageReferences = (
+				552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 5503AD732A37BF50006E6C79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -866,6 +874,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		552BB2662A40C24000BB3A86 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5503AD6A2A37BF50006E6C79 /* Project object */;
 }

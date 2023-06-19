@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VerseTapActionsView: View {
     let viewModel: ReaderViewModel
+    @Binding var showToast: Bool
     
     var body: some View {
         VStack(alignment: .center) {
@@ -21,16 +22,30 @@ struct VerseTapActionsView: View {
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
                     ForEach(VerseTapAction.allCases, id: \.self) { action in
-                        IconTextButton(title: action.rawValue, icon: action.iconName)
+                        IconTextButton(title: action.rawValue, icon: action.iconName) {
+                            viewModel.didTapVerseAction(action)
+                            if action == .copy {
+                                showToast.toggle()
+                            }
+                        }
                     }
                 }
             }
             
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                    Button {
+                        viewModel.removeHighlights()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
+                    .tint(.label)
+                    
                     ForEach(ColorHex.allCases, id: \.self) { color in
                         Button {
-                            viewModel.setHighlightColor(color)
+                            viewModel.setHighlights(color)
                         } label: {
                             Circle().fill(color.color)
                                 .frame(width: 50, height: 50)
@@ -61,6 +76,7 @@ struct VerseTapActionsView: View {
 }
 
 #Preview("MultiSelectionActionsView") {
-    VerseTapActionsView(viewModel: ReaderViewModel())
+    @State var show = false
+    return VerseTapActionsView(viewModel: ReaderViewModel(), showToast: $show)
         .previewLayout(.sizeThatFits)
 }

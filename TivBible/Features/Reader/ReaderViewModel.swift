@@ -18,7 +18,7 @@ final class ReaderViewModel {
     var showVerseSelectionActions: Bool {
         selectedVerses.isNotEmpty
     }
-    var shareableSelectedVersesText: String = ""
+    private var shareableSelectedVersesText: String = ""
     var selectedVersesText: String = ""
     
     private let preferenceStore = PreferenceStore()
@@ -51,10 +51,10 @@ final class ReaderViewModel {
     
     func refreshVerses() {
         verses = verses
-        getSelectedVersesText()
+        updateSelectedVersesText()
     }
     
-    private func getSelectedVersesText() {
+    private func updateSelectedVersesText() {
         let selectedVersesList = selectedVerses.sorted { $0.number < $1.number }
         let verses = selectedVersesList.map { $0.number }
 
@@ -83,10 +83,10 @@ final class ReaderViewModel {
         }
         
         selectedVersesText = "\(bookNameAndChapterNumber.replacingOccurrences(of: ":", with: " ")) : \(groups.joined(separator: ", "))"
-        shareableSelectedVersesText = "\(bookNameAndChapterNumber)\n\(selectedVersesList.map { "\($0.number). \($0.text)" }.joined(separator: "\n\n"))"
+        shareableSelectedVersesText = "\(bookNameAndChapterNumber):\n\(selectedVersesList.map { "v\($0.number). \($0.text)" }.joined(separator: "\n"))"
     }
     
-    func setHighlightColor(_ colorHex: ColorHex) {
+    func setHighlights(_ colorHex: ColorHex) {
         selectedVerses.forEach {
             $0.highlightColor = colorHex.rawValue
         }
@@ -98,5 +98,25 @@ final class ReaderViewModel {
             $0.isSelected = false
         }
         refreshVerses()
+    }
+    
+    func removeHighlights() {
+        selectedVerses.forEach {
+            $0.highlightColor = ""
+        }
+        refreshVerses()
+    }
+    
+    func didTapVerseAction(_ action: VerseTapAction) {
+        switch action {
+        case .share:
+            shareableSelectedVersesText.share()
+        case .bookmark:
+            break
+        case .copy:
+            shareableSelectedVersesText.copyToClipboard()
+        case .takeNotes:
+            break
+        }
     }
 }

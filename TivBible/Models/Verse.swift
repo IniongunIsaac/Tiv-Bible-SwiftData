@@ -51,6 +51,7 @@ final class Verse {
         }
         let textAttr = AttributedString(text, attributes: textAttrContainer)
         
+        //TODO: find out why paragraphs are not working. Could this be a Beta issue?
         /*var newContainer = AttributeContainer()
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.paragraphSpacing = 20

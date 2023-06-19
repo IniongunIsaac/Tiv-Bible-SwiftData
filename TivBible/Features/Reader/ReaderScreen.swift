@@ -7,12 +7,12 @@
 
 import SwiftUI
 import SwiftData
+import AlertToast
 
 struct ReaderScreen: View {
     
     private var viewModel = ReaderViewModel()
-    @State private var selected = false
-    @State private var selectedVerse: Verse?
+    @State private var showToast = false
     
     var body: some View {
         NavigationView {
@@ -31,7 +31,7 @@ struct ReaderScreen: View {
                 .listRowSpacing(-10)
                 .listStyle(.plain)
                 
-                VerseTapActionsView(viewModel: viewModel)
+                VerseTapActionsView(viewModel: viewModel, showToast: $showToast)
                     .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }
@@ -42,7 +42,7 @@ struct ReaderScreen: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        print("choose book")
+                        
                     } label: {
                         Text(viewModel.bookNameAndChapterNumber)
                             .foregroundStyle(Color.label)
@@ -69,6 +69,9 @@ struct ReaderScreen: View {
                     .foregroundStyle(Color.label)
                     .font(.gentiumPlus(.regular, size: 14))
                 }
+            }
+            .toast(isPresenting: $showToast) {
+                AlertToast(displayMode: .alert, type: .complete(.systemGreen))
             }
         }
         
