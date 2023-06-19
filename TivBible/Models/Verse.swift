@@ -17,6 +17,8 @@ final class Verse {
     var text: String
     var number: Int
     var highlightColor: String
+    var isBookmarked: Bool
+    var bookmarkDate: Date?
     var chapter: Chapter?
     
     @Transient
@@ -27,14 +29,18 @@ final class Verse {
         text: String,
         number: Int,
         highlightColor: String = "",
-        chapter: Chapter? = nil
+        isBookmarked: Bool = false,
+        chapter: Chapter? = nil,
+        bookmarkDate: Date? = nil
     ) {
         self.id = id
         self.title = title
         self.text = text
         self.number = number
         self.highlightColor = highlightColor
+        self.isBookmarked = isBookmarked
         self.chapter = chapter
+        self.bookmarkDate = bookmarkDate
     }
     
     var attrText: AttributedString {

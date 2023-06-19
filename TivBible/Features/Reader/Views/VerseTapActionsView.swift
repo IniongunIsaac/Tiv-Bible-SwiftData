@@ -24,7 +24,7 @@ struct VerseTapActionsView: View {
                     ForEach(VerseTapAction.allCases, id: \.self) { action in
                         IconTextButton(title: action.rawValue, icon: action.iconName) {
                             viewModel.didTapVerseAction(action)
-                            if action == .copy {
+                            if [.copy, .bookmark].contains(action) {
                                 showToast.toggle()
                             }
                         }

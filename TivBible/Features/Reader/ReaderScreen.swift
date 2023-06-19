@@ -71,7 +71,9 @@ struct ReaderScreen: View {
                 }
             }
             .toast(isPresenting: $showToast) {
-                AlertToast(displayMode: .alert, type: .complete(.systemGreen))
+                AlertToast(displayMode: .alert,
+                           type: .complete(.systemGreen),
+                           subTitle: viewModel.toastMessage)
             }
         }
         

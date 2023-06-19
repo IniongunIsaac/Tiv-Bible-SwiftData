@@ -20,6 +20,7 @@ final class ReaderViewModel {
     }
     private var shareableSelectedVersesText: String = ""
     var selectedVersesText: String = ""
+    var toastMessage: String = ""
     
     private let preferenceStore = PreferenceStore()
     private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self])
@@ -112,11 +113,21 @@ final class ReaderViewModel {
         case .share:
             shareableSelectedVersesText.share()
         case .bookmark:
-            break
+            setBookmarks()
+            toastMessage = "Bookmarked!"
         case .copy:
+            toastMessage = "Copied!"
             shareableSelectedVersesText.copyToClipboard()
         case .takeNotes:
             break
         }
+    }
+    
+    func setBookmarks() {
+        verses.forEach {
+            $0.isBookmarked = true
+            $0.bookmarkDate = Date()
+        }
+        refreshVerses()
     }
 }
