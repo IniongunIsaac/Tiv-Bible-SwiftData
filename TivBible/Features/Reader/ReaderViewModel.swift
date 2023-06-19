@@ -85,4 +85,18 @@ final class ReaderViewModel {
         selectedVersesText = "\(bookNameAndChapterNumber.replacingOccurrences(of: ":", with: " ")) : \(groups.joined(separator: ", "))"
         shareableSelectedVersesText = "\(bookNameAndChapterNumber)\n\(selectedVersesList.map { "\($0.number). \($0.text)" }.joined(separator: "\n\n"))"
     }
+    
+    func setHighlightColor(_ colorHex: ColorHex) {
+        selectedVerses.forEach {
+            $0.highlightColor = colorHex.rawValue
+        }
+        refreshVerses()
+    }
+    
+    func unselectedVerses() {
+        verses.forEach {
+            $0.isSelected = false
+        }
+        refreshVerses()
+    }
 }

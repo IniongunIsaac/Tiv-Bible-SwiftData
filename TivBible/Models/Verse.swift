@@ -16,6 +16,7 @@ final class Verse {
     var title: String
     var text: String
     var number: Int
+    var highlightColor: String
     var chapter: Chapter?
     
     @Transient
@@ -25,12 +26,14 @@ final class Verse {
         title: String,
         text: String,
         number: Int,
+        highlightColor: String = "",
         chapter: Chapter? = nil
     ) {
         self.id = id
         self.title = title
         self.text = text
         self.number = number
+        self.highlightColor = highlightColor
         self.chapter = chapter
     }
     
@@ -43,6 +46,9 @@ final class Verse {
         var textAttrContainer = AttributeContainer()
         textAttrContainer.underlineStyle = .thick
         textAttrContainer.underlineColor = .red
+        if highlightColor.isNotEmpty {
+            textAttrContainer.backgroundColor = highlightColor.color
+        }
         let textAttr = AttributedString(text, attributes: textAttrContainer)
         
         /*var newContainer = AttributeContainer()

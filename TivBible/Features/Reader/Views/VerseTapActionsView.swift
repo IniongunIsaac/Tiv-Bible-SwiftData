@@ -30,7 +30,7 @@ struct VerseTapActionsView: View {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
                     ForEach(ColorHex.allCases, id: \.self) { color in
                         Button {
-                            
+                            viewModel.setHighlightColor(color)
                         } label: {
                             Circle().fill(color.color)
                                 .frame(width: 50, height: 50)
@@ -47,7 +47,7 @@ struct VerseTapActionsView: View {
         .scrollIndicators(.never)
         .overlay(alignment: .topTrailing) {
             Button {
-                
+                viewModel.unselectedVerses()
             } label: {
                 Image(systemName: "xmark")
                     .resizable()
