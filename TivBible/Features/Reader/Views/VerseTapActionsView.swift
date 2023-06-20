@@ -80,8 +80,8 @@ struct VerseTapActionsView: View {
 }
 
 #Preview("MultiSelectionActionsView") {
-    @State var show = false
-    @State var notes = false
-    return VerseTapActionsView(viewModel: ReaderViewModel(), showToast: $show, showNotes: $notes)
-        .previewLayout(.sizeThatFits)
+    VerseTapActionsView(viewModel: ReaderViewModel(),
+                        showToast: .constant(false),
+                        showNotes: .constant(false))
+    .previewLayout(.sizeThatFits)
 }

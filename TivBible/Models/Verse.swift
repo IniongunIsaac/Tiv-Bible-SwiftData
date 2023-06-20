@@ -71,3 +71,34 @@ final class Verse {
         return numberDotAttr + textAttr
     }
 }
+
+extension Array where Element == Verse {
+    var groups: [String] {
+        let numbers = self.map { $0.number }
+        var left: Int?
+        var right: Int?
+        var groups = [String]()
+
+        for index in (numbers.first ?? 0)...(numbers.last ?? 0) + 1 {
+            if numbers.contains(index) {
+                if left == nil {
+                    left = index
+                } else {
+                    right = index
+                }
+            } else {
+                guard let leftx = left else { continue }
+                
+                if let right = right {
+                    groups.append("\(leftx)-\(right)")
+                } else {
+                    groups.append("\(leftx)")
+                }
+                left = nil
+                right = nil
+            }
+        }
+        
+        return groups
+    }
+}

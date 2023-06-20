@@ -32,7 +32,9 @@ struct ReaderScreen: View {
                 .listRowSpacing(-10)
                 .listStyle(.plain)
                 
-                VerseTapActionsView(viewModel: viewModel, showToast: $showToast, showNotes: $showNotes)
+                VerseTapActionsView(viewModel: viewModel,
+                                    showToast: $showToast,
+                                    showNotes: $showNotes)
                     .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }

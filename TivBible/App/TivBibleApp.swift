@@ -25,7 +25,7 @@ struct TivBibleApp: App {
                 SetupScreen()
             }
         }
-        .modelContainer(for: [Book.self, Chapter.self, Verse.self])
+        .modelContainer(for: [Book.self, Chapter.self, Verse.self, Note.self])
     }
 }
 

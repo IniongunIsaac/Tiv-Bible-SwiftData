@@ -13,13 +13,13 @@ struct NotesScreen: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            List {
                 ForEach(viewModel.notesTokens) { token in
-                    HStack() {
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 6)
+                    HStack {
+                        RoundedRectangle(cornerRadius: 6)
+                            .frame(width: 5)
                         
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 10) {
                             Text(token.text)
                             Text(token.reference)
                                 .font(.footnote)
@@ -28,24 +28,25 @@ struct NotesScreen: View {
                         
                         Spacer()
                     }
-                    Spacer(minLength: 20)
+                    
+                    Spacer(minLength: 5)
                 }
                 
-                Spacer(minLength: 30)
-                
-                TextEditor(text: $viewModel.notesText)
+                TextEditor(text: $viewModel.versesNotes)
                     .frame(minHeight: 200)
                     .overlay(alignment: .topLeading) {
-                        viewModel.notesText.isEmpty ?
+                        viewModel.versesNotes.isEmpty ?
                         Text("What would you like to say?")
                             .foregroundColor(.systemGray)
-                            .offset(y: 10)
+                            .offset(x: 6, y: 10)
                         : nil
                     }
                     .textCase(nil)
+                    .listRowSeparator(.hidden)
                 
             }
-            .padding()
+            .scrollIndicators(.never)
+            .listStyle(.plain)
             .navigationTitle("Notes")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -67,9 +68,14 @@ struct NotesScreen: View {
                             .padding(.horizontal, 4)
                             .padding(.vertical, 2)
                     }
-                    .disabled(viewModel.notesText.isEmpty)
+                    .disabled(viewModel.versesNotes.isEmpty)
                     .buttonBorderShape(.capsule)
                     .buttonStyle(.bordered)
+                }
+            }
+            .onChange(of: viewModel.notesTokens) {
+                if viewModel.notesTokens.isEmpty {
+                    dismiss()
                 }
             }
         }
@@ -79,5 +85,3 @@ struct NotesScreen: View {
 #Preview {
     NotesScreen(viewModel: ReaderViewModel())
 }
-
-//God is good all the time!

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NoteToken: Identifiable {
+struct NoteToken: Identifiable, Equatable {
     let id = UUID()
     let text: String
     let reference: String

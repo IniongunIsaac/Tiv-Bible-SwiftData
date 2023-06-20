@@ -21,11 +21,11 @@ final class ReaderViewModel {
     private var shareableSelectedVersesText: String = ""
     var selectedVersesText: String = ""
     var toastMessage: String = ""
-    var notesText: String = ""
+    var versesNotes: String = ""
     var notesTokens = [NoteToken]()
     
     private let preferenceStore = PreferenceStore()
-    private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self])
+    private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self, Note.self])
     @MainActor
     private var context: ModelContext {
         modelContainer.mainContext
@@ -58,36 +58,12 @@ final class ReaderViewModel {
     }
     
     private func updateSelectedVersesText() {
-        let sortedSelectedVerses = selectedVerses.sorted { $0.number < $1.number }
-        let verseNumbers = sortedSelectedVerses.map { $0.number }
-
-        var left: Int?
-        var right: Int?
-        var groups = [String]()
-
-        for index in (verseNumbers.first ?? 0)...(verseNumbers.last ?? 0) + 1 {
-            if verseNumbers.contains(index) {
-                if left == nil {
-                    left = index
-                } else {
-                    right = index
-                }
-            } else {
-                guard let leftx = left else { continue }
-                
-                if let right = right {
-                    groups.append("\(leftx)-\(right)")
-                } else {
-                    groups.append("\(leftx)")
-                }
-                left = nil
-                right = nil
-            }
-        }
+        let sortedVerses = selectedVerses.sorted { $0.number < $1.number }
+        let groups = sortedVerses.groups
         
         selectedVersesText = "\(bookNameAndChapterNumber):\(groups.joined(separator: ", "))"
-        shareableSelectedVersesText = "\(bookNameAndChapterNumber):\n\(sortedSelectedVerses.map { "v\($0.number). \($0.text)" }.joined(separator: "\n"))"
-        generateNoteTokens(sortedVerses: sortedSelectedVerses, groups: groups)
+        shareableSelectedVersesText = "\(bookNameAndChapterNumber):\n\(sortedVerses.map { "v\($0.number). \($0.text)" }.joined(separator: "\n"))"
+        generateNoteTokens(sortedVerses: sortedVerses, groups: groups)
     }
     
     private func generateNoteTokens(sortedVerses: [Verse], groups: [String]) {
@@ -160,7 +136,11 @@ final class ReaderViewModel {
         refreshVerses()
     }
     
+    @MainActor
     func saveNotes() {
-        
+        let newNote = Note(verses: selectedVerses, comment: versesNotes)
+        context.insert(newNote)
+        versesNotes = ""
+        notesTokens = []
     }
 }
