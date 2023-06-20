@@ -21,6 +21,8 @@ final class ReaderViewModel {
     private var shareableSelectedVersesText: String = ""
     var selectedVersesText: String = ""
     var toastMessage: String = ""
+    var notesText: String = ""
+    var notesTokens = [NoteToken]()
     
     private let preferenceStore = PreferenceStore()
     private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self])
@@ -56,15 +58,15 @@ final class ReaderViewModel {
     }
     
     private func updateSelectedVersesText() {
-        let selectedVersesList = selectedVerses.sorted { $0.number < $1.number }
-        let verses = selectedVersesList.map { $0.number }
+        let sortedSelectedVerses = selectedVerses.sorted { $0.number < $1.number }
+        let verseNumbers = sortedSelectedVerses.map { $0.number }
 
         var left: Int?
         var right: Int?
         var groups = [String]()
 
-        for index in (verses.first ?? 0)...(verses.last ?? 0) + 1 {
-            if verses.contains(index) {
+        for index in (verseNumbers.first ?? 0)...(verseNumbers.last ?? 0) + 1 {
+            if verseNumbers.contains(index) {
                 if left == nil {
                     left = index
                 } else {
@@ -83,8 +85,35 @@ final class ReaderViewModel {
             }
         }
         
-        selectedVersesText = "\(bookNameAndChapterNumber.replacingOccurrences(of: ":", with: " ")) : \(groups.joined(separator: ", "))"
-        shareableSelectedVersesText = "\(bookNameAndChapterNumber):\n\(selectedVersesList.map { "v\($0.number). \($0.text)" }.joined(separator: "\n"))"
+        selectedVersesText = "\(bookNameAndChapterNumber):\(groups.joined(separator: ", "))"
+        shareableSelectedVersesText = "\(bookNameAndChapterNumber):\n\(sortedSelectedVerses.map { "v\($0.number). \($0.text)" }.joined(separator: "\n"))"
+        generateNoteTokens(sortedVerses: sortedSelectedVerses, groups: groups)
+    }
+    
+    private func generateNoteTokens(sortedVerses: [Verse], groups: [String]) {
+        notesTokens = groups.map { group in
+            let reference = "\(bookNameAndChapterNumber):\(group)".uppercased()
+            
+            if group.contains("-") {
+                let indexes = group.components(separatedBy: "-")
+                let startIndex = Int(indexes[0])!
+                let endIndex = Int(indexes[1])!
+                
+                var texts = [String]()
+                for index in startIndex ... endIndex {
+                    if let verseText = sortedVerses.first(where: { $0.number == index })?.text {
+                        texts.append("v\(index). \(verseText)")
+                    }
+                }
+                
+                let text = texts.joined(separator: "\n\n")
+                return NoteToken(text: text, reference: reference)
+            } else {
+                let index = Int(group)!
+                let verseText = sortedVerses.first(where: { $0.number == index })?.text ?? ""
+                return NoteToken(text: verseText, reference: reference)
+            }
+        }
     }
     
     func setHighlights(_ colorHex: ColorHex) {
@@ -129,5 +158,9 @@ final class ReaderViewModel {
             $0.bookmarkDate = Date()
         }
         refreshVerses()
+    }
+    
+    func saveNotes() {
+        
     }
 }

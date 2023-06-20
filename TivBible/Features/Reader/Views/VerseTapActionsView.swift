@@ -10,6 +10,7 @@ import SwiftUI
 struct VerseTapActionsView: View {
     let viewModel: ReaderViewModel
     @Binding var showToast: Bool
+    @Binding var showNotes: Bool
     
     var body: some View {
         VStack(alignment: .center) {
@@ -26,6 +27,9 @@ struct VerseTapActionsView: View {
                             viewModel.didTapVerseAction(action)
                             if [.copy, .bookmark].contains(action) {
                                 showToast.toggle()
+                            }
+                            if action == .takeNotes {
+                                showNotes.toggle()
                             }
                         }
                     }
@@ -77,6 +81,7 @@ struct VerseTapActionsView: View {
 
 #Preview("MultiSelectionActionsView") {
     @State var show = false
-    return VerseTapActionsView(viewModel: ReaderViewModel(), showToast: $show)
+    @State var notes = false
+    return VerseTapActionsView(viewModel: ReaderViewModel(), showToast: $show, showNotes: $notes)
         .previewLayout(.sizeThatFits)
 }

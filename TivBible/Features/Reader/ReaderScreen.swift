@@ -13,6 +13,7 @@ struct ReaderScreen: View {
     
     private var viewModel = ReaderViewModel()
     @State private var showToast = false
+    @State private var showNotes = false
     
     var body: some View {
         NavigationView {
@@ -31,7 +32,7 @@ struct ReaderScreen: View {
                 .listRowSpacing(-10)
                 .listStyle(.plain)
                 
-                VerseTapActionsView(viewModel: viewModel, showToast: $showToast)
+                VerseTapActionsView(viewModel: viewModel, showToast: $showToast, showNotes: $showNotes)
                     .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }
@@ -74,6 +75,10 @@ struct ReaderScreen: View {
                 AlertToast(displayMode: .alert,
                            type: .complete(.systemGreen),
                            subTitle: viewModel.toastMessage)
+            }
+            .sheet(isPresented: $showNotes) {
+                NotesScreen(viewModel: viewModel)
+                    //.presentationDetents([.medium, .large])
             }
         }
         
