@@ -43,7 +43,7 @@ struct VerseTapActionsView: View {
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .resizable()
-                            .frame(width: 50, height: 50)
+                            .frame(width: 40, height: 40)
                     }
                     .tint(.label)
                     
@@ -52,7 +52,7 @@ struct VerseTapActionsView: View {
                             viewModel.setHighlights(color)
                         } label: {
                             Circle().fill(color.color)
-                                .frame(width: 50, height: 50)
+                                .frame(width: 40, height: 40)
                         }
                     }
                 }

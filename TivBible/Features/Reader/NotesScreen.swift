@@ -55,6 +55,7 @@ struct NotesScreen: View {
                         dismiss()
                     } label: {
                         Text("Dismiss")
+                            .fontWeight(.semibold)
                     }
                     .tint(.systemRed)
                 }

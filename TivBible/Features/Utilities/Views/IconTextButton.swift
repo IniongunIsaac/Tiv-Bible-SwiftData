@@ -10,15 +10,22 @@ import SwiftUI
 struct IconTextButton: View {
     var title: String
     var icon: String
-    var action: (() -> Void)? = nil
+    var iconPosition: IconTextPosition = .iconRight
+    var spacing: CGFloat = 8
+    var padding: CGFloat = 2
+    var action: VoidAction? = nil
     
     var body: some View {
         Button {
             action?()
         } label: {
-            IconTextView(title: title, icon: icon)
+            IconTextView(title: title,
+                         icon: icon,
+                         iconPosition: iconPosition,
+                         spacing: spacing,
+                         padding: padding)
         }
-        .background(Color.secondaryLabel.cornerRadius(10))
+        .background(Color.tertiaryLabel .cornerRadius(10))
         .buttonStyle(.bordered)
         .buttonBorderShape(.roundedRectangle)
         

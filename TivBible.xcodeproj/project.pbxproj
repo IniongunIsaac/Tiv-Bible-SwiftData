@@ -46,6 +46,14 @@
 		552BB2692A40E75200BB3A86 /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2682A40E75200BB3A86 /* NotesScreen.swift */; };
 		552BB26B2A41707500BB3A86 /* NoteToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB26A2A41707500BB3A86 /* NoteToken.swift */; };
 		552BB26D2A41851700BB3A86 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB26C2A41851700BB3A86 /* Note.swift */; };
+		552BB26F2A41B72500BB3A86 /* FontSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB26E2A41B72500BB3A86 /* FontSizeView.swift */; };
+		552BB2712A41C14C00BB3A86 /* FontSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2702A41C14C00BB3A86 /* FontSizeButton.swift */; };
+		552BB2732A41C1E400BB3A86 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2722A41C1E400BB3A86 /* IconButton.swift */; };
+		552BB2752A41C2CD00BB3A86 /* LineSpacingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2742A41C2CD00BB3A86 /* LineSpacingView.swift */; };
+		552BB2792A41C9C900BB3A86 /* FontStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2782A41C9C900BB3A86 /* FontStyleButton.swift */; };
+		552BB27B2A41CC1500BB3A86 /* StylesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27A2A41CC1500BB3A86 /* StylesView.swift */; };
+		552BB27D2A41CE8300BB3A86 /* ThemeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27C2A41CE8300BB3A86 /* ThemeOption.swift */; };
+		552BB27F2A41CF0A00BB3A86 /* ThemeOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27E2A41CF0A00BB3A86 /* ThemeOptionsView.swift */; };
 		555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CB2A38DBE100DF230E /* ReaderScreen.swift */; };
 		555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CD2A38DBF100DF230E /* SettingsScreen.swift */; };
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
@@ -114,6 +122,14 @@
 		552BB2682A40E75200BB3A86 /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
 		552BB26A2A41707500BB3A86 /* NoteToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToken.swift; sourceTree = "<group>"; };
 		552BB26C2A41851700BB3A86 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		552BB26E2A41B72500BB3A86 /* FontSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeView.swift; sourceTree = "<group>"; };
+		552BB2702A41C14C00BB3A86 /* FontSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeButton.swift; sourceTree = "<group>"; };
+		552BB2722A41C1E400BB3A86 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		552BB2742A41C2CD00BB3A86 /* LineSpacingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSpacingView.swift; sourceTree = "<group>"; };
+		552BB2782A41C9C900BB3A86 /* FontStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleButton.swift; sourceTree = "<group>"; };
+		552BB27A2A41CC1500BB3A86 /* StylesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesView.swift; sourceTree = "<group>"; };
+		552BB27C2A41CE8300BB3A86 /* ThemeOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeOption.swift; sourceTree = "<group>"; };
+		552BB27E2A41CF0A00BB3A86 /* ThemeOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeOptionsView.swift; sourceTree = "<group>"; };
 		555576CB2A38DBE100DF230E /* ReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderScreen.swift; sourceTree = "<group>"; };
 		555576CD2A38DBF100DF230E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
@@ -220,6 +236,7 @@
 				552BB2632A409DC800BB3A86 /* ColorHex.swift */,
 				552BB26A2A41707500BB3A86 /* NoteToken.swift */,
 				552BB26C2A41851700BB3A86 /* Note.swift */,
+				552BB27C2A41CE8300BB3A86 /* ThemeOption.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,6 +338,10 @@
 			isa = PBXGroup;
 			children = (
 				551D0B152A3CDE5B00449307 /* VerseTapActionsView.swift */,
+				552BB26E2A41B72500BB3A86 /* FontSizeView.swift */,
+				552BB2742A41C2CD00BB3A86 /* LineSpacingView.swift */,
+				552BB27A2A41CC1500BB3A86 /* StylesView.swift */,
+				552BB27E2A41CF0A00BB3A86 /* ThemeOptionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,6 +360,9 @@
 				551D0B1B2A3CF41A00449307 /* RoundedCornersShape.swift */,
 				551D0B1D2A3CF50E00449307 /* IconTextView.swift */,
 				551D0B1F2A3CF54B00449307 /* IconTextButton.swift */,
+				552BB2702A41C14C00BB3A86 /* FontSizeButton.swift */,
+				552BB2722A41C1E400BB3A86 /* IconButton.swift */,
+				552BB2782A41C9C900BB3A86 /* FontStyleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,6 +548,7 @@
 				5503ADB22A37C7B9006E6C79 /* Font+.swift in Sources */,
 				5503ADB02A37C79C006E6C79 /* Color+.swift in Sources */,
 				5503ADD92A37CB5D006E6C79 /* SetupViewModel.swift in Sources */,
+				552BB2712A41C14C00BB3A86 /* FontSizeButton.swift in Sources */,
 				551D0B1C2A3CF41A00449307 /* RoundedCornersShape.swift in Sources */,
 				551D0B1A2A3CE8F200449307 /* VerseTapAction.swift in Sources */,
 				5503ADBB2A37C886006E6C79 /* AppStorage+.swift in Sources */,
@@ -534,12 +559,15 @@
 				5503ADAE2A37C776006E6C79 /* View+.swift in Sources */,
 				5503ADA72A37C09E006E6C79 /* Book.swift in Sources */,
 				5503ADC42A37C914006E6C79 /* DependencyProvider.swift in Sources */,
+				552BB27F2A41CF0A00BB3A86 /* ThemeOptionsView.swift in Sources */,
 				5503ADB62A37C7F8006E6C79 /* Code+.swift in Sources */,
 				5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */,
 				555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */,
 				5503ADBD2A37C8B3006E6C79 /* PreferenceStore.swift in Sources */,
 				551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */,
+				552BB27D2A41CE8300BB3A86 /* ThemeOption.swift in Sources */,
 				555576D42A392B6F00DF230E /* ReaderViewModel.swift in Sources */,
+				552BB2732A41C1E400BB3A86 /* IconButton.swift in Sources */,
 				552BB26D2A41851700BB3A86 /* Note.swift in Sources */,
 				552BB2692A40E75200BB3A86 /* NotesScreen.swift in Sources */,
 				551D0B162A3CDE5B00449307 /* VerseTapActionsView.swift in Sources */,
@@ -547,10 +575,14 @@
 				552BB26B2A41707500BB3A86 /* NoteToken.swift in Sources */,
 				5503ADC02A37C8DD006E6C79 /* DependencyType.swift in Sources */,
 				5503ADB42A37C7D9006E6C79 /* TivBibleError.swift in Sources */,
+				552BB2752A41C2CD00BB3A86 /* LineSpacingView.swift in Sources */,
 				552BB2642A409DC800BB3A86 /* ColorHex.swift in Sources */,
 				55E42F812A38830300DBB619 /* String+.swift in Sources */,
+				552BB26F2A41B72500BB3A86 /* FontSizeView.swift in Sources */,
 				555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */,
+				552BB2792A41C9C900BB3A86 /* FontStyleButton.swift in Sources */,
 				5503ADC22A37C8F0006E6C79 /* DependencyContainer.swift in Sources */,
+				552BB27B2A41CC1500BB3A86 /* StylesView.swift in Sources */,
 				555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */,
 				5503AD762A37BF50006E6C79 /* TivBibleApp.swift in Sources */,
 			);

@@ -14,6 +14,7 @@ struct ReaderScreen: View {
     private var viewModel = ReaderViewModel()
     @State private var showToast = false
     @State private var showNotes = false
+    @State private var showStyles = false
     
     var body: some View {
         NavigationView {
@@ -58,7 +59,7 @@ struct ReaderScreen: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack(spacing: 0) {
                         Button {
-                            
+                            showStyles.toggle()
                         } label: {
                             Image(systemName: "textformat.size")
                         }
@@ -80,7 +81,10 @@ struct ReaderScreen: View {
             }
             .sheet(isPresented: $showNotes) {
                 NotesScreen(viewModel: viewModel)
-                    //.presentationDetents([.medium, .large])
+            }
+            .sheet(isPresented: $showStyles) {
+                StylesView()
+                    .presentationDetents([.medium])
             }
         }
         

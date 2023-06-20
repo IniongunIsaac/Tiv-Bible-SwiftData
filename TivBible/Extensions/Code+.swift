@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias VoidAction = (() -> Void)
+
 extension Collection {
     var isNotEmpty: Bool {
         !isEmpty

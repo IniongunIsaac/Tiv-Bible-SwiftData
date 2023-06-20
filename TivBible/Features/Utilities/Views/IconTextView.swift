@@ -7,20 +7,36 @@
 
 import SwiftUI
 
+enum IconTextPosition {
+    case iconLeft
+    case iconRight
+}
+
 struct IconTextView: View {
     var title: String
     var icon: String
+    var iconPosition: IconTextPosition = .iconRight
+    var spacing: CGFloat = 8
+    var padding: CGFloat = 2
     
     var body: some View {
-        HStack {
-            Text(title)
-            Image(systemName: icon)
+        HStack(spacing: spacing) {
+            if iconPosition == .iconLeft {
+                Image(systemName: icon)
+                Text(title)
+            } else {
+                Text(title)
+                Image(systemName: icon)
+            }
         }
         .foregroundStyle(Color.label)
-        .padding(4)
+        .padding(padding)
     }
 }
 
 #Preview("IconTextView") {
-    IconTextView(title: "Share", icon: "square.and.arrow.up")
+    IconTextView(title: "Share",
+                 icon: "square.and.arrow.up",
+                 iconPosition: .iconLeft)
+    .background(.gray)
 }
