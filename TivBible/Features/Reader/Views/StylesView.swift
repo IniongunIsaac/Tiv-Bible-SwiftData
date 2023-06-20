@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StylesView: View {
+    @Binding var showStyles: Bool
     
     var body: some View {
         VStack(spacing: 30) {
@@ -25,7 +26,7 @@ struct StylesView: View {
         .padding(.horizontal)
         .overlay(alignment: .topTrailing) {
             Button {
-                
+                showStyles.toggle()
             } label: {
                 Image(systemName: "xmark.circle.fill")
                     .resizable()
@@ -39,7 +40,7 @@ struct StylesView: View {
 }
 
 #Preview("StylesView") {
-    StylesView()
+    StylesView(showStyles: .constant(false))
         .background(.ultraThinMaterial)
         .previewLayout(.sizeThatFits)
 }

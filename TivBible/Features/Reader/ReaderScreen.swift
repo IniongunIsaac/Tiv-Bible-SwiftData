@@ -83,7 +83,7 @@ struct ReaderScreen: View {
                 NotesScreen(viewModel: viewModel)
             }
             .sheet(isPresented: $showStyles) {
-                StylesView()
+                StylesView(showStyles: $showStyles)
                     .presentationDetents([.medium])
             }
             .onChange(of: viewModel.toastMessage) {
