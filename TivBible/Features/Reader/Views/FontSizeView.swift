@@ -33,4 +33,3 @@ struct FontSizeView: View {
     FontSizeView()
         .padding()
 }
-//1.lane

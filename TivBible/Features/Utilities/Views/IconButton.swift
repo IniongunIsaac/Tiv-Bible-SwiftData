@@ -16,10 +16,11 @@ struct IconButton: View {
             action?()
         } label: {
             Image(systemName: iconName)
-                .font(.title)
+                .font(.title2)
                 .padding(.horizontal, 4)
                 .padding(.vertical, 6)
         }
+        .tint(.label)
         .buttonBorderShape(.roundedRectangle)
         .buttonStyle(.bordered)
     }

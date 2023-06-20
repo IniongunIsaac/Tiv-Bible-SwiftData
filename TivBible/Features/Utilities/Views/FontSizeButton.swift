@@ -39,6 +39,7 @@ struct FontSizeButton: View {
             .padding(.horizontal, 0)
             .padding(.vertical, 12)
         }
+        .tint(.label)
         .buttonBorderShape(.roundedRectangle)
         .buttonStyle(.bordered)
     }
