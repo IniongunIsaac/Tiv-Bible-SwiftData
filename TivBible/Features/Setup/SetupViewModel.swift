@@ -13,7 +13,7 @@ final class SetupViewModel: ObservableObject {
     @Published var dbInitializationInProgress: Bool = false
     @Published private var preferenceStore = PreferenceStore()
     
-    private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self])
+    private let modelContainer = try! ModelContainer(for: Constants.dataModels)
     private var context: ModelContext {
         modelContainer.mainContext
     }

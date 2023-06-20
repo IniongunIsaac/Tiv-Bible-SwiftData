@@ -55,6 +55,6 @@ struct SetupScreen: View {
     }
 }
 
-#Preview {
+#Preview("SetupScreen") {
     SetupScreen()
 }

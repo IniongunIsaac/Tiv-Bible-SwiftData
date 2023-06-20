@@ -9,13 +9,12 @@ import SwiftUI
 
 struct VerseTapActionsView: View {
     let viewModel: ReaderViewModel
-    @Binding var showToast: Bool
     @Binding var showNotes: Bool
     
     var body: some View {
         VStack(alignment: .center) {
             
-            Text(viewModel.selectedVersesText)
+            Text(viewModel.selectedVersesText.uppercased())
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .padding(.trailing, 30)
@@ -23,11 +22,10 @@ struct VerseTapActionsView: View {
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
                     ForEach(VerseTapAction.allCases, id: \.self) { action in
-                        IconTextButton(title: action.rawValue, icon: action.iconName) {
+                        IconTextButton(title: action.rawValue.uppercased(), icon: action.iconName) {
+                            
                             viewModel.didTapVerseAction(action)
-                            if [.copy, .bookmark].contains(action) {
-                                showToast.toggle()
-                            }
+                            
                             if action == .takeNotes {
                                 showNotes.toggle()
                             }
@@ -68,20 +66,19 @@ struct VerseTapActionsView: View {
             Button {
                 viewModel.unselectedVerses()
             } label: {
-                Image(systemName: "xmark")
+                Image(systemName: "xmark.circle.fill")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 15, height: 15)
+                    .frame(width: 23, height: 23)
             }
             .tint(.label)
-            .offset(x: -15, y: 40)
+            .offset(x: -15, y: 38)
         }
     }
 }
 
-#Preview("MultiSelectionActionsView") {
+#Preview("VerseTapActionsView") {
     VerseTapActionsView(viewModel: ReaderViewModel(),
-                        showToast: .constant(false),
                         showNotes: .constant(false))
     .previewLayout(.sizeThatFits)
 }

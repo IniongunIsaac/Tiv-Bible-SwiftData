@@ -10,4 +10,5 @@ import Foundation
 enum PreferenceStoreKey: String {
     case hasSetupDB
     case currentChapterUUID
+    case fontSize
 }

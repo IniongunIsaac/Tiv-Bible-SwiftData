@@ -54,6 +54,7 @@
 		552BB27B2A41CC1500BB3A86 /* StylesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27A2A41CC1500BB3A86 /* StylesView.swift */; };
 		552BB27D2A41CE8300BB3A86 /* ThemeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27C2A41CE8300BB3A86 /* ThemeOption.swift */; };
 		552BB27F2A41CF0A00BB3A86 /* ThemeOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27E2A41CF0A00BB3A86 /* ThemeOptionsView.swift */; };
+		552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2802A41E6CD00BB3A86 /* Constants.swift */; };
 		555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CB2A38DBE100DF230E /* ReaderScreen.swift */; };
 		555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CD2A38DBF100DF230E /* SettingsScreen.swift */; };
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
@@ -130,6 +131,7 @@
 		552BB27A2A41CC1500BB3A86 /* StylesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylesView.swift; sourceTree = "<group>"; };
 		552BB27C2A41CE8300BB3A86 /* ThemeOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeOption.swift; sourceTree = "<group>"; };
 		552BB27E2A41CF0A00BB3A86 /* ThemeOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeOptionsView.swift; sourceTree = "<group>"; };
+		552BB2802A41E6CD00BB3A86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		555576CB2A38DBE100DF230E /* ReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderScreen.swift; sourceTree = "<group>"; };
 		555576CD2A38DBF100DF230E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				5503ADB12A37C7B9006E6C79 /* Font+.swift */,
 				5503ADB52A37C7F8006E6C79 /* Code+.swift */,
 				55E42F802A38830300DBB619 /* String+.swift */,
+				552BB2802A41E6CD00BB3A86 /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				552BB2712A41C14C00BB3A86 /* FontSizeButton.swift in Sources */,
 				551D0B1C2A3CF41A00449307 /* RoundedCornersShape.swift in Sources */,
 				551D0B1A2A3CE8F200449307 /* VerseTapAction.swift in Sources */,
+				552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */,
 				5503ADBB2A37C886006E6C79 /* AppStorage+.swift in Sources */,
 				551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */,
 				5503ADA32A37C077006E6C79 /* TivBibleData.swift in Sources */,

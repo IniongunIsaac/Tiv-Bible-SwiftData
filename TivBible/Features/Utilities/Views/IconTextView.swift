@@ -17,7 +17,7 @@ struct IconTextView: View {
     var icon: String
     var iconPosition: IconTextPosition = .iconRight
     var spacing: CGFloat = 8
-    var padding: CGFloat = 2
+    var padding: CGFloat = 4
     
     var body: some View {
         HStack(spacing: spacing) {
@@ -29,13 +29,14 @@ struct IconTextView: View {
                 Image(systemName: icon)
             }
         }
+        .font(.caption)
         .foregroundStyle(Color.label)
         .padding(padding)
     }
 }
 
 #Preview("IconTextView") {
-    IconTextView(title: "Share",
+    IconTextView(title: "Share".uppercased(),
                  icon: "square.and.arrow.up",
                  iconPosition: .iconLeft)
     .background(.gray)

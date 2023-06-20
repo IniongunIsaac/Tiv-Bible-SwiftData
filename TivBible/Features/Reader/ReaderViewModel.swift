@@ -25,7 +25,8 @@ final class ReaderViewModel {
     var notesTokens = [NoteToken]()
     
     private let preferenceStore = PreferenceStore()
-    private let modelContainer = try! ModelContainer(for: [Book.self, Chapter.self, Verse.self, Note.self])
+    private let modelContainer = try! ModelContainer(for: Constants.dataModels)
+    
     @MainActor
     private var context: ModelContext {
         modelContainer.mainContext
@@ -142,5 +143,6 @@ final class ReaderViewModel {
         context.insert(newNote)
         versesNotes = ""
         notesTokens = []
+        toastMessage = "Success!"
     }
 }

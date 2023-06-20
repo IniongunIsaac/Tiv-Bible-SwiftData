@@ -25,14 +25,14 @@ struct TivBibleApp: App {
                 SetupScreen()
             }
         }
-        .modelContainer(for: [Book.self, Chapter.self, Verse.self, Note.self])
+        .modelContainer(for: Constants.dataModels)
     }
 }
 
 private extension TivBibleApp {
     func setupDependencyContainer() {
-        /*DependencyContainer.register(type: BooksDataStore.self, as: .singleton, BooksDataStore.shared)
-        DependencyContainer.register(type: ChaptersDataStore.self, as: .singleton, ChaptersDataStore.shared)
-        DependencyContainer.register(type: VersesDataStore.self, as: .singleton, VersesDataStore.shared)*/
+        DependencyContainer.register(type: SetupViewModel.self, SetupViewModel())
+        DependencyContainer.register(type: ReaderViewModel.self, ReaderViewModel())
+        DependencyContainer.register(type: PreferenceStore.self, PreferenceStore())
     }
 }

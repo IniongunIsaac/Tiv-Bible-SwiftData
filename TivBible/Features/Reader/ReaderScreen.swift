@@ -11,7 +11,7 @@ import AlertToast
 
 struct ReaderScreen: View {
     
-    private var viewModel = ReaderViewModel()
+    @Provided private var viewModel: ReaderViewModel
     @State private var showToast = false
     @State private var showNotes = false
     @State private var showStyles = false
@@ -33,9 +33,7 @@ struct ReaderScreen: View {
                 .listRowSpacing(-10)
                 .listStyle(.plain)
                 
-                VerseTapActionsView(viewModel: viewModel,
-                                    showToast: $showToast,
-                                    showNotes: $showNotes)
+                VerseTapActionsView(viewModel: viewModel, showNotes: $showNotes)
                     .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }
@@ -74,17 +72,24 @@ struct ReaderScreen: View {
                     .font(.gentiumPlus(.regular, size: 14))
                 }
             }
-            .toast(isPresenting: $showToast) {
+            .toast(isPresenting: $showToast, alert: {
                 AlertToast(displayMode: .alert,
                            type: .complete(.systemGreen),
                            subTitle: viewModel.toastMessage)
-            }
+            }, completion: {
+                viewModel.toastMessage = ""
+            })
             .sheet(isPresented: $showNotes) {
                 NotesScreen(viewModel: viewModel)
             }
             .sheet(isPresented: $showStyles) {
                 StylesView()
                     .presentationDetents([.medium])
+            }
+            .onChange(of: viewModel.toastMessage) {
+                if viewModel.toastMessage.isNotEmpty {
+                    showToast.toggle()
+                }
             }
         }
         

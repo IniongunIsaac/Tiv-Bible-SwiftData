@@ -12,7 +12,7 @@ struct Provided<Dependency> {
     
     var dependency: Dependency
     
-    init(as dependencyType: DependencyType = .newInstance) {
+    init(as dependencyType: DependencyType = .automatic) {
         guard let dependency = DependencyContainer.resolve(Dependency.self, as: dependencyType) else {
             fatalError("No dependency of type \(String(describing: Dependency.self)) registered!")
         }
