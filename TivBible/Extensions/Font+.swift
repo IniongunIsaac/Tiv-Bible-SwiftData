@@ -21,7 +21,7 @@ extension Font {
             case .custom(let name):
                 return name
             case .regular:
-                return "GentiumPlus-Regular"
+                return "GentiumPlus"
             case .bold:
                 return "GentiumPlus-Bold"
             case .italic:

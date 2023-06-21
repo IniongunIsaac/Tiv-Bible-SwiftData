@@ -14,6 +14,7 @@ final class PreferenceStore: ObservableObject {
     @AppStorage(.fontSize) var fontSize: Double = Constants.FontSize.default
     @AppStorage("lineSpacing") var lineSpacing: LineSpacingType = .normal
     @AppStorage("appTheme") var appTheme: AppTheme = .system
+    @AppStorage("appFont") var appFont: AppFont = .GentiumPlus
     
     func updateFontSize(type: FontSizeButtonType) {
         switch type {

@@ -15,6 +15,7 @@ struct TivBibleApp: App {
     
     init() {
         setupDependencyContainer()
+        //printFonts()
     }
 
     var body: some Scene {
@@ -36,5 +37,12 @@ private extension TivBibleApp {
         DependencyContainer.register(type: SetupViewModel.self, SetupViewModel())
         DependencyContainer.register(type: ReaderViewModel.self, ReaderViewModel())
         DependencyContainer.register(type: PreferenceStore.self, PreferenceStore())
+    }
+    
+    func printFonts() {
+        UIFont.familyNames.forEach({ familyName in
+            let fontNames = UIFont.fontNames(forFamilyName: familyName)
+            print(familyName, fontNames)
+        })
     }
 }

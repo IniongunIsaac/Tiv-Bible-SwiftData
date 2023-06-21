@@ -51,7 +51,7 @@ struct ReaderScreen: View {
                     } label: {
                         Text(viewModel.bookNameAndChapterNumber)
                             .foregroundStyle(Color.label)
-                            .font(.gentiumPlus(.bold, size: 12))
+                            .font(.gentiumPlus(.regular, size: 12))
                     }
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.capsule)
