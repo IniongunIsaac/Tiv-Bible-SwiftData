@@ -7,6 +7,21 @@
 
 import SwiftUI
 
+enum LineSpacingType {
+    case small, normal, large
+    
+    var value: Double {
+        switch self {
+        case .small:
+            return 8
+        case .normal:
+            return 9
+        case .large:
+            return 10
+        }
+    }
+}
+
 struct LineSpacingView: View {
     var body: some View {
         HStack(spacing: 15) {

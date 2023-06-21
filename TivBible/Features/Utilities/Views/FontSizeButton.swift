@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum FontSizeButtonType {
-    case increament
+    case increment
     case decrement
 }
 
@@ -21,7 +21,7 @@ struct FontSizeButton: View {
             action?()
         } label: {
             HStack(spacing: 5) {
-                if type == .increament {
+                if type == .increment {
                     Image(systemName: "textformat.size")
                     
                     Image(systemName: "plus")

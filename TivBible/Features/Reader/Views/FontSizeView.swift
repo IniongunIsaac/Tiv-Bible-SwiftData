@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FontSizeView: View {
+    @StateObject private var preferenceStore = PreferenceStore()
+    
     var body: some View {
         HStack(spacing: 15) {
             Text("FONT SIZE:")
@@ -17,14 +19,14 @@ struct FontSizeView: View {
             Spacer()
             
             FontSizeButton(type: .decrement) {
-                print("decrease font size")
+                preferenceStore.updateFontSize(type: .decrement)
             }
             
-            FontSizeButton(type: .increament) {
-                print("increase font size")
+            FontSizeButton(type: .increment) {
+                preferenceStore.updateFontSize(type: .increment)
             }
             
-            Text("15px")
+            Text("\(preferenceStore.fontSize.int)px")
         }
     }
 }

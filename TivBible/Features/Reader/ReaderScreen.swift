@@ -12,6 +12,7 @@ import AlertToast
 struct ReaderScreen: View {
     
     @Provided private var viewModel: ReaderViewModel
+    @StateObject private var preferenceStore = PreferenceStore()
     @State private var showToast = false
     @State private var showNotes = false
     @State private var showStyles = false
@@ -20,7 +21,7 @@ struct ReaderScreen: View {
         NavigationView {
             VStack(spacing: 0) {
                 List(viewModel.verses, id: \.id) { verse in
-                    Text(verse.attrText)
+                    Text(verse.attrText(fontSize: preferenceStore.fontSize))
                         .showUnderline(verse.isSelected)
                         .onTapGesture {
                             withAnimation(.spring) {

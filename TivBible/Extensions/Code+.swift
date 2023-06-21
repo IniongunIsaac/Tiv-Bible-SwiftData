@@ -35,3 +35,9 @@ extension Sequence {
         return list
     }
 }
+
+extension Double {
+    var int: Int {
+        Int(self)
+    }
+}

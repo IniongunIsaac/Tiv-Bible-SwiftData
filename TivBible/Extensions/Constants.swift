@@ -12,4 +12,10 @@ enum Constants {
     static let dataModels: [any PersistentModel.Type] = [Book.self, Chapter.self, Verse.self, Note.self]
     
     static let modelContainer: ModelContainer = try! ModelContainer(for: dataModels)
+    
+    enum FontSize {
+        static let max: Double = 18
+        
+        static let min: Double = 13
+    }
 }

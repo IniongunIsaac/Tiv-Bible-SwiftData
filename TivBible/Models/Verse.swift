@@ -43,7 +43,7 @@ final class Verse {
         self.bookmarkDate = bookmarkDate
     }
     
-    var attrText: AttributedString {
+    func attrText(fontSize: Double) -> AttributedString {
         var numberDotAttrContainer = AttributeContainer()
         numberDotAttrContainer.baselineOffset = 6
         numberDotAttrContainer.font = .gentiumPlus(.bold, size: 10)
@@ -52,6 +52,8 @@ final class Verse {
         var textAttrContainer = AttributeContainer()
         textAttrContainer.underlineStyle = .thick
         textAttrContainer.underlineColor = .red
+        textAttrContainer.font = .systemFont(ofSize: fontSize)
+        
         if highlightColor.isNotEmpty {
             textAttrContainer.backgroundColor = highlightColor.color
         }
