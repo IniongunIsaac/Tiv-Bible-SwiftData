@@ -22,6 +22,7 @@ struct ReaderScreen: View {
             VStack(spacing: 0) {
                 List(viewModel.verses, id: \.id) { verse in
                     Text(verse.attrText(fontSize: preferenceStore.fontSize))
+                        .lineSpacing(preferenceStore.lineSpacing.value)
                         .showUnderline(verse.isSelected)
                         .onTapGesture {
                             withAnimation(.spring) {

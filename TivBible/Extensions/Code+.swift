@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import DeviceKit
 
 typealias VoidAction = (() -> Void)
+let currentDevice = Device.current
 
 extension Collection {
     var isNotEmpty: Bool {
@@ -39,5 +41,11 @@ extension Sequence {
 extension Double {
     var int: Int {
         Int(self)
+    }
+}
+
+extension Int {
+    var cgfloat: CGFloat {
+        CGFloat(self)
     }
 }

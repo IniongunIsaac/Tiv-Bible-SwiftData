@@ -9,6 +9,8 @@ import SwiftUI
 
 struct IconButton: View {
     var iconName: String
+    var horizontalPadding: CGFloat = 4
+    var verticalPadding: CGFloat = 6
     var action: VoidAction? = nil
     
     var body: some View {
@@ -17,8 +19,8 @@ struct IconButton: View {
         } label: {
             Image(systemName: iconName)
                 .font(.title2)
-                .padding(.horizontal, 4)
-                .padding(.vertical, 6)
+                .padding(.horizontal, horizontalPadding)
+                .padding(.vertical, verticalPadding)
         }
         .tint(.label)
         .buttonBorderShape(.roundedRectangle)

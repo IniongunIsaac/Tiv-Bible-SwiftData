@@ -11,7 +11,8 @@ import SwiftUI
 final class PreferenceStore: ObservableObject {
     @AppStorage(.hasSetupDB) var hasSetupDB: Bool = false
     @AppStorage(.currentChapterUUID) var currentChapterUUID: String = ""
-    @AppStorage(.fontSize) var fontSize: Double = 15
+    @AppStorage(.fontSize) var fontSize: Double = Constants.FontSize.default
+    @AppStorage("lineSpacing") var lineSpacing: LineSpacingType = .normal
     
     func updateFontSize(type: FontSizeButtonType) {
         switch type {
@@ -24,5 +25,9 @@ final class PreferenceStore: ObservableObject {
                 fontSize -= 1
             }
         }
+    }
+    
+    func updateLineSpacing(_ spacing: LineSpacingType) {
+        lineSpacing = spacing
     }
 }

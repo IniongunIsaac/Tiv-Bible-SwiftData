@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import DeviceKit
 
 enum Constants {
     static let dataModels: [any PersistentModel.Type] = [Book.self, Chapter.self, Verse.self, Note.self]
@@ -14,8 +15,10 @@ enum Constants {
     static let modelContainer: ModelContainer = try! ModelContainer(for: dataModels)
     
     enum FontSize {
-        static let max: Double = 18
+        static let max: Double = currentDevice.isPhone ? 18 : 24
         
-        static let min: Double = 13
+        static let min: Double = currentDevice.isPhone ? 13 : 18
+        
+        static let `default`: Double = currentDevice.isPhone ? 15 : 17
     }
 }
