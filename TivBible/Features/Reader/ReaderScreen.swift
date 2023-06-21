@@ -24,6 +24,7 @@ struct ReaderScreen: View {
                     Text(verse.attrText(fontSize: preferenceStore.fontSize))
                         .lineSpacing(preferenceStore.lineSpacing.value)
                         .showUnderline(verse.isSelected)
+                        .listRowSeparator(.hidden)
                         .onTapGesture {
                             withAnimation(.spring) {
                                 verse.isSelected.toggle()

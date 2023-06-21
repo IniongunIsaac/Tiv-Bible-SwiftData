@@ -45,7 +45,7 @@ final class Verse {
     
     func attrText(fontSize: Double) -> AttributedString {
         var numberDotAttrContainer = AttributeContainer()
-        numberDotAttrContainer.baselineOffset = 6
+        numberDotAttrContainer.baselineOffset = [13, 14, 15].contains(fontSize) ? 4 : 6
         numberDotAttrContainer.font = .gentiumPlus(.bold, size: 10)
         let numberDotAttr = AttributedString("\(number). ", attributes: numberDotAttrContainer)
         

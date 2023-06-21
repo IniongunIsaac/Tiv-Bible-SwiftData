@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StylesView: View {
     @Binding var showStyles: Bool
+    @StateObject private var preferenceStore = PreferenceStore()
     
     var body: some View {
         VStack(spacing: 30) {
@@ -21,8 +22,9 @@ struct StylesView: View {
             
             FontStyleButton()
             
-            ThemeOptionsView()
+            AppThemesView()
         }
+        .preferredColorScheme(preferenceStore.appTheme.colorScheme)
         .padding(.horizontal)
         .overlay(alignment: .topTrailing) {
             Button {

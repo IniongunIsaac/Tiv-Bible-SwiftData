@@ -1,5 +1,5 @@
 //
-//  ThemeOptionsView.swift
+//  AppThemesView.swift
 //  TivBible
 //
 //  Created by Isaac Iniongun on 20/06/2023.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ThemeOptionsView: View {
-    @State private var selectedTheme: ThemeOption = .system
+struct AppThemesView: View {
+    @StateObject private var preferenceStore = PreferenceStore()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -16,8 +16,8 @@ struct ThemeOptionsView: View {
                 .font(.footnote)
                 .foregroundStyle(.secondary)
             
-            Picker(selection: $selectedTheme, label: Text("")) {
-                ForEach(ThemeOption.allCases, id: \.self) { option in
+            Picker(selection: $preferenceStore.appTheme, label: Text("")) {
+                ForEach(AppTheme.allCases, id: \.self) { option in
                     Text(option.rawValue.uppercased())
                         .tag(option)
                 }
@@ -27,7 +27,7 @@ struct ThemeOptionsView: View {
     }
 }
 
-#Preview {
-    ThemeOptionsView()
+#Preview("AppThemesView") {
+    AppThemesView()
         .padding()
 }

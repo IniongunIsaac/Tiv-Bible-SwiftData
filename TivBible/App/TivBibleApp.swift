@@ -21,8 +21,10 @@ struct TivBibleApp: App {
         WindowGroup {
             if preferenceStore.hasSetupDB {
                 MainContentScreen()
+                    .preferredColorScheme(preferenceStore.appTheme.colorScheme)
             } else {
                 SetupScreen()
+                    .preferredColorScheme(preferenceStore.appTheme.colorScheme)
             }
         }
         .modelContainer(for: Constants.dataModels)
