@@ -15,10 +15,12 @@ enum Constants {
     static let modelContainer: ModelContainer = try! ModelContainer(for: dataModels)
     
     enum FontSize {
-        static let max: Double = currentDevice.isPhone ? 18 : 24
+        static let max: Double = currentDevice.isPhone ? 20 : 26
         
         static let min: Double = currentDevice.isPhone ? 13 : 18
         
         static let `default`: Double = currentDevice.isPhone ? 15 : 17
     }
+    
+    static let chaptersPerRow: Int = currentDevice.isPhone ? 5 : 10
 }

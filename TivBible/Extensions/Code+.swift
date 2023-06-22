@@ -9,6 +9,7 @@ import Foundation
 import DeviceKit
 
 typealias VoidAction = (() -> Void)
+typealias ArgumentAction<T> = ((T) -> Void)
 let currentDevice = Device.current
 
 extension Collection {

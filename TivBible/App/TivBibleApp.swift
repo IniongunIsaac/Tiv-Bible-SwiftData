@@ -37,6 +37,7 @@ private extension TivBibleApp {
         DependencyContainer.register(type: SetupViewModel.self, SetupViewModel())
         DependencyContainer.register(type: ReaderViewModel.self, ReaderViewModel())
         DependencyContainer.register(type: PreferenceStore.self, PreferenceStore())
+        DependencyContainer.register(type: BooksViewModel.self, BooksViewModel())
     }
     
     func printFonts() {

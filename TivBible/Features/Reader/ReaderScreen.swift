@@ -16,6 +16,7 @@ struct ReaderScreen: View {
     @State private var showToast = false
     @State private var showNotes = false
     @State private var showStyles = false
+    @State private var showBooks = false
     
     var body: some View {
         NavigationView {
@@ -55,7 +56,7 @@ struct ReaderScreen: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        
+                        showBooks.toggle()
                     } label: {
                         Text(viewModel.bookNameAndChapterNumber)
                             .foregroundStyle(Color.label)
@@ -97,6 +98,9 @@ struct ReaderScreen: View {
             .sheet(isPresented: $showStyles) {
                 StylesView(showStyles: $showStyles)
                     .presentationDetents([.medium])
+            }
+            .sheet(isPresented: $showBooks) {
+                BooksScreen()
             }
             .onChange(of: viewModel.toastMessage) {
                 if viewModel.toastMessage.isNotEmpty {
