@@ -12,7 +12,6 @@ struct BookRowView: View {
     var action: ArgumentAction<Chapter>? = nil
     private let gridItems: [GridItem] = Array(repeating: .init(.flexible()),
                                               count: Constants.chaptersPerRow)
-    @State private var animValue = false
     @Binding var isExpanded: Bool
     
     var body: some View {

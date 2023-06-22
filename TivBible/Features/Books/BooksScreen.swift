@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BooksScreen: View {
     @Environment(\.dismiss) private var dismiss
-    @Provided private var viewModel: BooksViewModel
+    @Bindable private var viewModel = BooksViewModel()
     @StateObject private var preferenceStore = PreferenceStore()
     @StateObject private var expansionHandler = DisclosureGroupExpansionHandler<String>()
     
@@ -17,7 +17,7 @@ struct BooksScreen: View {
         NavigationStack {
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(viewModel.books) { book in
+                    ForEach(viewModel.filteredBooks) { book in
                         BookRowView(book: book, isExpanded: expansionHandler.isExpanded(book.name))
                             .onTapGesture {
                                 withAnimation {
@@ -36,6 +36,7 @@ struct BooksScreen: View {
                 .pickerStyle(.segmented)
             }
             .padding(.horizontal)
+            .searchable(text: $viewModel.searchText, placement: .toolbar, prompt: "Search")
             .navigationTitle("Books")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -50,6 +51,9 @@ struct BooksScreen: View {
                 }
             }
             .interactiveDismissDisabled()
+            .onChange(of: preferenceStore.bookSortType) {
+                viewModel.getBooks()
+            }
         }
         .onAppear {
             viewModel.getBooks()

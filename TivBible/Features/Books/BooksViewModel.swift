@@ -15,6 +15,15 @@ final class BooksViewModel {
     private let modelContainer = try! ModelContainer(for: Constants.dataModels)
     
     var books = [Book]()
+    var searchText: String = ""
+    var isSearching = false
+    var filteredBooks: [Book] {
+        if searchText.isEmpty {
+            return books
+        } else {
+            return books.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
     
     @MainActor
     private var context: ModelContext {
