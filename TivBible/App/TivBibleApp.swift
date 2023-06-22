@@ -23,6 +23,7 @@ struct TivBibleApp: App {
             if preferenceStore.hasSetupDB {
                 MainContentScreen()
                     .preferredColorScheme(preferenceStore.appTheme.colorScheme)
+                    .environmentObject(PreferenceStore())
             } else {
                 SetupScreen()
                     .preferredColorScheme(preferenceStore.appTheme.colorScheme)

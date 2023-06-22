@@ -107,6 +107,9 @@ struct ReaderScreen: View {
                     showToast.toggle()
                 }
             }
+            .onChange(of: preferenceStore.currentChapterUUID) {
+                viewModel.getVerses()
+            }
         }
         
     }

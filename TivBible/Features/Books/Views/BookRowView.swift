@@ -9,17 +9,16 @@ import SwiftUI
 
 struct BookRowView: View {
     var book: Book
-    var action: ArgumentAction<Chapter>? = nil
-    private let gridItems: [GridItem] = Array(repeating: .init(.flexible()),
-                                              count: Constants.chaptersPerRow)
+    private let gridItems: [GridItem] = Array(repeating: .init(.flexible()), count: Constants.chaptersPerRow)
     @Binding var isExpanded: Bool
+    @EnvironmentObject private var preferenceStore: PreferenceStore
     
     var body: some View {
         DisclosureGroup(book.name, isExpanded: $isExpanded) {
             LazyVGrid(columns: gridItems, spacing: 10) {
                 ForEach(book.chapters.sorted(by: { $0.number < $1.number })) { chapter in
                     Button {
-                        action?(chapter)
+                        preferenceStore.currentChapterUUID = chapter.id
                     } label: {
                         Text("\(chapter.number)")
                             .frame(width: 40, height: 40)

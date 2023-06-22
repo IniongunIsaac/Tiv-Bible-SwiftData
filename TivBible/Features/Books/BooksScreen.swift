@@ -54,6 +54,9 @@ struct BooksScreen: View {
             .onChange(of: preferenceStore.bookSortType) {
                 viewModel.getBooks()
             }
+            .onChange(of: preferenceStore.currentChapterUUID) {
+                dismiss()
+            }
         }
         .onAppear {
             viewModel.getBooks()
