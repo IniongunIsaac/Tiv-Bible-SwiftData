@@ -21,6 +21,13 @@ struct ReaderScreen: View {
         NavigationView {
             VStack(spacing: 0) {
                 List(viewModel.verses, id: \.id) { verse in
+                    if verse.title.isNotEmpty {
+                        Text(verse.title.uppercased())
+                            .foregroundStyle(.secondary)
+                            .font(.custom(preferenceStore.appFont.rawValue, size: 14))
+                            .fontWeight(.semibold)
+                    }
+                    
                     Text(verse.attrText(fontSize: preferenceStore.fontSize,
                                         fontName: preferenceStore.appFont.rawValue))
                         .lineSpacing(preferenceStore.lineSpacing.value)
@@ -41,7 +48,7 @@ struct ReaderScreen: View {
                     .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }
-            .padding(.bottom, 20)
+            .padding(.bottom, -20)
             .onAppear {
                 viewModel.getVerses()
             }
