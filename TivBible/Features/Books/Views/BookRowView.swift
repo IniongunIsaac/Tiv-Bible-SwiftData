@@ -11,10 +11,12 @@ struct BookRowView: View {
     var book: Book
     var action: ArgumentAction<Chapter>? = nil
     private let gridItems: [GridItem] = Array(repeating: .init(.flexible()),
-                                               count: Constants.chaptersPerRow)
+                                              count: Constants.chaptersPerRow)
+    @State private var animValue = false
+    @Binding var isExpanded: Bool
     
     var body: some View {
-        DisclosureGroup(book.name) {
+        DisclosureGroup(book.name, isExpanded: $isExpanded) {
             LazyVGrid(columns: gridItems, spacing: 10) {
                 ForEach(book.chapters.sorted(by: { $0.number < $1.number })) { chapter in
                     Button {
@@ -29,16 +31,13 @@ struct BookRowView: View {
                     .padding(.bottom, 10)
                 }
             }
-            .animation(.spring)
-            .padding(.leading, -23)
+            .padding(.vertical)
+            .padding(.horizontal, -8)
         }
-        .tint(.secondary)
+        .tint(.label)
     }
 }
 
 //#Preview {
 //    BookRowView(book: newBook)
 //}
-
-let chapters = Array(1...24).map { Chapter(number: $0) }
-let newBook = Book(name: "Genese", order: 1, testament: 0, version: 0, chapters: chapters)

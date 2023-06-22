@@ -64,6 +64,7 @@
 		556D8D722A44974600211481 /* BooksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D712A44974600211481 /* BooksScreen.swift */; };
 		556D8D742A44A29E00211481 /* BookSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D732A44A29E00211481 /* BookSortType.swift */; };
 		556D8D772A44B7F400211481 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D762A44B7F400211481 /* BookRowView.swift */; };
+		55730A0B2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55730A0A2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift */; };
 		55E42F812A38830300DBB619 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42F802A38830300DBB619 /* String+.swift */; };
 		55EC1FDE2A438BBB00DCA970 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC1FDD2A438BBB00DCA970 /* DeviceKit */; };
 		55EC1FE02A438ECD00DCA970 /* LineSpacingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */; };
@@ -190,6 +191,7 @@
 		556D8D712A44974600211481 /* BooksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksScreen.swift; sourceTree = "<group>"; };
 		556D8D732A44A29E00211481 /* BookSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSortType.swift; sourceTree = "<group>"; };
 		556D8D762A44B7F400211481 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
+		55730A0A2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupExpansionHandler.swift; sourceTree = "<group>"; };
 		55E42F802A38830300DBB619 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSpacingType.swift; sourceTree = "<group>"; };
 		55EC1FE22A43BBF600DCA970 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				551D0B182A3CE65E00449307 /* Views */,
+				55730A0A2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */,
 				55EC204A2A43C19A00DCA970 /* AppFont.swift in Sources */,
 				5503ADA32A37C077006E6C79 /* TivBibleData.swift in Sources */,
+				55730A0B2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift in Sources */,
 				5503ADA52A37C095006E6C79 /* Chapter.swift in Sources */,
 				5503ADAC2A37C762006E6C79 /* Data+.swift in Sources */,
 				5503ADAE2A37C776006E6C79 /* View+.swift in Sources */,
