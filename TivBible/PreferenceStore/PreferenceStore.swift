@@ -32,4 +32,8 @@ final class PreferenceStore: ObservableObject {
     func updateLineSpacing(_ spacing: LineSpacingType) {
         lineSpacing = spacing
     }
+    
+    var font: Font {
+        .custom(appFont.rawValue, size: fontSize)
+    }
 }

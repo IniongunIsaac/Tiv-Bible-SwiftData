@@ -16,4 +16,25 @@ enum AppFont: String, CaseIterable {
     case Baskerville
     case AvenirNext = "AvenirNext-Regular"
     case AvenirBook = "Avenir-Book"
+    
+    var displayName: String {
+        switch self {
+        case .GentiumPlus:
+            return "Gentium"
+        case .Poppins:
+            return "Poppins"
+        case .NewYork:
+            return "New York"
+        case .Lato:
+            return "Lato"
+        case .Georgia:
+            return "Georgia"
+        case .Baskerville:
+            return "Baskerville"
+        case .AvenirNext:
+            return "Avenir Next"
+        case .AvenirBook:
+            return "Avenir Book"
+        }
+    }
 }

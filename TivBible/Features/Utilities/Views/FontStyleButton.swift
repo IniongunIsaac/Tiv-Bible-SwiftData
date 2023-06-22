@@ -8,33 +8,32 @@
 import SwiftUI
 
 struct FontStyleButton: View {
-    var action: VoidAction? = nil
+    @StateObject private var preferenceStore = PreferenceStore()
     
     var body: some View {
-        Button {
+        HStack(spacing: 20) {
+            Text("FONT:")
+                .font(.footnote)
             
-        } label: {
-            HStack(spacing: 20) {
-                VStack(alignment: .leading) {
-                    Text("FONT:")
-                        .font(.footnote)
-                    
-                    Text("Gentium Plus Bold Gold Minus")
-                        .lineLimit(1)
-                        .foregroundStyle(Color.label)
+            Spacer()
+            
+            Picker(selection: $preferenceStore.appFont, label: Text("")) {
+                ForEach(AppFont.allCases.sorted { $0.rawValue < $1.rawValue }, id: \.self) { option in
+                    Text(option.displayName)
+                        .font(.custom(option.rawValue, size: 17))
+                        .tag(option)
                 }
-                
-                Spacer()
-                
-                Image(systemName: "chevron.right")
             }
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(lineWidth: 1)
-            )
+            .tint(.label)
+            .pickerStyle(.menu)
+            .padding(.horizontal, -10)
         }
-        .tint(.secondary)
+        .padding()
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(lineWidth: 1)
+        )
+        .foregroundStyle(.secondary)
     }
 }
 

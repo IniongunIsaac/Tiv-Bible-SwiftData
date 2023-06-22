@@ -21,7 +21,8 @@ struct ReaderScreen: View {
         NavigationView {
             VStack(spacing: 0) {
                 List(viewModel.verses, id: \.id) { verse in
-                    Text(verse.attrText(fontSize: preferenceStore.fontSize))
+                    Text(verse.attrText(fontSize: preferenceStore.fontSize,
+                                        fontName: preferenceStore.appFont.rawValue))
                         .lineSpacing(preferenceStore.lineSpacing.value)
                         .showUnderline(verse.isSelected)
                         .listRowSeparator(.hidden)
@@ -40,7 +41,7 @@ struct ReaderScreen: View {
                     .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }
-            .padding(.bottom, -20)
+            .padding(.bottom, 20)
             .onAppear {
                 viewModel.getVerses()
             }
@@ -51,7 +52,8 @@ struct ReaderScreen: View {
                     } label: {
                         Text(viewModel.bookNameAndChapterNumber)
                             .foregroundStyle(Color.label)
-                            .font(.gentiumPlus(.regular, size: 12))
+                            .font(.custom(preferenceStore.appFont.rawValue, size: 14))
+                            .fontWeight(.semibold)
                     }
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.capsule)
