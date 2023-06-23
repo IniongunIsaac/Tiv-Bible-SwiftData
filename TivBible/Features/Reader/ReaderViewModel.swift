@@ -23,6 +23,8 @@ final class ReaderViewModel {
     var toastMessage: String = ""
     var versesNotes: String = ""
     var notesTokens = [NoteToken]()
+    private var currentChapter: Chapter? = nil
+    var errorMessage: String = ""
     
     private let preferenceStore = PreferenceStore()
     private let modelContainer = try! ModelContainer(for: Constants.dataModels)
@@ -46,6 +48,7 @@ final class ReaderViewModel {
             guard let chapter = (try context.fetch(descriptor)).first else {
                 return
             }
+            currentChapter = chapter
             bookNameAndChapterNumber = chapter.bookNameAndChapterNumber
             verses = chapter.verses.sorted(by: { $0.number < $1.number })
         } catch {
@@ -144,5 +147,30 @@ final class ReaderViewModel {
         versesNotes = ""
         notesTokens = []
         toastMessage = "Success!"
+    }
+    
+    @MainActor
+    func getNextOrPreviousChapterVerses(type: NextButtonType) {
+        guard let currentChapter, let currentBook = currentChapter.book else {
+            errorMessage = "Something isn't right!"
+            return
+        }
+        
+        let chapterNumber = currentChapter.number
+        
+        switch type {
+        case .next:
+            guard let nextChapter = currentBook.chapters.first(where: { $0.number == chapterNumber + 1 }) else {
+                errorMessage = "You're on the last chapter!"
+                return
+            }
+            preferenceStore.currentChapterUUID = nextChapter.id
+        case .previous:
+            guard let previousChapter = currentBook.chapters.first(where: { $0.number == chapterNumber - 1 }) else {
+                errorMessage = "You're on the first chapter!"
+                return
+            }
+            preferenceStore.currentChapterUUID = previousChapter.id
+        }
     }
 }

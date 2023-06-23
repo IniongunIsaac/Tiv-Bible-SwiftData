@@ -17,6 +17,7 @@ struct ReaderScreen: View {
     @State private var showNotes = false
     @State private var showStyles = false
     @State private var showBooks = false
+    @State private var showErrorToast = false
     
     var body: some View {
         NavigationView {
@@ -51,14 +52,14 @@ struct ReaderScreen: View {
             }
             .overlay(alignment: .bottomLeading) {
                 NextButton(type: .previous) {
-                    
+                    viewModel.getNextOrPreviousChapterVerses(type: .previous)
                 }
                 .transition(.scale)
                 .visible(!viewModel.showVerseSelectionActions)
             }
             .overlay(alignment: .bottomTrailing) {
                 NextButton(type: .next) {
-                    
+                    viewModel.getNextOrPreviousChapterVerses(type: .next)
                 }
                 .transition(.scale)
                 .visible(!viewModel.showVerseSelectionActions)
@@ -106,6 +107,13 @@ struct ReaderScreen: View {
             }, completion: {
                 viewModel.toastMessage = ""
             })
+            .toast(isPresenting: $showErrorToast, alert: {
+                AlertToast(displayMode: .hud,
+                           type: .error(.systemRed),
+                           subTitle: viewModel.errorMessage)
+            }, completion: {
+                viewModel.errorMessage = ""
+            })
             .sheet(isPresented: $showNotes) {
                 NotesScreen(viewModel: viewModel)
             }
@@ -119,6 +127,11 @@ struct ReaderScreen: View {
             .onChange(of: viewModel.toastMessage) {
                 if viewModel.toastMessage.isNotEmpty {
                     showToast.toggle()
+                }
+            }
+            .onChange(of: viewModel.errorMessage) {
+                if viewModel.errorMessage.isNotEmpty {
+                    showErrorToast.toggle()
                 }
             }
             .onChange(of: preferenceStore.currentChapterUUID) {
