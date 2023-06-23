@@ -60,6 +60,7 @@
 		55500E572A45D8D60074BC67 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55500E562A45D8D60074BC67 /* SearchScreen.swift */; };
 		55500E5A2A45E4850074BC67 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55500E592A45E4850074BC67 /* EmptyStateView.swift */; };
 		55500E5C2A4664DF0074BC67 /* SearchBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55500E5B2A4664DF0074BC67 /* SearchBooksView.swift */; };
+		55500E5E2A4666950074BC67 /* SearchChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55500E5D2A4666950074BC67 /* SearchChaptersView.swift */; };
 		555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CB2A38DBE100DF230E /* ReaderScreen.swift */; };
 		555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CD2A38DBF100DF230E /* SettingsScreen.swift */; };
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
@@ -192,6 +193,7 @@
 		55500E562A45D8D60074BC67 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
 		55500E592A45E4850074BC67 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		55500E5B2A4664DF0074BC67 /* SearchBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBooksView.swift; sourceTree = "<group>"; };
+		55500E5D2A4666950074BC67 /* SearchChaptersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchChaptersView.swift; sourceTree = "<group>"; };
 		555576CB2A38DBE100DF230E /* ReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderScreen.swift; sourceTree = "<group>"; };
 		555576CD2A38DBF100DF230E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 			children = (
 				55500E592A45E4850074BC67 /* EmptyStateView.swift */,
 				55500E5B2A4664DF0074BC67 /* SearchBooksView.swift */,
+				55500E5D2A4666950074BC67 /* SearchChaptersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -828,6 +831,7 @@
 				5503ADB02A37C79C006E6C79 /* Color+.swift in Sources */,
 				5503ADD92A37CB5D006E6C79 /* SetupViewModel.swift in Sources */,
 				552BB2712A41C14C00BB3A86 /* FontSizeButton.swift in Sources */,
+				55500E5E2A4666950074BC67 /* SearchChaptersView.swift in Sources */,
 				551D0B1C2A3CF41A00449307 /* RoundedCornersShape.swift in Sources */,
 				551D0B1A2A3CE8F200449307 /* VerseTapAction.swift in Sources */,
 				552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */,

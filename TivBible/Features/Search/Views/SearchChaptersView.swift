@@ -1,5 +1,5 @@
 //
-//  SearchBooksView.swift
+//  SearchChaptersView.swift
 //  TivBible
 //
 //  Created by Isaac Iniongun on 24/06/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchBooksView: View {
+struct SearchChaptersView: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
     var viewModel: SearchViewModel
     
@@ -16,7 +16,7 @@ struct SearchBooksView: View {
             LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
                 Button {
                     withAnimation {
-                        viewModel.selectedBook = nil
+                        viewModel.selectedChapter = nil
                     }
                 } label: {
                     Text("All")
@@ -27,26 +27,26 @@ struct SearchBooksView: View {
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.capsule)
                 .background {
-                    if viewModel.selectedBook == nil {
+                    if viewModel.selectedChapter == nil {
                         Color.systemGreen.cornerRadius(20)
                     }
                 }
                 
-                ForEach(viewModel.books) { book in
+                ForEach(viewModel.chapters) { chapter in
                     Button {
                         withAnimation {
-                            viewModel.selectedBook = book
+                            viewModel.selectedChapter = chapter
                         }
                     } label: {
-                        Text(book.name)
+                        Text("\(chapter.number)")
                             .foregroundStyle(Color.label)
                             .font(preferenceStore.font(size: 14))
-                            .padding(.horizontal, 4)
+                            .padding(.horizontal, 6)
                     }
                     .buttonStyle(.bordered)
                     .buttonBorderShape(.capsule)
                     .background {
-                        if viewModel.selectedBook == book {
+                        if viewModel.selectedChapter == chapter {
                             Color.systemGreen.cornerRadius(20)
                         }
                     }

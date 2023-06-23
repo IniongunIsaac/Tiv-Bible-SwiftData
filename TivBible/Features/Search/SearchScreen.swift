@@ -14,8 +14,11 @@ struct SearchScreen: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 10) {
+            VStack(spacing: 5) {
                 SearchBooksView(viewModel: viewModel)
+                
+                SearchChaptersView(viewModel: viewModel)
+                    .visible(viewModel.chapters.isNotEmpty)
                 
                 Spacer()
                 
@@ -47,9 +50,4 @@ struct SearchScreen: View {
             .font(preferenceStore.font(size: 15))
         }
     }
-}
-
-#Preview("SearchScreen") {
-    SearchScreen()
-        .environmentObject(PreferenceStore())
 }

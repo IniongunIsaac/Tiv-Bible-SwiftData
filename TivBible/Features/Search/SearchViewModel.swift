@@ -23,12 +23,13 @@ final class SearchViewModel {
     var selectedBook: Book? = nil
     var chapters: [Chapter] {
         guard let selectedBook else { return [] }
-        return selectedBook.chapters
+        return selectedBook.chapters.sorted { $0.number < $1.number }
     }
+    var selectedChapter: Chapter? = nil
     private var verses = [Verse]()
     var filteredVerses: [Verse] {
          if searchText.isEmpty {
-            verses
+            []
         } else {
             verses.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.text.localizedCaseInsensitiveContains(searchText) }
         }
