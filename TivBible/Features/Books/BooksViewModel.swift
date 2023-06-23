@@ -19,9 +19,9 @@ final class BooksViewModel {
     var isSearching = false
     var filteredBooks: [Book] {
         if searchText.isEmpty {
-            return books
+            books
         } else {
-            return books.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            books.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
     

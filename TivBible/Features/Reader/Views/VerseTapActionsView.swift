@@ -10,11 +10,13 @@ import SwiftUI
 struct VerseTapActionsView: View {
     let viewModel: ReaderViewModel
     @Binding var showNotes: Bool
+    @EnvironmentObject private var preferenceStore: PreferenceStore
     
     var body: some View {
         VStack(alignment: .center) {
             
             Text(viewModel.selectedVersesText.uppercased())
+                .font(preferenceStore.font(size: 15))
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .padding(.trailing, 30)
@@ -86,5 +88,6 @@ struct VerseTapActionsView: View {
 #Preview("VerseTapActionsView") {
     VerseTapActionsView(viewModel: ReaderViewModel(),
                         showNotes: .constant(false))
+    .environmentObject(PreferenceStore())
     .previewLayout(.sizeThatFits)
 }

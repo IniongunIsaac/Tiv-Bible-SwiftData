@@ -20,6 +20,7 @@ struct ReaderScreen: View {
     @State private var showBooks = false
     @State private var showErrorToast = false
     @State private var isScrolling = false
+    @State private var showSearch = false
     
     var body: some View {
         NavigationView {
@@ -78,7 +79,7 @@ struct ReaderScreen: View {
                     } label: {
                         Text(viewModel.bookNameAndChapterNumber)
                             .foregroundStyle(Color.label)
-                            .font(.custom(preferenceStore.appFont.rawValue, size: 14))
+                            .font(preferenceStore.font(size: 14))
                             .fontWeight(.semibold)
                     }
                     .buttonStyle(.bordered)
@@ -94,7 +95,7 @@ struct ReaderScreen: View {
                         }
                         
                         Button {
-                            
+                            showSearch.toggle()
                         } label: {
                             Image(systemName: "magnifyingglass")
                         }
@@ -126,6 +127,9 @@ struct ReaderScreen: View {
             }
             .sheet(isPresented: $showBooks) {
                 BooksScreen()
+            }
+            .fullScreenCover(isPresented: $showSearch) {
+                SearchScreen()
             }
             .onChange(of: viewModel.toastMessage) {
                 if viewModel.toastMessage.isNotEmpty {

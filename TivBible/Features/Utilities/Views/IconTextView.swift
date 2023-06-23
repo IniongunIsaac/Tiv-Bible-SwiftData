@@ -13,6 +13,8 @@ enum IconTextPosition {
 }
 
 struct IconTextView: View {
+    @EnvironmentObject private var preferenceStore: PreferenceStore
+    
     var title: String
     var icon: String
     var iconPosition: IconTextPosition = .iconRight
@@ -29,7 +31,7 @@ struct IconTextView: View {
                 Image(systemName: icon)
             }
         }
-        .font(.caption)
+        .font(preferenceStore.font(size: 13))
         .foregroundStyle(Color.label)
         .padding(padding)
     }
@@ -39,5 +41,6 @@ struct IconTextView: View {
     IconTextView(title: "Share".uppercased(),
                  icon: "square.and.arrow.up",
                  iconPosition: .iconLeft)
+    .environmentObject(PreferenceStore())
     .background(.gray)
 }
