@@ -37,7 +37,9 @@ struct VerseTapActionsView: View {
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
                     Button {
-                        viewModel.removeHighlights()
+                        withAnimation {
+                            viewModel.removeHighlights()
+                        }
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .resizable()
@@ -47,7 +49,9 @@ struct VerseTapActionsView: View {
                     
                     ForEach(ColorHex.allCases, id: \.self) { color in
                         Button {
-                            viewModel.setHighlights(color)
+                            withAnimation {
+                                viewModel.setHighlights(color)
+                            }
                         } label: {
                             Circle().fill(color.color)
                                 .frame(width: 40, height: 40)
@@ -64,7 +68,9 @@ struct VerseTapActionsView: View {
         .scrollIndicators(.never)
         .overlay(alignment: .topTrailing) {
             Button {
-                viewModel.unselectedVerses()
+                withAnimation {
+                    viewModel.unselectedVerses()
+                }
             } label: {
                 Image(systemName: "xmark.circle.fill")
                     .resizable()

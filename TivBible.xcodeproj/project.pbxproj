@@ -65,6 +65,7 @@
 		556D8D742A44A29E00211481 /* BookSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D732A44A29E00211481 /* BookSortType.swift */; };
 		556D8D772A44B7F400211481 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D762A44B7F400211481 /* BookRowView.swift */; };
 		55730A0B2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55730A0A2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift */; };
+		55730A0D2A4514D2008725DA /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55730A0C2A4514D2008725DA /* NextButton.swift */; };
 		55E42F812A38830300DBB619 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42F802A38830300DBB619 /* String+.swift */; };
 		55EC1FDE2A438BBB00DCA970 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC1FDD2A438BBB00DCA970 /* DeviceKit */; };
 		55EC1FE02A438ECD00DCA970 /* LineSpacingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */; };
@@ -192,6 +193,7 @@
 		556D8D732A44A29E00211481 /* BookSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSortType.swift; sourceTree = "<group>"; };
 		556D8D762A44B7F400211481 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		55730A0A2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureGroupExpansionHandler.swift; sourceTree = "<group>"; };
+		55730A0C2A4514D2008725DA /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		55E42F802A38830300DBB619 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSpacingType.swift; sourceTree = "<group>"; };
 		55EC1FE22A43BBF600DCA970 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				552BB2742A41C2CD00BB3A86 /* LineSpacingView.swift */,
 				552BB27A2A41CC1500BB3A86 /* StylesView.swift */,
 				552BB27E2A41CF0A00BB3A86 /* AppThemesView.swift */,
+				55730A0C2A4514D2008725DA /* NextButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				556D8D742A44A29E00211481 /* BookSortType.swift in Sources */,
 				5503ADB42A37C7D9006E6C79 /* TivBibleError.swift in Sources */,
 				552BB2752A41C2CD00BB3A86 /* LineSpacingView.swift in Sources */,
+				55730A0D2A4514D2008725DA /* NextButton.swift in Sources */,
 				552BB2642A409DC800BB3A86 /* ColorHex.swift in Sources */,
 				55EC1FE02A438ECD00DCA970 /* LineSpacingType.swift in Sources */,
 				55E42F812A38830300DBB619 /* String+.swift in Sources */,

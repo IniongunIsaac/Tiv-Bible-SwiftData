@@ -49,6 +49,20 @@ struct ReaderScreen: View {
                     .transition(.scale)
                     .visible(viewModel.showVerseSelectionActions)
             }
+            .overlay(alignment: .bottomLeading) {
+                NextButton(type: .previous) {
+                    
+                }
+                .transition(.scale)
+                .visible(!viewModel.showVerseSelectionActions)
+            }
+            .overlay(alignment: .bottomTrailing) {
+                NextButton(type: .next) {
+                    
+                }
+                .transition(.scale)
+                .visible(!viewModel.showVerseSelectionActions)
+            }
             .padding(.bottom, -20)
             .onAppear {
                 viewModel.getVerses()
