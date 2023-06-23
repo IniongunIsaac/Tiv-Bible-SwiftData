@@ -55,6 +55,8 @@
 		552BB27D2A41CE8300BB3A86 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27C2A41CE8300BB3A86 /* AppTheme.swift */; };
 		552BB27F2A41CF0A00BB3A86 /* AppThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27E2A41CF0A00BB3A86 /* AppThemesView.swift */; };
 		552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2802A41E6CD00BB3A86 /* Constants.swift */; };
+		55500E522A45ACB70074BC67 /* IsScrolling in Frameworks */ = {isa = PBXBuildFile; productRef = 55500E512A45ACB70074BC67 /* IsScrolling */; };
+		55500E552A45B6D40074BC67 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55500E542A45B6D40074BC67 /* SearchViewModel.swift */; };
 		555576CC2A38DBE100DF230E /* ReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CB2A38DBE100DF230E /* ReaderScreen.swift */; };
 		555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CD2A38DBF100DF230E /* SettingsScreen.swift */; };
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
@@ -183,6 +185,7 @@
 		552BB27C2A41CE8300BB3A86 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		552BB27E2A41CF0A00BB3A86 /* AppThemesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemesView.swift; sourceTree = "<group>"; };
 		552BB2802A41E6CD00BB3A86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		55500E542A45B6D40074BC67 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		555576CB2A38DBE100DF230E /* ReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderScreen.swift; sourceTree = "<group>"; };
 		555576CD2A38DBF100DF230E /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				552BB2672A40C24000BB3A86 /* AlertToast in Frameworks */,
+				55500E522A45ACB70074BC67 /* IsScrolling in Frameworks */,
 				55EC1FDE2A438BBB00DCA970 /* DeviceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +431,7 @@
 		5503ADD42A37CA8A006E6C79 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				55500E532A45B67B0074BC67 /* Search */,
 				556D8D6E2A44970100211481 /* Books */,
 				555576CA2A38DB8500DF230E /* Reader */,
 				555576C92A38DB7E00DF230E /* Settings */,
@@ -480,6 +485,14 @@
 				552BB2782A41C9C900BB3A86 /* FontStyleButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		55500E532A45B67B0074BC67 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				55500E542A45B6D40074BC67 /* SearchViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		555576C82A38DB4900DF230E /* Misc */ = {
@@ -624,6 +637,7 @@
 			packageProductDependencies = (
 				552BB2662A40C24000BB3A86 /* AlertToast */,
 				55EC1FDD2A438BBB00DCA970 /* DeviceKit */,
+				55500E512A45ACB70074BC67 /* IsScrolling */,
 			);
 			productName = TivBible;
 			productReference = 5503AD722A37BF50006E6C79 /* TivBible.app */;
@@ -700,6 +714,7 @@
 			packageReferences = (
 				552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */,
 				55EC1FDC2A438BBB00DCA970 /* XCRemoteSwiftPackageReference "DeviceKit" */,
+				55500E502A45ACB70074BC67 /* XCRemoteSwiftPackageReference "IsScrolling" */,
 			);
 			productRefGroup = 5503AD732A37BF50006E6C79 /* Products */;
 			projectDirPath = "";
@@ -808,6 +823,7 @@
 				5503ADAC2A37C762006E6C79 /* Data+.swift in Sources */,
 				5503ADAE2A37C776006E6C79 /* View+.swift in Sources */,
 				5503ADA72A37C09E006E6C79 /* Book.swift in Sources */,
+				55500E552A45B6D40074BC67 /* SearchViewModel.swift in Sources */,
 				5503ADC42A37C914006E6C79 /* DependencyProvider.swift in Sources */,
 				552BB27F2A41CF0A00BB3A86 /* AppThemesView.swift in Sources */,
 				5503ADB62A37C7F8006E6C79 /* Code+.swift in Sources */,
@@ -1184,6 +1200,14 @@
 				kind = branch;
 			};
 		};
+		55500E502A45ACB70074BC67 /* XCRemoteSwiftPackageReference "IsScrolling" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fatbobman/IsScrolling.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
 		55EC1FDC2A438BBB00DCA970 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
@@ -1199,6 +1223,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
+		};
+		55500E512A45ACB70074BC67 /* IsScrolling */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55500E502A45ACB70074BC67 /* XCRemoteSwiftPackageReference "IsScrolling" */;
+			productName = IsScrolling;
 		};
 		55EC1FDD2A438BBB00DCA970 /* DeviceKit */ = {
 			isa = XCSwiftPackageProductDependency;

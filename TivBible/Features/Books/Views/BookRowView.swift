@@ -33,9 +33,6 @@ struct BookRowView: View {
             .padding(.horizontal, -8)
         }
         .tint(.label)
+        .font(preferenceStore.font(size: 16))
     }
 }
-
-//#Preview {
-//    BookRowView(book: newBook)
-//}

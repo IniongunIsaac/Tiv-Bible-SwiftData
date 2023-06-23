@@ -34,7 +34,7 @@ final class PreferenceStore: ObservableObject {
         lineSpacing = spacing
     }
     
-    var font: Font {
-        .custom(appFont.rawValue, size: fontSize)
+    func font(size: Double? = nil) -> Font {
+        .custom(appFont.rawValue, size: size ?? fontSize)
     }
 }

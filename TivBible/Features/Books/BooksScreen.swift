@@ -34,11 +34,14 @@ struct BooksScreen: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                .font(preferenceStore.font(size: 15))
             }
             .padding(.horizontal)
-            .searchable(text: $viewModel.searchText, placement: .toolbar, prompt: "Search")
+            .searchable(text: $viewModel.searchText, prompt: "Search")
+            .font(preferenceStore.font(size: 15))
             .navigationTitle("Books")
             .navigationBarTitleDisplayMode(.inline)
+            .font(preferenceStore.font(size: 15))
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button(role: .cancel) {
@@ -46,6 +49,7 @@ struct BooksScreen: View {
                     } label: {
                         Text("Dismiss")
                             .fontWeight(.semibold)
+                            .font(preferenceStore.font(size: 16))
                     }
                     .tint(.systemRed)
                 }

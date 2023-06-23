@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import AlertToast
+import IsScrolling
 
 struct ReaderScreen: View {
     
@@ -18,6 +19,7 @@ struct ReaderScreen: View {
     @State private var showStyles = false
     @State private var showBooks = false
     @State private var showErrorToast = false
+    @State private var isScrolling = false
     
     var body: some View {
         NavigationView {
@@ -42,6 +44,7 @@ struct ReaderScreen: View {
                             }
                         }
                 }
+                .scrollStatusMonitor($isScrolling, monitorMode: .exclusion)
                 .scrollIndicators(.never)
                 .listRowSpacing(-10)
                 .listStyle(.plain)
@@ -55,14 +58,14 @@ struct ReaderScreen: View {
                     viewModel.getNextOrPreviousChapterVerses(type: .previous)
                 }
                 .transition(.scale)
-                .visible(!viewModel.showVerseSelectionActions)
+                .visible(!viewModel.showVerseSelectionActions || isScrolling)
             }
             .overlay(alignment: .bottomTrailing) {
                 NextButton(type: .next) {
                     viewModel.getNextOrPreviousChapterVerses(type: .next)
                 }
                 .transition(.scale)
-                .visible(!viewModel.showVerseSelectionActions)
+                .visible(!viewModel.showVerseSelectionActions || isScrolling)
             }
             .padding(.bottom, -20)
             .onAppear {
