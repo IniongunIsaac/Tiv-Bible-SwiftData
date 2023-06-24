@@ -20,12 +20,20 @@ final class SearchViewModel {
     
     var searchText: String = ""
     var books = [Book]()
-    var selectedBook: Book? = nil
+    var selectedBook: Book? = nil {
+        didSet {
+            search()
+        }
+    }
     var chapters: [Chapter] {
         guard let selectedBook else { return [] }
         return selectedBook.chapters.sorted { $0.number < $1.number }
     }
-    var selectedChapter: Chapter? = nil
+    var selectedChapter: Chapter? = nil {
+        didSet {
+            search()
+        }
+    }
     private var verses = [Verse]()
     var filteredVerses = [Verse]()
     
@@ -68,8 +76,7 @@ final class SearchViewModel {
         if searchText.isEmpty {
             filteredVerses =  []
         } else {
-            var filtered = verses.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.text.localizedCaseInsensitiveContains(searchText) }
-                .sorted { $0.number < $1.number }
+            var filtered = verses.filter { $0.contains(searchText) }.sorted { $0.number < $1.number }
             
             if let selectedBook {
                 filtered = filtered.filter { $0.chapter?.book == selectedBook }

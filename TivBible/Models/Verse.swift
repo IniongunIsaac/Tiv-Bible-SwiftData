@@ -79,6 +79,10 @@ final class Verse {
         }
         return "\(book.name) \(chapter.number):\(number)".uppercased()
     }
+    
+    func contains(_ searchText: String) -> Bool {
+        title.localizedCaseInsensitiveContains(searchText) || text.localizedCaseInsensitiveContains(searchText)
+    }
 }
 
 extension Array where Element == Verse {
