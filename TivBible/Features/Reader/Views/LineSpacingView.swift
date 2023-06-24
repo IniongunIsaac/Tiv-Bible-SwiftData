@@ -13,7 +13,7 @@ struct LineSpacingView: View {
     var body: some View {
         HStack(spacing: 15) {
             Text("LINE SPACING:")
-                .font(.footnote)
+                .font(preferenceStore.font(size: 14))
                 .foregroundStyle(.secondary)
             
             Spacer()

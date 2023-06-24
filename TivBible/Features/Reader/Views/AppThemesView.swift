@@ -11,9 +11,9 @@ struct AppThemesView: View {
     @StateObject private var preferenceStore = PreferenceStore()
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 6) {
             Text("THEME:")
-                .font(.footnote)
+                .font(preferenceStore.font(size: 14))
                 .foregroundStyle(.secondary)
             
             Picker(selection: $preferenceStore.appTheme, label: Text("")) {

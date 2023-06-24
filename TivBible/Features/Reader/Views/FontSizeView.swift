@@ -13,7 +13,7 @@ struct FontSizeView: View {
     var body: some View {
         HStack(spacing: 15) {
             Text("FONT SIZE:")
-                .font(.footnote)
+                .font(preferenceStore.font(size: 14))
                 .foregroundStyle(.secondary)
             
             Spacer()
@@ -27,6 +27,7 @@ struct FontSizeView: View {
             }
             
             Text("\(preferenceStore.fontSize.int)px")
+                .font(preferenceStore.font(size: 15))
         }
     }
 }

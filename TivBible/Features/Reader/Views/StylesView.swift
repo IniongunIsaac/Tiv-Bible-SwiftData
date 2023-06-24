@@ -15,6 +15,7 @@ struct StylesView: View {
         VStack(spacing: 30) {
             Text("STYLES")
                 .offset(y: -28)
+                .font(preferenceStore.font(size: 16))
             
             FontSizeView()
             

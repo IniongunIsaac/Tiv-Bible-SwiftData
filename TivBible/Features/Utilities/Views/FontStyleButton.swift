@@ -13,7 +13,7 @@ struct FontStyleButton: View {
     var body: some View {
         HStack(spacing: 20) {
             Text("FONT:")
-                .font(.footnote)
+                .font(preferenceStore.font(size: 14))
             
             Spacer()
             
