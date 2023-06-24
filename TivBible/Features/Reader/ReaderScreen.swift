@@ -21,34 +21,46 @@ struct ReaderScreen: View {
     @State private var showErrorToast = false
     @State private var isScrolling = false
     @State private var showSearch = false
+    @State private var verseNumber: Int?
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                List(viewModel.verses, id: \.id) { verse in
-                    if verse.title.isNotEmpty {
-                        Text(verse.title.uppercased())
-                            .foregroundStyle(.secondary)
-                            .font(.custom(preferenceStore.appFont.rawValue, size: 14))
-                            .fontWeight(.semibold)
+                ScrollViewReader { proxy in
+                    List(viewModel.verses, id: \.id) { verse in
+                        if verse.title.isNotEmpty {
+                            Text(verse.title.uppercased())
+                                .foregroundStyle(.secondary)
+                                .font(.custom(preferenceStore.appFont.rawValue, size: 14))
+                                .fontWeight(.semibold)
+                        }
+                        
+                        Text(verse.attrText(fontSize: preferenceStore.fontSize,
+                                            fontName: preferenceStore.appFont.rawValue))
+                            .lineSpacing(preferenceStore.lineSpacing.value)
+                            .showUnderline(verse.isSelected)
+                            .listRowSeparator(.hidden)
+                            .onTapGesture {
+                                withAnimation(.spring) {
+                                    verse.isSelected.toggle()
+                                    viewModel.refreshVerses()
+                                }
+                            }
+                            .id(verse.number)
+                            .background(verseNumber == verse.number ? Color(hex: "#FFAF02") : Color.clear)
                     }
-                    
-                    Text(verse.attrText(fontSize: preferenceStore.fontSize,
-                                        fontName: preferenceStore.appFont.rawValue))
-                        .lineSpacing(preferenceStore.lineSpacing.value)
-                        .showUnderline(verse.isSelected)
-                        .listRowSeparator(.hidden)
-                        .onTapGesture {
-                            withAnimation(.spring) {
-                                verse.isSelected.toggle()
-                                viewModel.refreshVerses()
+                    .scrollStatusMonitor($isScrolling, monitorMode: .exclusion)
+                    .scrollIndicators(.never)
+                    .listRowSpacing(-10)
+                    .listStyle(.plain)
+                    .onChange(of: verseNumber) { _, number in
+                        if let number {
+                            withAnimation {
+                                proxy.scrollTo(number, anchor: .top)
                             }
                         }
+                    }
                 }
-                .scrollStatusMonitor($isScrolling, monitorMode: .exclusion)
-                .scrollIndicators(.never)
-                .listRowSpacing(-10)
-                .listStyle(.plain)
                 
                 VerseTapActionsView(viewModel: viewModel, showNotes: $showNotes)
                     .transition(.scale)
@@ -129,7 +141,7 @@ struct ReaderScreen: View {
                 BooksScreen()
             }
             .fullScreenCover(isPresented: $showSearch) {
-                SearchScreen()
+                SearchScreen(verseNumber: $verseNumber)
             }
             .onChange(of: viewModel.toastMessage) {
                 if viewModel.toastMessage.isNotEmpty {
@@ -149,6 +161,6 @@ struct ReaderScreen: View {
     }
 }
 
-#Preview("ReaderScreen") {
-    ReaderScreen()
-}
+//#Preview("ReaderScreen") {
+//    ReaderScreen()
+//}

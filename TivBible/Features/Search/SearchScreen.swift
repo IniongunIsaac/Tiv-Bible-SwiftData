@@ -11,6 +11,8 @@ struct SearchScreen: View {
     @Bindable private var viewModel = SearchViewModel()
     @EnvironmentObject private var preferenceStore: PreferenceStore
     @Environment(\.dismiss) private var dismiss
+    @State private var shouldDismiss = false
+    @Binding var verseNumber: Int?
     
     var body: some View {
         NavigationStack {
@@ -24,7 +26,9 @@ struct SearchScreen: View {
                 
                 ZStack {
                     if viewModel.filteredVerses.isNotEmpty {
-                        SearchResultsView(viewModel: viewModel)
+                        SearchResultsView(viewModel: viewModel,
+                                          shouldDismiss: $shouldDismiss,
+                                          verseNumber: $verseNumber)
                             .padding(.horizontal, -20)
                     } else {
                         EmptyStateView()
@@ -64,6 +68,9 @@ struct SearchScreen: View {
                 if viewModel.searchText.isEmpty {
                     viewModel.endSearch()
                 }
+            }
+            .onChange(of: shouldDismiss) {
+                dismiss()
             }
             .font(preferenceStore.font(size: 15))
         }
