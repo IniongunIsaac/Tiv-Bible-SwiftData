@@ -24,7 +24,7 @@ struct SearchScreen: View {
                 
                 ZStack {
                     if viewModel.filteredVerses.isNotEmpty {
-                        SearchResultsView(viewModel: viewModel) //yesu vaa Aôndo
+                        SearchResultsView(viewModel: viewModel)
                             .padding(.horizontal, -20)
                     } else {
                         EmptyStateView()
@@ -55,6 +55,16 @@ struct SearchScreen: View {
                 }
             }
             .searchable(text: $viewModel.searchText, prompt: "Search")
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
+            .onSubmit(of: .search) {
+                viewModel.search()
+            }
+            .onChange(of: viewModel.searchText) {
+                if viewModel.searchText.isEmpty {
+                    viewModel.endSearch()
+                }
+            }
             .font(preferenceStore.font(size: 15))
         }
     }
