@@ -50,3 +50,9 @@ extension Int {
         CGFloat(self)
     }
 }
+
+func runAfter(_ delay: Double = 0.2, block: @escaping VoidAction) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+        block()
+    }
+}

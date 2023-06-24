@@ -24,7 +24,7 @@ struct SearchScreen: View {
                 
                 ZStack {
                     if viewModel.filteredVerses.isNotEmpty {
-                        SearchResultsView(viewModel: viewModel) //yesu vaa
+                        SearchResultsView(viewModel: viewModel) //yesu vaa Aôndo
                             .padding(.horizontal, -20)
                     } else {
                         EmptyStateView()
@@ -35,7 +35,7 @@ struct SearchScreen: View {
             }
             .onAppear {
                 viewModel.getBooks()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                runAfter(0.3) {
                     viewModel.getVerses()
                 }
             }

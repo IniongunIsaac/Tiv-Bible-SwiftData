@@ -28,11 +28,37 @@ final class SearchViewModel {
     var selectedChapter: Chapter? = nil
     private var verses = [Verse]()
     var filteredVerses: [Verse] {
-         if searchText.isEmpty {
-            []
+        
+        //TODO: Fitering like this using #Predicate is just a mess
+        /*guard searchText.isNotEmpty else { return [] }
+        
+        let searchTerm = searchText.lowercased()
+        let predicate = #Predicate<Verse> {
+            $0.text.contains(searchTerm) || $0.title.contains(searchTerm)
+        }
+        let descriptor = FetchDescriptor(predicate: predicate)
+        
+        do {
+            return try context.fetch(descriptor)
+        } catch {
+            return []
+        }*/
+        
+        if searchText.isEmpty {
+            return []
         } else {
-            verses.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.text.localizedCaseInsensitiveContains(searchText) }
+            var filtered = verses.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.text.localizedCaseInsensitiveContains(searchText) }
                 .sorted { $0.number < $1.number }
+            
+            if let selectedBook {
+                filtered = filtered.filter { $0.chapter?.book == selectedBook }
+            }
+            
+            if let selectedChapter {
+                filtered = filtered.filter { $0.chapter == selectedChapter }
+            }
+            
+            return filtered
         }
     }
     
