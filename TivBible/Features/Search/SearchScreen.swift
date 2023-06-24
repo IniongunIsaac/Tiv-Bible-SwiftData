@@ -23,13 +23,21 @@ struct SearchScreen: View {
                 Spacer()
                 
                 ZStack {
-                    EmptyStateView()
+                    if viewModel.filteredVerses.isNotEmpty {
+                        SearchResultsView(viewModel: viewModel) //yesu vaa
+                            .padding(.horizontal, -20)
+                    } else {
+                        EmptyStateView()
+                    }
                 }
                 
                 Spacer()
             }
             .onAppear {
                 viewModel.getBooks()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    viewModel.getVerses()
+                }
             }
             .padding(.horizontal)
             .navigationTitle("Bible Search")

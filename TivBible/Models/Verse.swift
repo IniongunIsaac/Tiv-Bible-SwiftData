@@ -72,6 +72,13 @@ final class Verse {
         
         return numberDotAttr + textAttr
     }
+    
+    var reference: String {
+        guard let chapter, let book = chapter.book else {
+            return ""
+        }
+        return "\(book.name) \(chapter.number):\(number)".uppercased()
+    }
 }
 
 extension Array where Element == Verse {

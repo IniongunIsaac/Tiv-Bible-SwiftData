@@ -32,6 +32,7 @@ final class SearchViewModel {
             []
         } else {
             verses.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.text.localizedCaseInsensitiveContains(searchText) }
+                .sorted { $0.number < $1.number }
         }
     }
     
