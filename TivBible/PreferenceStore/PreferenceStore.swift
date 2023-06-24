@@ -16,7 +16,7 @@ final class PreferenceStore: ObservableObject {
     @AppStorage("appTheme") var appTheme: AppTheme = .system
     @AppStorage("appFont") var appFont: AppFont = .GentiumPlus
     @AppStorage("bookSortType") var bookSortType: BookSortType = .traditional
-    @AppStorage("stayAwake") var stayAwake: Bool = false
+    @AppStorage(.stayAwake) var stayAwake: Bool = false
     
     func updateFontSize(type: FontSizeButtonType) {
         switch type {

@@ -68,14 +68,18 @@ struct ReaderScreen: View {
             }
             .overlay(alignment: .bottomLeading) {
                 NextButton(type: .previous) {
-                    viewModel.getNextOrPreviousChapterVerses(type: .previous)
+                    withAnimation {
+                        viewModel.getNextOrPreviousChapterVerses(type: .previous)
+                    }
                 }
                 .transition(.scale)
                 .visible(!viewModel.showVerseSelectionActions || isScrolling)
             }
             .overlay(alignment: .bottomTrailing) {
                 NextButton(type: .next) {
-                    viewModel.getNextOrPreviousChapterVerses(type: .next)
+                    withAnimation {
+                        viewModel.getNextOrPreviousChapterVerses(type: .next)
+                    }
                 }
                 .transition(.scale)
                 .visible(!viewModel.showVerseSelectionActions || isScrolling)

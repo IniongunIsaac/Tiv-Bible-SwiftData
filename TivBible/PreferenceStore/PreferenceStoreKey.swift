@@ -12,4 +12,5 @@ enum PreferenceStoreKey: String {
     case currentChapterUUID
     case fontSize
     case lineSpacing
+    case stayAwake
 }
