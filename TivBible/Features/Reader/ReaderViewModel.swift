@@ -133,7 +133,7 @@ final class ReaderViewModel {
     }
     
     func setBookmarks() {
-        verses.forEach {
+        selectedVerses.forEach {
             $0.isBookmarked = true
             $0.bookmarkDate = Date()
         }
