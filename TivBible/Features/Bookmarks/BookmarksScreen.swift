@@ -11,6 +11,7 @@ import SwiftData
 struct BookmarksScreen: View {
     private var viewModel = BookmarksViewModel()
     @EnvironmentObject private var preferenceStore: PreferenceStore
+    @Environment(\.dismiss) private var dismiss
     
     //TODO: See if we can write this code in this manner instead of going with what we have in the VM ATM
     /*@Environment(\.modelContext) private var context
@@ -60,8 +61,29 @@ struct BookmarksScreen: View {
         .listStyle(.plain)
         .navigationTitle("Bookmarks")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
         .onAppear {
             viewModel.getBookmakrs()
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                }
+                .tint(.label)
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Text("Clear All")
+                        .font(preferenceStore.font())
+                        .foregroundStyle(Color.systemRed)
+                }
+            }
         }
     }
 }
