@@ -15,7 +15,7 @@ struct MiscScreen: View {
     var body: some View {
         NavigationStack {
             List(MiscItem.allCases, id: \.self) { item in
-                Button {
+                /*Button {
                     miscItem = item
                     showBookmarks = item == .bookmarks
                 } label: {
@@ -37,7 +37,10 @@ struct MiscScreen: View {
                 }
                 .tint(.label)
                 .buttonBorderShape(.roundedRectangle)
-                .buttonStyle(.bordered)
+                .buttonStyle(.bordered)*/
+                MiscItemButton(title: item.rawValue, iconName: item.iconName) {
+                    showBookmarks = item == .bookmarks
+                }
                 .listRowSeparator(.hidden)
             }
             .scrollIndicators(.never)

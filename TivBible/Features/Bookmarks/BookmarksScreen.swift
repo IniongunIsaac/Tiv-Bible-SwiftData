@@ -12,6 +12,7 @@ struct BookmarksScreen: View {
     private var viewModel = BookmarksViewModel()
     @EnvironmentObject private var preferenceStore: PreferenceStore
     @Environment(\.dismiss) private var dismiss
+    @State private var showActions = false
     
     //TODO: See if we can write this code in this manner instead of going with what we have in the VM ATM
     /*@Environment(\.modelContext) private var context
@@ -53,7 +54,7 @@ struct BookmarksScreen: View {
                 withAnimation {
                     //preferenceStore.currentChapterUUID = verse.chapter?.id ?? ""
                     //verseNumber = verse.number
-                    //shouldDismiss.toggle()
+                    showActions.toggle()
                 }
             }
         }
@@ -84,6 +85,10 @@ struct BookmarksScreen: View {
                         .foregroundStyle(Color.systemRed)
                 }
             }
+        }
+        .sheet(isPresented: $showActions) {
+            MiscItemActionsView()
+                .presentationDetents([.height(370)])
         }
     }
 }
