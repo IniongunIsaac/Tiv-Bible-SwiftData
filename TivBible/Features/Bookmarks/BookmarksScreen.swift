@@ -13,6 +13,7 @@ struct BookmarksScreen: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
     @Environment(\.dismiss) private var dismiss
     @State private var showActions = false
+    @State private var selectedBookmark: Verse? = nil
     
     //TODO: See if we can write this code in this manner instead of going with what we have in the VM ATM
     /*@Environment(\.modelContext) private var context
@@ -52,8 +53,7 @@ struct BookmarksScreen: View {
             .padding(.bottom, 15)
             .onTapGesture {
                 withAnimation {
-                    //preferenceStore.currentChapterUUID = verse.chapter?.id ?? ""
-                    //verseNumber = verse.number
+                    selectedBookmark = bookmark
                     showActions.toggle()
                 }
             }
@@ -87,8 +87,28 @@ struct BookmarksScreen: View {
             }
         }
         .sheet(isPresented: $showActions) {
-            MiscItemActionsView()
-                .presentationDetents([.height(370)])
+            MiscItemActionsView(showActions: $showActions) { itemAction in
+                didChooseMiscItemAction(itemAction)
+            }
+            .presentationDetents([.height(370)])
+        }
+    }
+    
+    private func didChooseMiscItemAction(_ itemAction: MiscItemAction) {
+        switch itemAction {
+        case .readFullChapter:
+            preferenceStore.currentChapterUUID = selectedBookmark?.chapter?.id ?? ""
+            preferenceStore.selectedTabItem = .read
+            dismiss()
+            
+        case .share:
+            guard let selectedBookmark else { return }
+            selectedBookmark.shareableText.share()
+            
+        case .copy:
+            break
+        case .delete:
+            break
         }
     }
 }

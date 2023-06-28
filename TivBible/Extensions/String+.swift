@@ -16,6 +16,7 @@ extension String {
     func share() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let rootViewController = windowScene.windows.first?.rootViewController else {
+            print("Unable to share!!!")
             return
         }
         

@@ -83,6 +83,10 @@ final class Verse {
     func contains(_ searchText: String) -> Bool {
         title.localizedCaseInsensitiveContains(searchText) || text.localizedCaseInsensitiveContains(searchText)
     }
+    
+    var shareableText: String {
+        "\(reference)\n\(text)"
+    }
 }
 
 extension Array where Element == Verse {

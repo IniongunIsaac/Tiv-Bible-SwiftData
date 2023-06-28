@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MiscItemActionsView: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
+    @Binding var showActions: Bool
+    var action: ArgumentAction<MiscItemAction>? = nil
     
     var body: some View {
         List {
@@ -21,7 +23,8 @@ struct MiscItemActionsView: View {
             
             ForEach(MiscItemAction.allCases, id: \.self) { item in
                 MiscItemButton(title: item.rawValue, iconName: item.iconName) {
-                    
+                    showActions.toggle()
+                    action?(item)
                 }
                 .background(item == .delete ? .red : .secondarySystemBackground)
                 .cornerRadius(10)
@@ -32,7 +35,7 @@ struct MiscItemActionsView: View {
         .listStyle(.plain)
         .overlay(alignment: .topTrailing) {
             Button {
-                
+                showActions.toggle()
             } label: {
                 Image(systemName: "xmark.circle.fill")
                     .resizable()

@@ -17,6 +17,7 @@ final class PreferenceStore: ObservableObject {
     @AppStorage("appFont") var appFont: AppFont = .GentiumPlus
     @AppStorage("bookSortType") var bookSortType: BookSortType = .traditional
     @AppStorage(.stayAwake) var stayAwake: Bool = false
+    @AppStorage("selectedTabItem") var selectedTabItem: TabItem = .read
     
     func updateFontSize(type: FontSizeButtonType) {
         switch type {

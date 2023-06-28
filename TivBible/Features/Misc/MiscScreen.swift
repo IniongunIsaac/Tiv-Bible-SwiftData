@@ -15,29 +15,6 @@ struct MiscScreen: View {
     var body: some View {
         NavigationStack {
             List(MiscItem.allCases, id: \.self) { item in
-                /*Button {
-                    miscItem = item
-                    showBookmarks = item == .bookmarks
-                } label: {
-                    HStack(alignment: .center, spacing: 10) {
-                        Image(systemName: item.iconName)
-                        Text(item.rawValue)
-                        
-                        Spacer()
-                        
-                        Image(systemName: "chevron.right")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 12, height: 12)
-                            .foregroundStyle(.secondary)
-                    }
-                    .font(preferenceStore.font(size: 16))
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 10)
-                }
-                .tint(.label)
-                .buttonBorderShape(.roundedRectangle)
-                .buttonStyle(.bordered)*/
                 MiscItemButton(title: item.rawValue, iconName: item.iconName) {
                     showBookmarks = item == .bookmarks
                 }

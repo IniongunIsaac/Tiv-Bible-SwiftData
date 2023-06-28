@@ -79,6 +79,7 @@
 		5595A5002A4B6F7100270A5B /* MiscItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A4FF2A4B6F7100270A5B /* MiscItemAction.swift */; };
 		5595A5022A4B704500270A5B /* MiscItemActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A5012A4B704500270A5B /* MiscItemActionsView.swift */; };
 		5595A5042A4B70BF00270A5B /* MiscItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A5032A4B70BF00270A5B /* MiscItemButton.swift */; };
+		5595A5062A4BEEBA00270A5B /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A5052A4BEEBA00270A5B /* TabItem.swift */; };
 		55E42F812A38830300DBB619 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42F802A38830300DBB619 /* String+.swift */; };
 		55EC1FDE2A438BBB00DCA970 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC1FDD2A438BBB00DCA970 /* DeviceKit */; };
 		55EC1FE02A438ECD00DCA970 /* LineSpacingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */; };
@@ -219,6 +220,7 @@
 		5595A4FF2A4B6F7100270A5B /* MiscItemAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItemAction.swift; sourceTree = "<group>"; };
 		5595A5012A4B704500270A5B /* MiscItemActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItemActionsView.swift; sourceTree = "<group>"; };
 		5595A5032A4B70BF00270A5B /* MiscItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItemButton.swift; sourceTree = "<group>"; };
+		5595A5052A4BEEBA00270A5B /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		55E42F802A38830300DBB619 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSpacingType.swift; sourceTree = "<group>"; };
 		55EC1FE22A43BBF600DCA970 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */,
 				55EC20492A43C19A00DCA970 /* AppFont.swift */,
 				556D8D732A44A29E00211481 /* BookSortType.swift */,
+				5595A5052A4BEEBA00270A5B /* TabItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */,
 				5503ADBB2A37C886006E6C79 /* AppStorage+.swift in Sources */,
 				551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */,
+				5595A5062A4BEEBA00270A5B /* TabItem.swift in Sources */,
 				55EC204A2A43C19A00DCA970 /* AppFont.swift in Sources */,
 				5503ADA32A37C077006E6C79 /* TivBibleData.swift in Sources */,
 				5595A5002A4B6F7100270A5B /* MiscItemAction.swift in Sources */,

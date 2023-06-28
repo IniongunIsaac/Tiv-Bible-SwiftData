@@ -12,10 +12,10 @@ import SwiftData
 struct TivBibleApp: App {
     
     @StateObject private var preferenceStore = PreferenceStore()
+    @Environment(\.scenePhase) private var scenePhase
     
     init() {
         setupDependencyContainer()
-        //printFonts()
     }
 
     var body: some Scene {
@@ -30,6 +30,11 @@ struct TivBibleApp: App {
             }
         }
         .modelContainer(for: Constants.dataModels)
+        .onChange(of: scenePhase) { _, newScenePhase in
+            if newScenePhase == .inactive || newScenePhase == .background {
+                preferenceStore.selectedTabItem = .read
+            }
+        }
     }
 }
 
