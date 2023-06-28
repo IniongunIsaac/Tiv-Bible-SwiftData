@@ -31,7 +31,7 @@ struct SearchScreen: View {
                                           verseNumber: $verseNumber)
                             .padding(.horizontal, -20)
                     } else {
-                        EmptyStateView()
+                        EmptyStateView(message: "Results will appear here")
                     }
                 }
                 

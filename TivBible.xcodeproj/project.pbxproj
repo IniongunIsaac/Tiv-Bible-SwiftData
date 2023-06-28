@@ -80,6 +80,7 @@
 		5595A5022A4B704500270A5B /* MiscItemActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A5012A4B704500270A5B /* MiscItemActionsView.swift */; };
 		5595A5042A4B70BF00270A5B /* MiscItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A5032A4B70BF00270A5B /* MiscItemButton.swift */; };
 		5595A5062A4BEEBA00270A5B /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A5052A4BEEBA00270A5B /* TabItem.swift */; };
+		5595A5082A4C020100270A5B /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595A5072A4C020100270A5B /* ToastMessage.swift */; };
 		55E42F812A38830300DBB619 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E42F802A38830300DBB619 /* String+.swift */; };
 		55EC1FDE2A438BBB00DCA970 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55EC1FDD2A438BBB00DCA970 /* DeviceKit */; };
 		55EC1FE02A438ECD00DCA970 /* LineSpacingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */; };
@@ -221,6 +222,7 @@
 		5595A5012A4B704500270A5B /* MiscItemActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItemActionsView.swift; sourceTree = "<group>"; };
 		5595A5032A4B70BF00270A5B /* MiscItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItemButton.swift; sourceTree = "<group>"; };
 		5595A5052A4BEEBA00270A5B /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		5595A5072A4C020100270A5B /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		55E42F802A38830300DBB619 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		55EC1FDF2A438ECD00DCA970 /* LineSpacingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSpacingType.swift; sourceTree = "<group>"; };
 		55EC1FE22A43BBF600DCA970 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				55EC20492A43C19A00DCA970 /* AppFont.swift */,
 				556D8D732A44A29E00211481 /* BookSortType.swift */,
 				5595A5052A4BEEBA00270A5B /* TabItem.swift */,
+				5595A5072A4C020100270A5B /* ToastMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -915,6 +918,7 @@
 				552BB26F2A41B72500BB3A86 /* FontSizeView.swift in Sources */,
 				555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */,
 				55500E572A45D8D60074BC67 /* SearchScreen.swift in Sources */,
+				5595A5082A4C020100270A5B /* ToastMessage.swift in Sources */,
 				552BB2792A41C9C900BB3A86 /* FontStyleButton.swift in Sources */,
 				5503ADC22A37C8F0006E6C79 /* DependencyContainer.swift in Sources */,
 				552BB27B2A41CC1500BB3A86 /* StylesView.swift in Sources */,

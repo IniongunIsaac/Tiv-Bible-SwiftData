@@ -11,6 +11,7 @@ import SwiftData
 @Observable
 final class BookmarksViewModel {
     var bookmarks = [Verse]()
+    var toastMessage: ToastMessage = .empty
     
     private let modelContainer = try! ModelContainer(for: Constants.dataModels)
     
@@ -20,7 +21,7 @@ final class BookmarksViewModel {
     }
     
     @MainActor
-    func getBookmakrs() {
+    func getBookmarks() {
         let predicate = #Predicate<Verse> {
             $0.isBookmarked
         }
@@ -33,5 +34,25 @@ final class BookmarksViewModel {
         } catch {
             debugPrint("Unable to get bookmarks")
         }
+    }
+    
+    @MainActor
+    func deleteBookmark(_ bookmark: Verse?) {
+        guard let bookmark else { return }
+        bookmark.isBookmarked = false
+        bookmark.bookmarkDate = nil
+        toastMessage = .success("Bookmark deleted!")
+        getBookmarks()
+    }
+    
+    @MainActor
+    func clearBookmarks() {
+        guard bookmarks.isNotEmpty else { return }
+        bookmarks.forEach {
+            $0.isBookmarked = false
+            $0.bookmarkDate = nil
+        }
+        toastMessage = .success("Bookmarks deleted!")
+        getBookmarks()
     }
 }

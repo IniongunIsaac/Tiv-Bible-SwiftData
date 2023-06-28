@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EmptyStateView: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
+    var message: String
     
     var body: some View {
         VStack {
@@ -18,13 +19,13 @@ struct EmptyStateView: View {
                 .frame(width: 40, height: 40)
                 .fontWeight(.thin)
             
-            Text("Results will appear here")
+            Text(message)
                 .font(preferenceStore.font(size: 16))
         }
     }
 }
 
 #Preview {
-    EmptyStateView()
+    EmptyStateView(message: "No content")
         .environmentObject(PreferenceStore())
 }
