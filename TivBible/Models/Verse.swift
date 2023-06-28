@@ -17,6 +17,7 @@ final class Verse {
     var text: String
     var number: Int
     var highlightColor: String
+    var highlightDate: Date?
     var isBookmarked: Bool
     var bookmarkDate: Date?
     var chapter: Chapter?
@@ -29,6 +30,7 @@ final class Verse {
         text: String,
         number: Int,
         highlightColor: String = "",
+        highlightDate: Date? = nil,
         isBookmarked: Bool = false,
         chapter: Chapter? = nil,
         bookmarkDate: Date? = nil
@@ -38,6 +40,7 @@ final class Verse {
         self.text = text
         self.number = number
         self.highlightColor = highlightColor
+        self.highlightDate = highlightDate
         self.isBookmarked = isBookmarked
         self.chapter = chapter
         self.bookmarkDate = bookmarkDate

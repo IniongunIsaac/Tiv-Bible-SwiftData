@@ -55,6 +55,8 @@
 		552BB27D2A41CE8300BB3A86 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27C2A41CE8300BB3A86 /* AppTheme.swift */; };
 		552BB27F2A41CF0A00BB3A86 /* AppThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB27E2A41CF0A00BB3A86 /* AppThemesView.swift */; };
 		552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2802A41E6CD00BB3A86 /* Constants.swift */; };
+		554230222A4C1AFE001EC310 /* MiscListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554230212A4C1AFE001EC310 /* MiscListViewModel.swift */; };
+		554230242A4C1F6B001EC310 /* MiscListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554230232A4C1F6B001EC310 /* MiscListScreen.swift */; };
 		5548BE282A48A93500E8974A /* MiscItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548BE272A48A93500E8974A /* MiscItem.swift */; };
 		55500E522A45ACB70074BC67 /* IsScrolling in Frameworks */ = {isa = PBXBuildFile; productRef = 55500E512A45ACB70074BC67 /* IsScrolling */; };
 		55500E552A45B6D40074BC67 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55500E542A45B6D40074BC67 /* SearchViewModel.swift */; };
@@ -68,8 +70,6 @@
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
 		555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576D12A38DC2200DF230E /* MainContentScreen.swift */; };
 		555576D42A392B6F00DF230E /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576D32A392B6F00DF230E /* ReaderViewModel.swift */; };
-		555643B62A48E49500D53C20 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555643B52A48E49500D53C20 /* BookmarksViewModel.swift */; };
-		555643B82A48E57800D53C20 /* BookmarksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555643B72A48E57800D53C20 /* BookmarksScreen.swift */; };
 		556D8D702A44971300211481 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D6F2A44971300211481 /* BooksViewModel.swift */; };
 		556D8D722A44974600211481 /* BooksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D712A44974600211481 /* BooksScreen.swift */; };
 		556D8D742A44A29E00211481 /* BookSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D732A44A29E00211481 /* BookSortType.swift */; };
@@ -198,6 +198,8 @@
 		552BB27C2A41CE8300BB3A86 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		552BB27E2A41CF0A00BB3A86 /* AppThemesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemesView.swift; sourceTree = "<group>"; };
 		552BB2802A41E6CD00BB3A86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		554230212A4C1AFE001EC310 /* MiscListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscListViewModel.swift; sourceTree = "<group>"; };
+		554230232A4C1F6B001EC310 /* MiscListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscListScreen.swift; sourceTree = "<group>"; };
 		5548BE272A48A93500E8974A /* MiscItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItem.swift; sourceTree = "<group>"; };
 		55500E542A45B6D40074BC67 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		55500E562A45D8D60074BC67 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
@@ -210,8 +212,6 @@
 		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
 		555576D12A38DC2200DF230E /* MainContentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentScreen.swift; sourceTree = "<group>"; };
 		555576D32A392B6F00DF230E /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
-		555643B52A48E49500D53C20 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
-		555643B72A48E57800D53C20 /* BookmarksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksScreen.swift; sourceTree = "<group>"; };
 		556D8D6F2A44971300211481 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		556D8D712A44974600211481 /* BooksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksScreen.swift; sourceTree = "<group>"; };
 		556D8D732A44A29E00211481 /* BookSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSortType.swift; sourceTree = "<group>"; };
@@ -459,7 +459,6 @@
 		5503ADD42A37CA8A006E6C79 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				555643B42A48E41300D53C20 /* Bookmarks */,
 				55500E532A45B67B0074BC67 /* Search */,
 				556D8D6E2A44970100211481 /* Books */,
 				555576CA2A38DB8500DF230E /* Reader */,
@@ -516,6 +515,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		554230252A4C294B001EC310 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				5595A4FF2A4B6F7100270A5B /* MiscItemAction.swift */,
+				5595A5012A4B704500270A5B /* MiscItemActionsView.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		554230262A4C2957001EC310 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				554230212A4C1AFE001EC310 /* MiscListViewModel.swift */,
+				554230232A4C1F6B001EC310 /* MiscListScreen.swift */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
 		55500E532A45B67B0074BC67 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,10 +557,10 @@
 		555576C82A38DB4900DF230E /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				554230262A4C2957001EC310 /* Lists */,
+				554230252A4C294B001EC310 /* Actions */,
 				555576CF2A38DBF900DF230E /* MiscScreen.swift */,
 				5548BE272A48A93500E8974A /* MiscItem.swift */,
-				5595A4FF2A4B6F7100270A5B /* MiscItemAction.swift */,
-				5595A5012A4B704500270A5B /* MiscItemActionsView.swift */,
 				5595A5032A4B70BF00270A5B /* MiscItemButton.swift */,
 			);
 			path = Misc;
@@ -566,15 +583,6 @@
 				552BB2682A40E75200BB3A86 /* NotesScreen.swift */,
 			);
 			path = Reader;
-			sourceTree = "<group>";
-		};
-		555643B42A48E41300D53C20 /* Bookmarks */ = {
-			isa = PBXGroup;
-			children = (
-				555643B52A48E49500D53C20 /* BookmarksViewModel.swift */,
-				555643B72A48E57800D53C20 /* BookmarksScreen.swift */,
-			);
-			path = Bookmarks;
 			sourceTree = "<group>";
 		};
 		556D8D6E2A44970100211481 /* Books */ = {
@@ -870,7 +878,6 @@
 				55500E5E2A4666950074BC67 /* SearchChaptersView.swift in Sources */,
 				551D0B1C2A3CF41A00449307 /* RoundedCornersShape.swift in Sources */,
 				551D0B1A2A3CE8F200449307 /* VerseTapAction.swift in Sources */,
-				555643B82A48E57800D53C20 /* BookmarksScreen.swift in Sources */,
 				552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */,
 				5503ADBB2A37C886006E6C79 /* AppStorage+.swift in Sources */,
 				551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */,
@@ -890,7 +897,6 @@
 				5503ADB62A37C7F8006E6C79 /* Code+.swift in Sources */,
 				5503ADD72A37CACE006E6C79 /* SetupScreen.swift in Sources */,
 				555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */,
-				555643B62A48E49500D53C20 /* BookmarksViewModel.swift in Sources */,
 				5503ADBD2A37C8B3006E6C79 /* PreferenceStore.swift in Sources */,
 				551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */,
 				552BB27D2A41CE8300BB3A86 /* AppTheme.swift in Sources */,
@@ -901,6 +907,7 @@
 				551D0B162A3CDE5B00449307 /* VerseTapActionsView.swift in Sources */,
 				556D8D772A44B7F400211481 /* BookRowView.swift in Sources */,
 				5595A5042A4B70BF00270A5B /* MiscItemButton.swift in Sources */,
+				554230242A4C1F6B001EC310 /* MiscListScreen.swift in Sources */,
 				55500E5C2A4664DF0074BC67 /* SearchBooksView.swift in Sources */,
 				555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */,
 				552BB26B2A41707500BB3A86 /* NoteToken.swift in Sources */,
@@ -911,6 +918,7 @@
 				5548BE282A48A93500E8974A /* MiscItem.swift in Sources */,
 				5503ADB42A37C7D9006E6C79 /* TivBibleError.swift in Sources */,
 				552BB2752A41C2CD00BB3A86 /* LineSpacingView.swift in Sources */,
+				554230222A4C1AFE001EC310 /* MiscListViewModel.swift in Sources */,
 				55730A0D2A4514D2008725DA /* NextButton.swift in Sources */,
 				552BB2642A409DC800BB3A86 /* ColorHex.swift in Sources */,
 				55EC1FE02A438ECD00DCA970 /* LineSpacingType.swift in Sources */,

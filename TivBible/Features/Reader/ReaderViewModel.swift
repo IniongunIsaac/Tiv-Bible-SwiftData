@@ -99,6 +99,7 @@ final class ReaderViewModel {
     func setHighlights(_ colorHex: ColorHex) {
         selectedVerses.forEach {
             $0.highlightColor = colorHex.rawValue
+            $0.highlightDate = Date()
         }
         refreshVerses()
     }
@@ -113,6 +114,7 @@ final class ReaderViewModel {
     func removeHighlights() {
         selectedVerses.forEach {
             $0.highlightColor = ""
+            $0.highlightDate = nil
         }
         refreshVerses()
     }

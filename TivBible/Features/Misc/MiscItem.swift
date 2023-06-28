@@ -38,26 +38,4 @@ enum MiscItem: String, CaseIterable {
         }
     }
     
-    var view: any View {
-        switch self {
-        case .bookmarks:
-            return BooksScreen()
-        case .highlights:
-            return EmptyView()
-        case .notes:
-            return EmptyView()
-        case .apostlesCreed:
-            return EmptyView()
-        case .commandments:
-            return EmptyView()
-        case .lordsPrayer:
-            return EmptyView()
-        case .share, .rating:
-            return EmptyView()
-        }
-    }
-    
-    var hasDetailView: Bool {
-        [.bookmarks, .highlights, .notes].contains(self)
-    }
 }

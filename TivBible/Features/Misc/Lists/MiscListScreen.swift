@@ -1,52 +1,48 @@
 //
-//  BookmarksScreen.swift
+//  MiscListScreen.swift
 //  TivBible
 //
-//  Created by Isaac Iniongun on 25/06/2023.
+//  Created by Isaac Iniongun on 28/06/2023.
 //
 
 import SwiftUI
 import AlertToast
 
-struct BookmarksScreen: View {
-    private var viewModel = BookmarksViewModel()
+struct MiscListScreen: View {
+    private var viewModel = MiscListViewModel()
     @EnvironmentObject private var preferenceStore: PreferenceStore
     @Environment(\.dismiss) private var dismiss
     @State private var showActions = false
     @State private var showToast = false
     @State private var showConfirmationAlert = false
-    @State private var selectedBookmark: Verse? = nil
+    @State private var selectedVerse: Verse? = nil
+    var miscItem: MiscItem
     
-    //TODO: See if we can write this code in this manner instead of going with what we have in the VM ATM
-    /*@Environment(\.modelContext) private var context
-    private let predicate = #Predicate<Verse> {
-        $0.isBookmarked
+    init(miscItem: MiscItem) {
+        self.miscItem = miscItem
     }
-    @Query(filter: #Predicate<Verse>(\.isBookmarked),
-           sort: \.bookmarkDate,
-           order: .forward)
-    private var bookmarks: [Verse]*/
     
     var body: some View {
         ZStack {
-            if viewModel.bookmarks.isNotEmpty {
-                List(viewModel.bookmarks) { bookmark in
+            if viewModel.verses.isNotEmpty {
+                List(viewModel.verses) { verse in
                     HStack {
                         RoundedRectangle(cornerRadius: 6)
+                            .fill(viewModel.fillColor(for: verse))
                             .frame(width: 5)
                         
                         VStack(alignment: .leading, spacing: 10) {
-                            Text(bookmark.text)
+                            Text(verse.text)
                                 .font(preferenceStore.font(size: 16))
                             
                             HStack {
-                                Text(bookmark.reference)
+                                Text(verse.reference)
                                     .font(preferenceStore.font(size: 15))
                                     .fontWeight(.bold)
                                 
                                 Spacer()
                                 
-                                Text(bookmark.bookmarkDate ?? Date(), style: .date)
+                                Text(verse.bookmarkDate ?? Date(), style: .date)
                                     .font(preferenceStore.font(size: 15))
                                     .foregroundStyle(.secondary)
                             }
@@ -57,7 +53,7 @@ struct BookmarksScreen: View {
                     .padding(.bottom, 15)
                     .onTapGesture {
                         withAnimation {
-                            selectedBookmark = bookmark
+                            selectedVerse = verse
                             showActions.toggle()
                         }
                     }
@@ -65,14 +61,15 @@ struct BookmarksScreen: View {
                 .scrollIndicators(.never)
                 .listStyle(.plain)
             } else {
-                EmptyStateView(message: "You have no bookmarks")
+                EmptyStateView(message: "You have no \(miscItem.rawValue.lowercased())")
             }
         }
-        .navigationTitle("Bookmarks")
+        .navigationTitle(miscItem.rawValue)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .onAppear {
-            viewModel.getBookmarks()
+            viewModel.miscItem = miscItem
+            viewModel.getVerses()
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -92,7 +89,7 @@ struct BookmarksScreen: View {
                         .font(preferenceStore.font())
                         .foregroundStyle(Color.systemRed)
                 }
-                .disabled(viewModel.bookmarks.isEmpty)
+                .disabled(viewModel.verses.isEmpty)
             }
         }
         .sheet(isPresented: $showActions) {
@@ -106,13 +103,13 @@ struct BookmarksScreen: View {
                 title: Text("Confirmation"),
                 message: Text("Are you sure you want to proceed?"),
                 primaryButton: .default(Text("Yes"), action: {
-                    viewModel.clearBookmarks()
+                    viewModel.clear()
                 }),
                 secondaryButton: .cancel()
             )
         }
         .toast(isPresenting: $showToast, alert: {
-            AlertToast(displayMode: .hud,
+            AlertToast(displayMode: .alert,
                        type: viewModel.toastMessage.alertType,
                        subTitle: viewModel.toastMessage.message)
         }, completion: {
@@ -129,25 +126,22 @@ struct BookmarksScreen: View {
     private func didChooseMiscItemAction(_ itemAction: MiscItemAction) {
         switch itemAction {
         case .readFullChapter:
-            preferenceStore.currentChapterUUID = selectedBookmark?.chapter?.id ?? ""
+            guard let chapterId = selectedVerse?.chapter?.id else { return }
+            preferenceStore.currentChapterUUID = chapterId
             preferenceStore.selectedTabItem = .read
             dismiss()
             
         case .share:
-            guard let selectedBookmark else { return }
-            selectedBookmark.shareableText.share()
+            guard let selectedVerse else { return }
+            selectedVerse.shareableText.share()
             
         case .copy:
-            guard let selectedBookmark else { return }
-            selectedBookmark.shareableText.copyToClipboard()
+            guard let selectedVerse else { return }
+            selectedVerse.shareableText.copyToClipboard()
             viewModel.toastMessage = .success("Copy success")
             
         case .delete:
-            viewModel.deleteBookmark(selectedBookmark)
+            viewModel.delete(selectedVerse)
         }
     }
 }
-
-//#Preview {
-//    BookmarksScreen()
-//}
