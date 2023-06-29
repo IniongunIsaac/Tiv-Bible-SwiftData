@@ -43,7 +43,7 @@
 		551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1F2A3CF54B00449307 /* IconTextButton.swift */; };
 		552BB2642A409DC800BB3A86 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2632A409DC800BB3A86 /* ColorHex.swift */; };
 		552BB2672A40C24000BB3A86 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 552BB2662A40C24000BB3A86 /* AlertToast */; };
-		552BB2692A40E75200BB3A86 /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2682A40E75200BB3A86 /* NotesScreen.swift */; };
+		552BB2692A40E75200BB3A86 /* TakeNotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2682A40E75200BB3A86 /* TakeNotesScreen.swift */; };
 		552BB26B2A41707500BB3A86 /* NoteToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB26A2A41707500BB3A86 /* NoteToken.swift */; };
 		552BB26D2A41851700BB3A86 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB26C2A41851700BB3A86 /* Note.swift */; };
 		552BB26F2A41B72500BB3A86 /* FontSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB26E2A41B72500BB3A86 /* FontSizeView.swift */; };
@@ -57,6 +57,11 @@
 		552BB2812A41E6CD00BB3A86 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2802A41E6CD00BB3A86 /* Constants.swift */; };
 		554230222A4C1AFE001EC310 /* MiscListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554230212A4C1AFE001EC310 /* MiscListViewModel.swift */; };
 		554230242A4C1F6B001EC310 /* MiscListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554230232A4C1F6B001EC310 /* MiscListScreen.swift */; };
+		554230292A4C36C5001EC310 /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554230282A4C36C5001EC310 /* NotesScreen.swift */; };
+		5542302B2A4C36E4001EC310 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542302A2A4C36E4001EC310 /* NotesViewModel.swift */; };
+		5542302D2A4C39DD001EC310 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542302C2A4C39DD001EC310 /* NoteView.swift */; };
+		5542302F2A4D5332001EC310 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542302E2A4D5332001EC310 /* Date+.swift */; };
+		554230312A4D575B001EC310 /* NoteVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554230302A4D575B001EC310 /* NoteVerse.swift */; };
 		5548BE282A48A93500E8974A /* MiscItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548BE272A48A93500E8974A /* MiscItem.swift */; };
 		55500E522A45ACB70074BC67 /* IsScrolling in Frameworks */ = {isa = PBXBuildFile; productRef = 55500E512A45ACB70074BC67 /* IsScrolling */; };
 		55500E552A45B6D40074BC67 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55500E542A45B6D40074BC67 /* SearchViewModel.swift */; };
@@ -186,7 +191,7 @@
 		551D0B1D2A3CF50E00449307 /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
 		551D0B1F2A3CF54B00449307 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
 		552BB2632A409DC800BB3A86 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
-		552BB2682A40E75200BB3A86 /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
+		552BB2682A40E75200BB3A86 /* TakeNotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeNotesScreen.swift; sourceTree = "<group>"; };
 		552BB26A2A41707500BB3A86 /* NoteToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToken.swift; sourceTree = "<group>"; };
 		552BB26C2A41851700BB3A86 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		552BB26E2A41B72500BB3A86 /* FontSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeView.swift; sourceTree = "<group>"; };
@@ -200,6 +205,11 @@
 		552BB2802A41E6CD00BB3A86 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		554230212A4C1AFE001EC310 /* MiscListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscListViewModel.swift; sourceTree = "<group>"; };
 		554230232A4C1F6B001EC310 /* MiscListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscListScreen.swift; sourceTree = "<group>"; };
+		554230282A4C36C5001EC310 /* NotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
+		5542302A2A4C36E4001EC310 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		5542302C2A4C39DD001EC310 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		5542302E2A4D5332001EC310 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		554230302A4D575B001EC310 /* NoteVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVerse.swift; sourceTree = "<group>"; };
 		5548BE272A48A93500E8974A /* MiscItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItem.swift; sourceTree = "<group>"; };
 		55500E542A45B6D40074BC67 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		55500E562A45D8D60074BC67 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
@@ -376,6 +386,7 @@
 				556D8D732A44A29E00211481 /* BookSortType.swift */,
 				5595A5052A4BEEBA00270A5B /* TabItem.swift */,
 				5595A5072A4C020100270A5B /* ToastMessage.swift */,
+				554230302A4D575B001EC310 /* NoteVerse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +401,7 @@
 				5503ADB52A37C7F8006E6C79 /* Code+.swift */,
 				55E42F802A38830300DBB619 /* String+.swift */,
 				552BB2802A41E6CD00BB3A86 /* Constants.swift */,
+				5542302E2A4D5332001EC310 /* Date+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,6 +471,7 @@
 		5503ADD42A37CA8A006E6C79 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				554230272A4C36A4001EC310 /* Notes */,
 				55500E532A45B67B0074BC67 /* Search */,
 				556D8D6E2A44970100211481 /* Books */,
 				555576CA2A38DB8500DF230E /* Reader */,
@@ -511,6 +524,7 @@
 				552BB2702A41C14C00BB3A86 /* FontSizeButton.swift */,
 				552BB2722A41C1E400BB3A86 /* IconButton.swift */,
 				552BB2782A41C9C900BB3A86 /* FontStyleButton.swift */,
+				5542302C2A4C39DD001EC310 /* NoteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -531,6 +545,15 @@
 				554230232A4C1F6B001EC310 /* MiscListScreen.swift */,
 			);
 			path = Lists;
+			sourceTree = "<group>";
+		};
+		554230272A4C36A4001EC310 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				554230282A4C36C5001EC310 /* NotesScreen.swift */,
+				5542302A2A4C36E4001EC310 /* NotesViewModel.swift */,
+			);
+			path = Notes;
 			sourceTree = "<group>";
 		};
 		55500E532A45B67B0074BC67 /* Search */ = {
@@ -580,7 +603,7 @@
 				551D0B142A3CDE3600449307 /* Views */,
 				555576CB2A38DBE100DF230E /* ReaderScreen.swift */,
 				555576D32A392B6F00DF230E /* ReaderViewModel.swift */,
-				552BB2682A40E75200BB3A86 /* NotesScreen.swift */,
+				552BB2682A40E75200BB3A86 /* TakeNotesScreen.swift */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -868,6 +891,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5542302F2A4D5332001EC310 /* Date+.swift in Sources */,
 				5503ADB92A37C857006E6C79 /* PreferenceStoreKey.swift in Sources */,
 				5503ADA92A37C0A8006E6C79 /* Verse.swift in Sources */,
 				5503ADB22A37C7B9006E6C79 /* Font+.swift in Sources */,
@@ -887,6 +911,7 @@
 				5595A5002A4B6F7100270A5B /* MiscItemAction.swift in Sources */,
 				55730A0B2A44FF7D008725DA /* DisclosureGroupExpansionHandler.swift in Sources */,
 				5503ADA52A37C095006E6C79 /* Chapter.swift in Sources */,
+				554230292A4C36C5001EC310 /* NotesScreen.swift in Sources */,
 				5503ADAC2A37C762006E6C79 /* Data+.swift in Sources */,
 				5503ADAE2A37C776006E6C79 /* View+.swift in Sources */,
 				5503ADA72A37C09E006E6C79 /* Book.swift in Sources */,
@@ -903,8 +928,9 @@
 				555576D42A392B6F00DF230E /* ReaderViewModel.swift in Sources */,
 				552BB2732A41C1E400BB3A86 /* IconButton.swift in Sources */,
 				552BB26D2A41851700BB3A86 /* Note.swift in Sources */,
-				552BB2692A40E75200BB3A86 /* NotesScreen.swift in Sources */,
+				552BB2692A40E75200BB3A86 /* TakeNotesScreen.swift in Sources */,
 				551D0B162A3CDE5B00449307 /* VerseTapActionsView.swift in Sources */,
+				5542302B2A4C36E4001EC310 /* NotesViewModel.swift in Sources */,
 				556D8D772A44B7F400211481 /* BookRowView.swift in Sources */,
 				5595A5042A4B70BF00270A5B /* MiscItemButton.swift in Sources */,
 				554230242A4C1F6B001EC310 /* MiscListScreen.swift in Sources */,
@@ -912,6 +938,7 @@
 				555576CE2A38DBF100DF230E /* SettingsScreen.swift in Sources */,
 				552BB26B2A41707500BB3A86 /* NoteToken.swift in Sources */,
 				5503ADC02A37C8DD006E6C79 /* DependencyType.swift in Sources */,
+				5542302D2A4C39DD001EC310 /* NoteView.swift in Sources */,
 				556D8D702A44971300211481 /* BooksViewModel.swift in Sources */,
 				55500E602A466B530074BC67 /* SearchResultsView.swift in Sources */,
 				556D8D742A44A29E00211481 /* BookSortType.swift in Sources */,
@@ -927,6 +954,7 @@
 				555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */,
 				55500E572A45D8D60074BC67 /* SearchScreen.swift in Sources */,
 				5595A5082A4C020100270A5B /* ToastMessage.swift in Sources */,
+				554230312A4D575B001EC310 /* NoteVerse.swift in Sources */,
 				552BB2792A41C9C900BB3A86 /* FontStyleButton.swift in Sources */,
 				5503ADC22A37C8F0006E6C79 /* DependencyContainer.swift in Sources */,
 				552BB27B2A41CC1500BB3A86 /* StylesView.swift in Sources */,

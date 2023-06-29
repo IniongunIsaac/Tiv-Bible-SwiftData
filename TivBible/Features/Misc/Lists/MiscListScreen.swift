@@ -26,30 +26,11 @@ struct MiscListScreen: View {
         ZStack {
             if viewModel.verses.isNotEmpty {
                 List(viewModel.verses) { verse in
-                    HStack {
-                        RoundedRectangle(cornerRadius: 6)
-                            .fill(viewModel.fillColor(for: verse))
-                            .frame(width: 5)
-                        
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(verse.text)
-                                .font(preferenceStore.font(size: 16))
-                            
-                            HStack {
-                                Text(verse.reference)
-                                    .font(preferenceStore.font(size: 15))
-                                    .fontWeight(.bold)
-                                
-                                Spacer()
-                                
-                                Text(verse.bookmarkDate ?? Date(), style: .date)
-                                    .font(preferenceStore.font(size: 15))
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
-                        
-                        Spacer()
-                    }
+                    NoteView(text: verse.text,
+                             reference: verse.reference,
+                             date: (verse.bookmarkDate ?? Date()).dateString,
+                             barColor: viewModel.fillColor(for: verse))
+                    .listRowSeparator(.hidden)
                     .padding(.bottom, 15)
                     .onTapGesture {
                         withAnimation {

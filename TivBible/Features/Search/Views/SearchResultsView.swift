@@ -15,20 +15,7 @@ struct SearchResultsView: View {
     
     var body: some View {
         List(viewModel.filteredVerses) { verse in
-            HStack {
-                RoundedRectangle(cornerRadius: 6)
-                    .frame(width: 5)
-                
-                VStack(alignment: .leading, spacing: 10) {
-                    Text(verse.text)
-                        .font(preferenceStore.font(size: 16))
-                    Text(verse.reference)
-                        .font(preferenceStore.font(size: 15))
-                        .fontWeight(.bold)
-                }
-                
-                Spacer()
-            }
+            NoteView(text: verse.text, reference: verse.reference)
             .padding(.bottom, 15)
             .onTapGesture {
                 withAnimation {

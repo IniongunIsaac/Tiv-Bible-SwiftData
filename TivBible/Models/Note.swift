@@ -10,16 +10,28 @@ import SwiftData
 
 @Model
 final class Note {
+    @Attribute(.unique) var id: String
     var takenOn: Date
-    var verses: [Verse]
+    var verses: [NoteVerse]
     var comment: String
     
-    init(takenOn: Date = Date(),
-        verses: [Verse],
+    init(id: String = UUID().uuidString,
+        takenOn: Date = Date(),
+        verses: [NoteVerse],
         comment: String
     ) {
+        self.id = id
         self.takenOn = takenOn
         self.verses = verses
         self.comment = comment
+    }
+    
+    var reference: String {
+        guard let verse = verses.first, let chapter = verse.chapter, let book = chapter.book else { return "---" }
+        return "\(book.name) \(chapter.number):\(verses.groups.joined(separator: ", "))"
+    }
+    
+    var dateText: String {
+        takenOn.formatted()
     }
 }

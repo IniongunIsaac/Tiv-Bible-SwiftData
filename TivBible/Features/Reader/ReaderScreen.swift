@@ -135,7 +135,7 @@ struct ReaderScreen: View {
                 viewModel.errorMessage = ""
             })
             .sheet(isPresented: $showNotes) {
-                NotesScreen(viewModel: viewModel)
+                TakeNotesScreen(viewModel: viewModel)
             }
             .sheet(isPresented: $showStyles) {
                 StylesView(showStyles: $showStyles)

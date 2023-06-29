@@ -144,7 +144,8 @@ final class ReaderViewModel {
     
     @MainActor
     func saveNotes() {
-        let newNote = Note(verses: selectedVerses, comment: versesNotes)
+        let newNote = Note(verses: selectedVerses.noteVerses.sorted { $0.number < $1.number },
+                           comment: versesNotes)
         context.insert(newNote)
         versesNotes = ""
         notesTokens = []

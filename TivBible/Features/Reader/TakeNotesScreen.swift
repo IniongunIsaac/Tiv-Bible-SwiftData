@@ -1,5 +1,5 @@
 //
-//  NotesScreen.swift
+//  TakeNotesScreen.swift
 //  TivBible
 //
 //  Created by Isaac Iniongun on 19/06/2023.
@@ -7,36 +7,27 @@
 
 import SwiftUI
 
-struct NotesScreen: View {
+struct TakeNotesScreen: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var preferenceStore: PreferenceStore
     @Bindable var viewModel: ReaderViewModel
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.notesTokens) { token in
-                    HStack {
-                        RoundedRectangle(cornerRadius: 6)
-                            .frame(width: 5)
-                        
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(token.text)
-                            Text(token.reference)
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                        }
-                        
-                        Spacer()
-                    }
+                    NoteView(text: token.text, reference: token.reference)
                     
                     Spacer(minLength: 5)
                 }
                 
                 TextEditor(text: $viewModel.versesNotes)
+                    .font(preferenceStore.font())
                     .frame(minHeight: 200)
                     .overlay(alignment: .topLeading) {
                         viewModel.versesNotes.isEmpty ?
                         Text("What would you like to say?")
+                            .font(preferenceStore.font())
                             .foregroundColor(.systemGray)
                             .offset(x: 6, y: 10)
                         : nil
@@ -55,6 +46,7 @@ struct NotesScreen: View {
                         dismiss()
                     } label: {
                         Text("Dismiss")
+                            .font(preferenceStore.font(size: 14))
                             .fontWeight(.semibold)
                     }
                     .tint(.systemRed)
@@ -65,7 +57,7 @@ struct NotesScreen: View {
                         viewModel.saveNotes()
                     } label: {
                         Text("Save")
-                            .font(.callout)
+                            .font(preferenceStore.font(size: 14))
                             .padding(.horizontal, 4)
                             .padding(.vertical, 2)
                     }
@@ -83,6 +75,7 @@ struct NotesScreen: View {
     }
 }
 
-#Preview {
-    NotesScreen(viewModel: ReaderViewModel())
+#Preview("TakeNotesScreen") {
+    TakeNotesScreen(viewModel: ReaderViewModel())
+        .environmentObject(PreferenceStore())
 }

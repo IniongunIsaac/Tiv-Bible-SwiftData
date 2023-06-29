@@ -33,6 +33,9 @@ struct MiscScreen: View {
             .navigationDestination(isPresented: $showHighlights) {
                 MiscListScreen(miscItem: .highlights)
             }
+            .navigationDestination(isPresented: $showNotes) {
+                NotesScreen()
+            }
         }
     }
 }
