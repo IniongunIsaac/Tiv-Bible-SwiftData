@@ -57,7 +57,7 @@ final class NoteVerse {
 
 extension Array where Element == NoteVerse {
     var groups: [String] {
-        let numbers = self.sorted { $0.number < $1.number }.map { $0.number }
+        let numbers = sorted { $0.number < $1.number }.map { $0.number }
         var left: Int?
         var right: Int?
         var groups = [String]()
@@ -86,6 +86,6 @@ extension Array where Element == NoteVerse {
     }
     
     var shareableText: String {
-        map { "v\($0.number). \($0.text)" }.joined(separator: "\n")
+        sorted { $0.number < $1.number }.map { "v\($0.number). \($0.text)" }.joined(separator: "\n")
     }
 }

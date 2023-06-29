@@ -28,10 +28,10 @@ final class Note {
     
     var reference: String {
         guard let verse = verses.first, let chapter = verse.chapter, let book = chapter.book else { return "---" }
-        return "\(book.name) \(chapter.number):\(verses.groups.joined(separator: ", "))"
+        return "\(book.name) \(chapter.number):\(verses.groups.joined(separator: ", "))".uppercased()
     }
     
-    var dateText: String {
-        takenOn.formatted()
+    var shareText: String {
+        "\(reference)\n\(verses.shareableText)"
     }
 }

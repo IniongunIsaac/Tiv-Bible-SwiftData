@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IconButton: View {
+    @EnvironmentObject private var preferenceStore: PreferenceStore
     var iconName: String
     var horizontalPadding: CGFloat = 4
     var verticalPadding: CGFloat = 6
@@ -18,7 +19,7 @@ struct IconButton: View {
             action?()
         } label: {
             Image(systemName: iconName)
-                .font(.title2)
+                .font(preferenceStore.font())
                 .padding(.horizontal, horizontalPadding)
                 .padding(.vertical, verticalPadding)
         }
@@ -30,4 +31,6 @@ struct IconButton: View {
 
 #Preview {
     IconButton(iconName: "1.lane")
+        .environmentObject(PreferenceStore())
 }
+//ButtonBorderShape BorderedButtonStyle

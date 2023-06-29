@@ -113,8 +113,10 @@ struct MiscListScreen: View {
             dismiss()
             
         case .share:
-            guard let selectedVerse else { return }
-            selectedVerse.shareableText.share()
+            runAfter {
+                guard let selectedVerse else { return }
+                selectedVerse.shareableText.share()
+            }
             
         case .copy:
             guard let selectedVerse else { return }
