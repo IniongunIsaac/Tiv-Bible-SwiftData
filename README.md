@@ -18,8 +18,8 @@ The app allows you to select and highlight verses using one of several colors pr
 ##### Notes:
 While reading the bible, the app allows you to take notes for any selected verses of your choice. A list of verses with comments alongside them can be viewed at a later time and you can then decide to share them, copy or delete them respectively.
 
-##### Search and History
-The app contains a robust functionality that allows you to search through the entire bible. Upon successful search, a list of search results is displayed and you can choose to proceed with reading the full chapter or verse of any of the search results. In addition to this, you can also find lists of your recent searches and reading history respectively.
+##### Search
+The app contains a robust functionality that allows you to search through the entire bible. Upon successful search, a list of search results is displayed and you can choose to proceed with reading the full chapter or verse of any of the search results.
 
 ##### Custom Settings
 The app allows you to dynamically:
