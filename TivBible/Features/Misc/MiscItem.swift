@@ -13,7 +13,7 @@ enum MiscItem: String, CaseIterable {
          notes = "Notes",
          apostlesCreed = "Akar a Puekarahar",
          commandments = "Atindi a Pue",
-         lordsPrayer = "Msen U Ter Wase",
+         theLordsPrayer = "Msen U Ter Wase",
          share = "Share with friends",
          rating = "Rate on Appstore"
     
@@ -29,7 +29,7 @@ enum MiscItem: String, CaseIterable {
             return "text.book.closed"
         case .commandments:
             return "book.closed"
-        case .lordsPrayer:
+        case .theLordsPrayer:
             return "text.book.closed"
         case .share:
             return "square.and.arrow.up"

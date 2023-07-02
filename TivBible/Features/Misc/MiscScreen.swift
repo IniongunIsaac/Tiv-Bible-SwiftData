@@ -13,6 +13,9 @@ struct MiscScreen: View {
     @State private var showHighlights = false
     @State private var showMiscList = false
     @State private var showNotes = false
+    @State private var showApostlesCreed = false
+    @State private var showCommandments = false
+    @State private var showPrayer = false
     
     var body: some View {
         NavigationStack {
@@ -21,6 +24,9 @@ struct MiscScreen: View {
                     showBookmarks = item == .bookmarks
                     showHighlights = item == .highlights
                     showNotes = item == .notes
+                    showApostlesCreed = item == .apostlesCreed
+                    showCommandments = item == .commandments
+                    showPrayer = item == .theLordsPrayer
                 }
                 .listRowSeparator(.hidden)
             }
@@ -35,6 +41,16 @@ struct MiscScreen: View {
             }
             .navigationDestination(isPresented: $showNotes) {
                 NotesScreen()
+            }
+            .sheet(isPresented: $showApostlesCreed) {
+                ApostlesCreedView()
+            }
+            .sheet(isPresented: $showCommandments) {
+                CommandmentsView()
+            }
+            .sheet(isPresented: $showPrayer) {
+                TheLordsPrayerView()
+                    .presentationDetents([.height(350)])
             }
         }
     }
