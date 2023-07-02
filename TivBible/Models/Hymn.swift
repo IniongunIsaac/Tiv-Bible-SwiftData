@@ -35,4 +35,6 @@ final class Hymn {
     func contains(_ searchText: String) -> Bool {
         number.string.contains(searchText) || title.insensitiveContains(searchText) || versesText.insensitiveContains(searchText)
     }
+    
+    var shareableContent: String { "\(title)\n\n\(verses.enumerated().map { "\($0.offset + 1). \($0.element)" }.joined(separator: "\n\n")) Chorus: \(chorus)" }
 }

@@ -26,8 +26,10 @@ final class HymnsViewModel {
         let sortDescriptor = SortDescriptor<Hymn>(\.number)
         let fetchDescriptor = FetchDescriptor(sortBy: [sortDescriptor])
         do {
-            hymns = try context.fetch(fetchDescriptor)
+            let hymns = try context.fetch(fetchDescriptor)
+            self.hymns = hymns
             filteredHymns = hymns
+            debugPrint(filteredHymns.count)
         } catch {
             debugPrint("Unable to get hymns")
         }

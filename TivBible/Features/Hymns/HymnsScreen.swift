@@ -10,6 +10,8 @@ import SwiftUI
 struct HymnsScreen: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
     @Bindable private var viewModel = HymnsViewModel()
+    @State private var showDetail = false
+    @State private var selectedHymn: Hymn?
     
     var body: some View {
         NavigationStack {
@@ -30,6 +32,12 @@ struct HymnsScreen: View {
                                 Text((hymn.versesText).trimmingCharacters(in: .whitespacesAndNewlines))
                                     .font(preferenceStore.font())
                                     .lineLimit(3)
+                            }
+                        }
+                        .onTapGesture {
+                            selectedHymn = hymn
+                            withAnimation {
+                                showDetail.toggle()
                             }
                         }
                     }
@@ -53,6 +61,13 @@ struct HymnsScreen: View {
             }
             .onChange(of: viewModel.searchText) {
                 viewModel.search()
+            }
+            .sheet(isPresented: $showDetail) {
+                if let selectedHymn {
+                    HymnDetailView(hymn: selectedHymn)
+                } else {
+                    EmptyView()
+                }
             }
         }
     }

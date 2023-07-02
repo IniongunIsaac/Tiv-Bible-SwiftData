@@ -38,7 +38,7 @@ extension FormattableNumeric {
         Int(truncating: self as! NSNumber)
     }
     
-    func string(fractionDigits:Int) -> String {
+    func string(fractionDigits: Int) -> String {
         let formatter = with(NumberFormatter()) {
             $0.minimumFractionDigits = fractionDigits
             $0.maximumFractionDigits = fractionDigits
