@@ -32,8 +32,8 @@ struct MiscItemButton: View {
             .font(preferenceStore.font(size: 16))
             .padding(.horizontal, 5)
             .padding(.vertical, 8)
+            .foregroundStyle(Color.label)
         }
-        .tint(.label)
         .buttonBorderShape(.roundedRectangle)
         .buttonStyle(.bordered)
     }

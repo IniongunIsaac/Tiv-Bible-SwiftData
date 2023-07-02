@@ -59,6 +59,7 @@ struct CommandmentsView: View {
                     IconTextButton(title: action.rawValue, icon: action.iconName) {
                         didTapAction(action)
                     }
+                    .background(.ultraThinMaterial)
                 }
             }
         }

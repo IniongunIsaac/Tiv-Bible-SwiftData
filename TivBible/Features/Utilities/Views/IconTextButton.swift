@@ -28,10 +28,22 @@ struct IconTextButton: View {
         .background(Color.tertiaryLabel .cornerRadius(4))
         .buttonStyle(.bordered)
         .buttonBorderShape(.roundedRectangle(radius: 4))
-        
+        //.background(.ultraThickMaterial)
     }
 }
 
-#Preview("IconTextButton") {
-    IconTextButton(title: "Share".uppercased(), icon: "square.and.arrow.up")
+//#Preview("IconTextButton") {
+//    IconTextButton(title: "Share".uppercased(), icon: "square.and.arrow.up")
+//}
+
+struct BlurView: UIViewRepresentable {
+    public typealias UIViewType = UIVisualEffectView
+    
+    public func makeUIView(context: Context) -> UIVisualEffectView {
+        return UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
+    }
+    
+    public func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = UIBlurEffect(style: .systemMaterial)
+    }
 }
