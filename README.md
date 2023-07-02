@@ -30,8 +30,8 @@ The app allows you to dynamically:
 
 ### Mobile apps
 
-[<img src="/Tiv%20Bible/Screenshots/appstore-badge.png" height="50">](https://apps.apple.com/us/app/tiv-bible/id1584060052)
-[<img src="/Tiv%20Bible/Screenshots/google-play-badge.png" height="50">](https://play.google.com/store/apps/details?id=com.iniongun.tivbible)
+[<img src="/TivBible/Screenshots/appstore-badge.png" height="50">](https://apps.apple.com/us/app/tiv-bible/id1584060052)
+[<img src="/TivBible/Screenshots/google-play-badge.png" height="50">](https://play.google.com/store/apps/details?id=com.iniongun.tivbible)
 
 ## Technology Stack
 The application is built using the following:
