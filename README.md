@@ -42,7 +42,7 @@ The application is built using the following:
 * MVVM-ish
 
 ## Screenshots
-[<img src="/Tiv%20Bible/Screenshots/1.png" align="center" width ="22%" hspace="0" vspace="10">](/Tiv%20Bible/Screenshots/1.png)
-[<img src="/Tiv%20Bible/Screenshots/2.png" align="center" width ="22%" hspace="0" vspace="10">](/Tiv%20Bible/Screenshots/2.png)
-[<img src="/Tiv%20Bible/Screenshots/3.png" align="center" width ="22%" hspace="0" vspace="10">](/Tiv%20Bible/Screenshots/3.png)
-[<img src="/Tiv%20Bible/Screenshots/4.png" align="center" width ="22%" hspace="0" vspace="10">](/Tiv%20Bible/Screenshots/4.png)
+[<img src="/TivBible/Screenshots/1.png" align="center" width ="22%" hspace="0" vspace="10">](/TivBible/Screenshots/1.png)
+[<img src="/TivBible/Screenshots/2.png" align="center" width ="22%" hspace="0" vspace="10">](/TivBible/Screenshots/2.png)
+[<img src="/TivBible/Screenshots/3.png" align="center" width ="22%" hspace="0" vspace="10">](/TivBible/Screenshots/3.png)
+[<img src="/TivBible/Screenshots/4.png" align="center" width ="22%" hspace="0" vspace="10">](/TivBible/Screenshots/4.png)
