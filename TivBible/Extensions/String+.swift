@@ -27,4 +27,8 @@ extension String {
     func copyToClipboard() {
         UIPasteboard.general.string = self
     }
+    
+    func insensitiveContains(_ value: String) -> Bool {
+        lowercased().localizedCaseInsensitiveContains(value.lowercased())
+    }
 }

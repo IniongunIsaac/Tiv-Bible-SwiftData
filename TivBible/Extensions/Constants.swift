@@ -10,7 +10,7 @@ import SwiftData
 import DeviceKit
 
 enum Constants {
-    static let dataModels: [any PersistentModel.Type] = [Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self]
+    static let dataModels: [any PersistentModel.Type] = [Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self]
     
     static let modelContainer: ModelContainer = try! ModelContainer(for: dataModels)
     

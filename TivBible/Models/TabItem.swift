@@ -9,6 +9,7 @@ import Foundation
 
 enum TabItem: Int {
     case read
+    case hymns
     case misc
     case settings
 }

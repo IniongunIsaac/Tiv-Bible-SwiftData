@@ -19,6 +19,13 @@ struct MainContentScreen: View {
                 }
                 .tag(TabItem.read)
             
+            HymnsScreen()
+                .tabItem {
+                    Image(systemName: "character.book.closed.fill")
+                    Text("Atsam")
+                }
+                .tag(TabItem.hymns)
+            
             MiscScreen()
                 .tabItem {
                     Image(systemName: "list.bullet.rectangle")
@@ -32,10 +39,6 @@ struct MainContentScreen: View {
                     Text("Settings")
                 }
                 .tag(TabItem.settings)
-        }
-        .onDisappear {
-            //print("MainContentScreen onDisappear")
-            //preferenceStore.selectedTabItem = .read
         }
     }
 }

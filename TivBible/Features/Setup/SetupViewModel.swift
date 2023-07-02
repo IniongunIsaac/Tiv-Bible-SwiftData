@@ -46,9 +46,11 @@ final class SetupViewModel: ObservableObject {
         dbInitializationInProgress = true
         
         var bibleData = [TivBibleData]()
+        var hymnsData = [HymnData]()
         
         do {
             bibleData = try await getBibleData() ?? []
+            hymnsData = try await getHymns() ?? []
         } catch {
             debugPrint("unable to get local bible data from json file \(error)")
         }
@@ -104,6 +106,20 @@ final class SetupViewModel: ObservableObject {
             
             saveDefaultChapter()
             
+            let hymns = hymnsData.enumerated()
+                .map {
+                    Hymn(
+                        title: $0.element.title,
+                        chorus: $0.element.chorus,
+                        number: $0.offset + 1,
+                        verses: $0.element.verses
+                    )
+                }
+            
+            for hymn in hymns {
+                context.insert(hymn)
+            }
+            
             preferenceStore.hasSetupDB = true
             dbInitializationInProgress = false
         }
@@ -117,6 +133,22 @@ final class SetupViewModel: ObservableObject {
             
             do {
                 return try jsonData.decode(into: [TivBibleData].self)
+            } catch {
+                throw TivBibleError.unableToDecodeData
+            }
+        }
+        
+        return try await task.value
+    }
+    
+    private func getHymns() async throws -> [HymnData]? {
+        let task = Task {
+            guard let jsonData = jsonData(from: "atsam_a_ikyenge") else {
+                throw TivBibleError.unableToLoadLocalJSON
+            }
+            
+            do {
+                return try jsonData.decode(into: [HymnData].self)
             } catch {
                 throw TivBibleError.unableToDecodeData
             }
