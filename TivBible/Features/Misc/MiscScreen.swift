@@ -15,18 +15,13 @@ struct MiscScreen: View {
     @State private var showNotes = false
     @State private var showApostlesCreed = false
     @State private var showCommandments = false
-    @State private var showPrayer = false
+    @State private var showTheLordsPrayer = false
     
     var body: some View {
         NavigationStack {
             List(MiscItem.allCases, id: \.self) { item in
                 MiscItemButton(title: item.rawValue, iconName: item.iconName) {
-                    showBookmarks = item == .bookmarks
-                    showHighlights = item == .highlights
-                    showNotes = item == .notes
-                    showApostlesCreed = item == .apostlesCreed
-                    showCommandments = item == .commandments
-                    showPrayer = item == .theLordsPrayer
+                    didTapMiscItem(item)
                 }
                 .listRowSeparator(.hidden)
             }
@@ -48,10 +43,23 @@ struct MiscScreen: View {
             .sheet(isPresented: $showCommandments) {
                 CommandmentsView()
             }
-            .sheet(isPresented: $showPrayer) {
+            .sheet(isPresented: $showTheLordsPrayer) {
                 TheLordsPrayerView()
                     .presentationDetents([.height(350)])
             }
+        }
+    }
+    
+    private func didTapMiscItem(_ item: MiscItem) {
+        showBookmarks = item == .bookmarks
+        showHighlights = item == .highlights
+        showNotes = item == .notes
+        showApostlesCreed = item == .apostlesCreed
+        showCommandments = item == .commandments
+        showTheLordsPrayer = item == .theLordsPrayer
+        
+        if item == .share {
+            Constants.shareableText.share()
         }
     }
 }

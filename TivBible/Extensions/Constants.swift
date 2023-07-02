@@ -75,4 +75,7 @@ enum Constants {
         
         static let shareableText = "\(title)\n\n\(content)"
     }
+    
+    static var shareableText = "The Tiv Bible Mobile App is a robust, user friendly, FREE and offline app that allows you to read the Holy Bible in Tiv language.\n\nIt has awesome, cool features such as:\n\n1. Copy/Paste of multiple verses\n\n2. Bookmarking multiple verses for later references.\n\n3. Highlighting verses using different highlight colors for emphasis.\n\n4. Changing font size and style dynamically while reading the bible.\n\n5. Dynamic switching between Light, Dark, System Default and Battery Saver Modes respectively.\n\n6. So much more to name a few!!!\n\nDownload Now: https://apps.apple.com/us/app/tiv-bible/id1584060052\n\nDon\'t forget to give the app a good rating on the AppStore!"
+    
 }
