@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import StoreKit
+import UIKit
 
 struct MiscScreen: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
@@ -51,16 +53,33 @@ struct MiscScreen: View {
     }
     
     private func didTapMiscItem(_ item: MiscItem) {
-        showBookmarks = item == .bookmarks
-        showHighlights = item == .highlights
-        showNotes = item == .notes
-        showApostlesCreed = item == .apostlesCreed
-        showCommandments = item == .commandments
-        showTheLordsPrayer = item == .theLordsPrayer
-        
-        if item == .share {
+        switch item {
+        case .bookmarks:
+            showBookmarks.toggle()
+        case .highlights:
+            showHighlights.toggle()
+        case .notes:
+            showNotes.toggle()
+        case .apostlesCreed:
+            showApostlesCreed.toggle()
+        case .commandments:
+            showCommandments.toggle()
+        case .theLordsPrayer:
+            showTheLordsPrayer.toggle()
+        case .share:
             Constants.shareableText.share()
+        case .rating:
+            rateApp()
         }
+    }
+    
+    private func rateApp() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        else {
+            print("WindowScene not available!!!")
+            return
+        }
+        SKStoreReviewController.requestReview(in: windowScene)
     }
 }
 
