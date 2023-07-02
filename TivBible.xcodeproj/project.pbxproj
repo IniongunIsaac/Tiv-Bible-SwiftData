@@ -65,6 +65,7 @@
 		55482F022A50B42B009C3370 /* ApostlesCreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55482F012A50B42B009C3370 /* ApostlesCreedView.swift */; };
 		55482F042A50BD96009C3370 /* CommandmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55482F032A50BD96009C3370 /* CommandmentsView.swift */; };
 		55482F062A50C127009C3370 /* TheLordsPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55482F052A50C127009C3370 /* TheLordsPrayerView.swift */; };
+		55482F082A51713D009C3370 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55482F072A51713D009C3370 /* README.md */; };
 		5548BE282A48A93500E8974A /* MiscItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548BE272A48A93500E8974A /* MiscItem.swift */; };
 		554F798F2A4E2A470096F8FA /* NoteCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F798E2A4E2A470096F8FA /* NoteCommentView.swift */; };
 		554F79912A4E32880096F8FA /* NoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F79902A4E32880096F8FA /* NoteDetailsView.swift */; };
@@ -219,6 +220,13 @@
 		55482F012A50B42B009C3370 /* ApostlesCreedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApostlesCreedView.swift; sourceTree = "<group>"; };
 		55482F032A50BD96009C3370 /* CommandmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandmentsView.swift; sourceTree = "<group>"; };
 		55482F052A50C127009C3370 /* TheLordsPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheLordsPrayerView.swift; sourceTree = "<group>"; };
+		55482F072A51713D009C3370 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		55482F0A2A51720C009C3370 /* appstore-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appstore-badge.png"; sourceTree = "<group>"; };
+		55482F0B2A51720C009C3370 /* google-play-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-play-badge.png"; sourceTree = "<group>"; };
+		55482F0C2A517312009C3370 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		55482F0D2A517312009C3370 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		55482F0E2A517312009C3370 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		55482F0F2A517312009C3370 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		5548BE272A48A93500E8974A /* MiscItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscItem.swift; sourceTree = "<group>"; };
 		554F798E2A4E2A470096F8FA /* NoteCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCommentView.swift; sourceTree = "<group>"; };
 		554F79902A4E32880096F8FA /* NoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsView.swift; sourceTree = "<group>"; };
@@ -323,6 +331,7 @@
 		5503AD692A37BF50006E6C79 = {
 			isa = PBXGroup;
 			children = (
+				55482F072A51713D009C3370 /* README.md */,
 				5503AD742A37BF50006E6C79 /* TivBible */,
 				5503AD872A37BF51006E6C79 /* TivBibleTests */,
 				5503AD912A37BF51006E6C79 /* TivBibleUITests */,
@@ -343,6 +352,7 @@
 		5503AD742A37BF50006E6C79 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
+				55482F092A5171DF009C3370 /* Screenshots */,
 				5503ADC52A37C975006E6C79 /* App */,
 				5503ADD42A37CA8A006E6C79 /* Features */,
 				5503ADBE2A37C8CC006E6C79 /* DI */,
@@ -579,6 +589,19 @@
 				55482F052A50C127009C3370 /* TheLordsPrayerView.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		55482F092A5171DF009C3370 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				55482F0C2A517312009C3370 /* 1.png */,
+				55482F0E2A517312009C3370 /* 2.png */,
+				55482F0D2A517312009C3370 /* 3.png */,
+				55482F0F2A517312009C3370 /* 4.png */,
+				55482F0A2A51720C009C3370 /* appstore-badge.png */,
+				55482F0B2A51720C009C3370 /* google-play-badge.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		554F798D2A4E2A200096F8FA /* Views */ = {
@@ -864,6 +887,7 @@
 				55EC1FFD2A43BBF700DCA970 /* Poppins-Medium.ttf in Resources */,
 				55EC1FFF2A43BBF700DCA970 /* Poppins-LightItalic.ttf in Resources */,
 				55EC20182A43BC3000DCA970 /* Lato-Thin.ttf in Resources */,
+				55482F082A51713D009C3370 /* README.md in Resources */,
 				55EC1FF52A43BBF700DCA970 /* Poppins-Italic.ttf in Resources */,
 				55EC200A2A43BC1300DCA970 /* Baskervville-Italic.ttf in Resources */,
 				55EC1FFC2A43BBF700DCA970 /* Poppins-SemiBold.ttf in Resources */,
