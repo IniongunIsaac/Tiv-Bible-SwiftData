@@ -139,7 +139,7 @@ struct ReaderScreen: View {
             }
             .sheet(isPresented: $showStyles) {
                 StylesView(showStyles: $showStyles)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.fraction(0.62)])
             }
             .sheet(isPresented: $showBooks) {
                 BooksScreen()

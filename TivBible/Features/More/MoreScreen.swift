@@ -1,16 +1,17 @@
 //
-//  MiscScreen.swift
+//  MoreScreen.swift
 //  TivBible
 //
-//  Created by Isaac Iniongun on 13/06/2023.
+//  Created by Isaac Iniongun on 06/07/2023.
 //
 
 import SwiftUI
-import StoreKit
-import UIKit
 
-struct MiscScreen: View {
+struct MoreScreen: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
+    private var verseActions: [MiscItem] = [.bookmarks, .highlights, .notes]
+    private var bibleActions: [MiscItem] = [.apostlesCreed, .commandments, .theLordsPrayer]
+    private var otherActions: [MiscItem] = [.share, .rating, .settings]
     @State private var showBookmarks = false
     @State private var showHighlights = false
     @State private var showMiscList = false
@@ -18,18 +19,40 @@ struct MiscScreen: View {
     @State private var showApostlesCreed = false
     @State private var showCommandments = false
     @State private var showTheLordsPrayer = false
+    @State private var showSettings = false
     
     var body: some View {
         NavigationStack {
-            List(MiscItem.allCases, id: \.self) { item in
-                MiscItemButton(title: item.rawValue, iconName: item.iconName) {
-                    didTapMiscItem(item)
+            List {
+                Section("YOUR VERSE ACTIONS") {
+                    ForEach(verseActions, id: \.self) { item in
+                        MiscItemButton(title: item.rawValue, iconName: item.iconName) {
+                            didTapMiscItem(item)
+                        }
+                    }
                 }
-                .listRowSeparator(.hidden)
+                
+                Section("INSIDE THE BIBLE") {
+                    ForEach(bibleActions, id: \.self) { item in
+                        MiscItemButton(title: item.rawValue, iconName: item.iconName) {
+                            didTapMiscItem(item)
+                        }
+                    }
+                }
+                
+                Section("OTHERS") {
+                    ForEach(otherActions, id: \.self) { item in
+                        MiscItemButton(title: item.rawValue, iconName: item.iconName) {
+                            didTapMiscItem(item)
+                        }
+                    }
+                }
+                
             }
-            .scrollIndicators(.never)
+            .font(preferenceStore.font(size: 11))
             .listStyle(.plain)
-            .navigationTitle("Miscelleneous")
+            .scrollIndicators(.never)
+            .navigationTitle("More Activities")
             .navigationDestination(isPresented: $showBookmarks) {
                 MiscListScreen(miscItem: .bookmarks)
             }
@@ -41,6 +64,7 @@ struct MiscScreen: View {
             }
             .sheet(isPresented: $showApostlesCreed) {
                 ApostlesCreedView()
+                    .presentationDetents([.fraction(0.85)])
             }
             .sheet(isPresented: $showCommandments) {
                 CommandmentsView()
@@ -48,6 +72,10 @@ struct MiscScreen: View {
             .sheet(isPresented: $showTheLordsPrayer) {
                 TheLordsPrayerView()
                     .presentationDetents([.height(350)])
+            }
+            .sheet(isPresented: $showSettings) {
+                StylesView(showStyles: $showSettings)
+                    .presentationDetents([.fraction(0.62)])
             }
         }
     }
@@ -70,13 +98,13 @@ struct MiscScreen: View {
             Constants.shareableText.share()
         case .rating:
             rateApp()
-        case .settings: ()
+        case .settings:
+            showSettings.toggle()
         }
     }
-    
 }
 
-#Preview("MiscScreen") {
-    MiscScreen()
+#Preview("MoreScreen") {
+    MoreScreen()
         .environmentObject(PreferenceStore())
 }

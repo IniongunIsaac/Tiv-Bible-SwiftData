@@ -15,7 +15,8 @@ enum MiscItem: String, CaseIterable {
          commandments = "Atindi a Pue",
          theLordsPrayer = "Msen U Ter Wase",
          share = "Share with friends",
-         rating = "Rate on Appstore"
+         rating = "Rate on Appstore",
+         settings = "Settings"
     
     var iconName: String {
         switch self {
@@ -35,6 +36,8 @@ enum MiscItem: String, CaseIterable {
             return "square.and.arrow.up"
         case .rating:
             return "star.circle"
+        case .settings:
+            return "gearshape"
         }
     }
     

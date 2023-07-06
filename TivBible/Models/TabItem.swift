@@ -12,4 +12,5 @@ enum TabItem: Int {
     case hymns
     case misc
     case settings
+    case more
 }

@@ -26,9 +26,12 @@ struct MiscItemActionsView: View {
                     showActions.toggle()
                     action?(item)
                 }
+                .buttonBorderShape(.roundedRectangle)
+                .buttonStyle(.bordered)
                 .background(item == .delete ? .red : .secondarySystemBackground)
                 .cornerRadius(10)
                 .listRowSeparator(.hidden)
+                
             }
         }
         .scrollIndicators(.never)

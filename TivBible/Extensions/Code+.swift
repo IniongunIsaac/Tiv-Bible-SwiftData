@@ -7,6 +7,7 @@
 
 import Foundation
 import DeviceKit
+import StoreKit
 
 typealias VoidAction = (() -> Void)
 typealias ArgumentAction<T> = ((T) -> Void)
@@ -55,4 +56,13 @@ func runAfter(_ delay: Double = 0.2, block: @escaping VoidAction) {
     DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
         block()
     }
+}
+
+func rateApp() {
+    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+    else {
+        print("WindowScene not available!!!")
+        return
+    }
+    SKStoreReviewController.requestReview(in: windowScene)
 }

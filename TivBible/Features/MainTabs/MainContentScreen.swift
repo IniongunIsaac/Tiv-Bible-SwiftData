@@ -26,7 +26,7 @@ struct MainContentScreen: View {
                 }
                 .tag(TabItem.hymns)
             
-            MiscScreen()
+            /*MiscScreen()
                 .tabItem {
                     Image(systemName: "list.bullet.rectangle")
                     Text("Misc.")
@@ -37,6 +37,13 @@ struct MainContentScreen: View {
                 .tabItem {
                     Image(systemName: "gearshape")
                     Text("Settings")
+                }
+                .tag(TabItem.settings)*/ //list.dash list.bullet.circle
+            
+            MoreScreen()
+                .tabItem {
+                    Image(systemName: "list.dash")
+                    Text("More")
                 }
                 .tag(TabItem.settings)
         }

@@ -24,6 +24,13 @@ struct StylesView: View {
             FontStyleButton()
             
             AppThemesView()
+            
+            Toggle(isOn: $preferenceStore.stayAwake) {
+                Text("STAY AWAKE:")
+                    .font(preferenceStore.font(size: 14))
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.trailing, 2)
         }
         .preferredColorScheme(preferenceStore.appTheme.colorScheme)
         .padding(.horizontal)
@@ -39,11 +46,16 @@ struct StylesView: View {
             .tint(.label)
             .offset(x: -18, y: -30)
         }
+        .onChange(of: preferenceStore.stayAwake) { _, awake in
+            withAnimation {
+                UIApplication.shared.isIdleTimerDisabled = awake
+            }
+        }
     }
 }
 
-#Preview("StylesView") {
-    StylesView(showStyles: .constant(false))
-        .background(.ultraThinMaterial)
-        .previewLayout(.sizeThatFits)
-}
+//#Preview("StylesView") {
+//    StylesView(showStyles: .constant(false))
+//        .background(.ultraThinMaterial)
+//        .previewLayout(.sizeThatFits)
+//}
