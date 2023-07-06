@@ -8,6 +8,7 @@
 import Foundation
 
 enum AppFont: String, CaseIterable {
+    case System
     case GentiumPlus
     case Poppins = "Poppins-Regular"
     case NewYork = "NewYorkLarge-Regular"
@@ -19,6 +20,8 @@ enum AppFont: String, CaseIterable {
     
     var displayName: String {
         switch self {
+        case .System:
+            return "System"
         case .GentiumPlus:
             return "Gentium"
         case .Poppins:

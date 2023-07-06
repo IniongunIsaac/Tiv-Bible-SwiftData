@@ -61,13 +61,14 @@ final class Verse {
     func attrText(fontSize: Double, fontName: String) -> AttributedString {
         var numberDotAttrContainer = AttributeContainer()
         numberDotAttrContainer.baselineOffset = [13, 14, 15].contains(fontSize) ? 3 : 5
-        numberDotAttrContainer.font = .custom(fontName, size: 10)
+        numberDotAttrContainer.font = font(name: fontName, size: 10) //.custom(fontName, size: 10)
         let numberDotAttr = AttributedString("\(number). ", attributes: numberDotAttrContainer)
         
         var textAttrContainer = AttributeContainer()
         textAttrContainer.underlineStyle = .thick
         textAttrContainer.underlineColor = .red
-        textAttrContainer.font = .custom(fontName, size: fontSize)
+        textAttrContainer.font = font(name: fontName, size: fontSize)
+        //fontName.insensitiveEquals("system") ? .system(size: fontSize, design: .rounded) : .custom(fontName, size: fontSize)
         
         if highlightColor.isNotEmpty {
             textAttrContainer.backgroundColor = highlightColor.color
@@ -86,6 +87,10 @@ final class Verse {
         finalAttrText.mergeAttributes(newContainer)*/
         
         return numberDotAttr + textAttr
+    }
+    
+    private func font(name: String, size: Double) -> Font {
+        name.insensitiveEquals("system") ? .system(size: size, design: .rounded) : .custom(name, size: size)
     }
     
     var reference: String {

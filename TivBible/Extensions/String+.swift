@@ -31,4 +31,8 @@ extension String {
     func insensitiveContains(_ value: String) -> Bool {
         lowercased().localizedCaseInsensitiveContains(value.lowercased())
     }
+    
+    func insensitiveEquals(_ value: String) -> Bool {
+        lowercased() == value.lowercased()
+    }
 }

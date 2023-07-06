@@ -29,7 +29,6 @@ final class HymnsViewModel {
             let hymns = try context.fetch(fetchDescriptor)
             self.hymns = hymns
             filteredHymns = hymns
-            debugPrint(filteredHymns.count)
         } catch {
             debugPrint("Unable to get hymns")
         }

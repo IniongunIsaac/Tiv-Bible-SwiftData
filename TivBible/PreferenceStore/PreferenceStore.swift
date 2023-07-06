@@ -37,6 +37,6 @@ final class PreferenceStore: ObservableObject {
     }
     
     func font(size: Double? = nil) -> Font {
-        .custom(appFont.rawValue, size: size ?? fontSize)
+        appFont == .System ? .system(size: size ?? fontSize, design: .rounded) : .custom(appFont.rawValue, size: size ?? fontSize)
     }
 }
