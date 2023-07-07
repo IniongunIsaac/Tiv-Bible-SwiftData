@@ -33,13 +33,15 @@ The app allows you to dynamically:
 [<img src="/TivBible/Screenshots/appstore-badge.png" height="50">](https://apps.apple.com/us/app/tiv-bible/id1584060052)
 [<img src="/TivBible/Screenshots/google-play-badge.png" height="50">](https://play.google.com/store/apps/details?id=com.iniongun.tivbible)
 
-## Technology Stack
+## Technology Stack & Tools
 The application is built using the following:
 
 * Swift
 * SwiftUI
 * SwiftData
 * MVVM-ish
+* Xcode 15 Beta 2
+* iOS 17 Beta
 
 ## Screenshots
 [<img src="/TivBible/Screenshots/1.png" align="center" width ="22%" hspace="0" vspace="10">](/TivBible/Screenshots/1.png)

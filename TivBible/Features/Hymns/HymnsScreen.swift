@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HymnsScreen: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
-    @Bindable private var viewModel = HymnsViewModel()
+    @StateObject private var viewModel = HymnsViewModel()
     @State private var showDetail = false
     @State private var selectedHymn: Hymn?
     
@@ -35,10 +35,9 @@ struct HymnsScreen: View {
                             }
                         }
                         .onTapGesture {
+                            //TODO: Weird behavior: it appears the first verse you tap on doesn't select that verse until you tap on another and then come back to it.
                             selectedHymn = hymn
-                            withAnimation {
-                                showDetail.toggle()
-                            }
+                            showDetail.toggle()
                         }
                     }
                     .scrollIndicators(.never)

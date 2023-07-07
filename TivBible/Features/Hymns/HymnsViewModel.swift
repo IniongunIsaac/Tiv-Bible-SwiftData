@@ -8,20 +8,22 @@
 import Foundation
 import SwiftData
 
-@Observable
-final class HymnsViewModel {
+//TODO: I can't explain this but the new '@Observable' macro approach didn't work for this functionality so I had to use the '@ObservableObject' approach and it works sadly!
+//@Observable
+@MainActor
+final class HymnsViewModel: ObservableObject {
     private let modelContainer = try! ModelContainer(for: Constants.dataModels)
     
-    @MainActor
+    //@MainActor
     private var context: ModelContext {
         modelContainer.mainContext
     }
     
-    var searchText: String = ""
+    @Published var searchText: String = ""
     private var hymns = [Hymn]()
-    var filteredHymns = [Hymn]()
+    @Published var filteredHymns = [Hymn]()
     
-    @MainActor
+    //@MainActor
     func getHymns() {
         let sortDescriptor = SortDescriptor<Hymn>(\.number)
         let fetchDescriptor = FetchDescriptor(sortBy: [sortDescriptor])
