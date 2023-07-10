@@ -24,7 +24,7 @@ struct ReaderScreen: View {
     @State private var verseNumber: Int?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
                 ScrollViewReader { proxy in
                     List(viewModel.verses, id: \.id) { verse in

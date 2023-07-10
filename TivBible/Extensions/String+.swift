@@ -21,6 +21,8 @@ extension String {
         }
         
         let activityViewController = UIActivityViewController(activityItems: [self], applicationActivities: nil)
+        activityViewController.modalPresentationStyle = .popover
+        activityViewController.popoverPresentationController?.sourceView = rootViewController.view
         rootViewController.present(activityViewController, animated: true, completion: nil)
     }
     

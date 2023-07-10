@@ -14,8 +14,9 @@ struct StylesView: View {
     var body: some View {
         VStack(spacing: 30) {
             Text("STYLES")
-                .offset(y: -28)
+                //.offset(y: -28)
                 .font(preferenceStore.font(size: 16))
+                .padding(.top)
             
             FontSizeView()
             
@@ -31,6 +32,8 @@ struct StylesView: View {
                     .foregroundStyle(.secondary)
             }
             .padding(.trailing, 2)
+            
+            Spacer()
         }
         .preferredColorScheme(preferenceStore.appTheme.colorScheme)
         .padding(.horizontal)
@@ -44,7 +47,7 @@ struct StylesView: View {
                     .frame(width: 25, height: 25)
             }
             .tint(.label)
-            .offset(x: -18, y: -30)
+            .offset(x: -18, y: 12)
         }
         .onChange(of: preferenceStore.stayAwake) { _, awake in
             withAnimation {

@@ -66,7 +66,7 @@ struct VerseTapActionsView: View {
         .padding()
         .background(.ultraThinMaterial)
         .cornerRadius(15, corners: [.topLeft, .topRight])
-        .frame(height: 250)
+        .frame(height: 220)
         .scrollIndicators(.never)
         .overlay(alignment: .topTrailing) {
             Button {
@@ -80,14 +80,14 @@ struct VerseTapActionsView: View {
                     .frame(width: 23, height: 23)
             }
             .tint(.label)
-            .offset(x: -15, y: 38)
+            .offset(x: -15, y: 15)
         }
     }
 }
 
-#Preview("VerseTapActionsView") {
-    VerseTapActionsView(viewModel: ReaderViewModel(),
-                        showNotes: .constant(false))
-    .environmentObject(PreferenceStore())
-    .previewLayout(.sizeThatFits)
-}
+//#Preview("VerseTapActionsView") {
+//    VerseTapActionsView(viewModel: ReaderViewModel(),
+//                        showNotes: .constant(false))
+//    .environmentObject(PreferenceStore())
+//    .previewLayout(.sizeThatFits)
+//}
