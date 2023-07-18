@@ -36,7 +36,7 @@ enum Constants {
             "A kondo A yem sha, A za tema ken uwegh ku iyanegh ku Aondo, Ter u A hembe agee cii;",
             "Shi Una mough sha la, Una va sha u va oron mba umav man mbakpenev ijir.",
             "Mna Icighan Jijingi jighjigh,",
-            "Mna Icighan nongo u Kristu sha won cii jighjigh, ka mzough u ui cighan mbaiorov je ve.",
+            "Mna Icighan nongo u Kristu sha won cii jighjigh, ka mzough u ui cighan mbaiorov je la.",
             "Mna mde u asorabo jighjigh",
             "Mna mder u iyol shin ku jighjigh",
             "Mna uma u tsoron jighjigh."

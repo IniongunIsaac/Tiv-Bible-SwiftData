@@ -35,6 +35,7 @@ struct VerseTapActionsView: View {
                     }
                 }
             }
+            .contentMargins(.horizontal, 20, for: .scrollContent)
             
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
@@ -61,9 +62,11 @@ struct VerseTapActionsView: View {
                     }
                 }
             }
+            .contentMargins(.horizontal, 20, for: .scrollContent)
             
         }
-        .padding()
+        .padding(.vertical)
+        .padding(.bottom, 20)
         .background(.ultraThinMaterial)
         .cornerRadius(15, corners: [.topLeft, .topRight])
         .frame(height: 220)
