@@ -24,7 +24,7 @@ struct NotesScreen: View {
         note?.shareText ?? ""
     }
     
-    @Query(sort: \.takenOn, order: .reverse)
+    @Query(sort: \Note.takenOn, order: .reverse)
     private var notes: [Note]
     
     var body: some View {
