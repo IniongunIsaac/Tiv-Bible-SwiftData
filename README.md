@@ -40,7 +40,7 @@ The application is built using the following:
 * SwiftUI
 * SwiftData
 * MVVM-ish
-* Xcode 15 Beta3
+* Xcode 15 Beta 8
 * iOS 17 Beta
 
 ## Screenshots
