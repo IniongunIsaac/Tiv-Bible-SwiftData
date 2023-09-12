@@ -27,7 +27,7 @@ final class ReaderViewModel {
     var errorMessage: String = ""
     
     private let preferenceStore = PreferenceStore()
-    private let modelContainer = try! ModelContainer(for: Constants.dataModels)
+    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self)
     
     @MainActor
     private var context: ModelContext {

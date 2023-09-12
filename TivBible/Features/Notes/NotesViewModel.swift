@@ -12,7 +12,7 @@ import SwiftData
 final class NotesViewModel {
     //var notes
     
-    private let modelContainer = try! ModelContainer(for: Constants.dataModels)
+    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self)
     
     @MainActor
     private var context: ModelContext {
