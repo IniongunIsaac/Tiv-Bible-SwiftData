@@ -15,6 +15,7 @@ final class Book {
     var order: Int
     var testament: Int
     var version: Int
+    @Relationship(inverse: \Chapter.book)
     var chapters: [Chapter]
     
     init(id: String = UUID().uuidString,

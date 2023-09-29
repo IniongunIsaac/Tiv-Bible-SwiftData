@@ -17,7 +17,7 @@ final class Note {
     
     init(id: String = UUID().uuidString,
         takenOn: Date = Date(),
-        verses: [NoteVerse],
+        verses: [NoteVerse] = [],
         comment: String
     ) {
         self.id = id

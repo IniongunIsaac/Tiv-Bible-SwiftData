@@ -60,8 +60,6 @@ final class SetupViewModel: ObservableObject {
         Task() {
             let bibleBooks = bibleData.distinctBy { $0.book }.sorted { $0.orderNo < $1.orderNo }
             
-            var books = [Book]()
-            
             bibleBooks.forEach { book in
                 
                 let bookOccurrences = bibleData.filter { $0.book == book.book }
@@ -75,33 +73,31 @@ final class SetupViewModel: ObservableObject {
                     version: 0
                 )
                 
-                var newChapters = [Chapter]()
+                context.insert(newBook)
                 
                 bookChapters.forEach { chapter in
                     
                     let bookChapterVerses = bookOccurrences.filter { $0.chapter == chapter.chapter }.distinctBy { $0.verse }
                     
-                    let newChapter = Chapter(number: chapter.chapter, book: newBook)
+                    let newChapter = Chapter(number: chapter.chapter)
+                    context.insert(newChapter)
+                    newChapter.book = newBook
                     
                     let verses = bookChapterVerses.map {
-                        Verse(title: $0.title.cleanVerse,
-                              text: $0.text.cleanVerse,
-                              number: $0.verse,
-                              chapter: newChapter)
+                        Verse(
+                            title: $0.title.cleanVerse,
+                            text: $0.text.cleanVerse,
+                            number: $0.verse
+                        )
                     }
                     
-                    newChapter.verses = verses
-                    newChapters.append(newChapter)
+                    for verse in verses {
+                        context.insert(verse)
+                        verse.chapter = newChapter
+                    }
                     
                 }
                 
-                newBook.chapters = newChapters
-                books.append(newBook)
-                
-            }
-            
-            for book in books {
-                context.insert(book)
             }
             
             saveDefaultChapter()

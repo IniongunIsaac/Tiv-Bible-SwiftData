@@ -25,14 +25,14 @@ final class Verse {
     @Transient
     var isSelected: Bool = false
     
-    init(id: String = UUID().uuidString,
+    init(
+        id: String = UUID().uuidString,
         title: String,
         text: String,
         number: Int,
         highlightColor: String = "",
         highlightDate: Date? = nil,
         isBookmarked: Bool = false,
-        chapter: Chapter? = nil,
         bookmarkDate: Date? = nil
     ) {
         self.id = id
@@ -42,7 +42,6 @@ final class Verse {
         self.highlightColor = highlightColor
         self.highlightDate = highlightDate
         self.isBookmarked = isBookmarked
-        self.chapter = chapter
         self.bookmarkDate = bookmarkDate
     }
     

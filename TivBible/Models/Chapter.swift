@@ -12,18 +12,18 @@ import SwiftData
 final class Chapter {
     @Attribute(.unique) var id: String
     var number: Int
+    @Relationship(inverse: \Verse.chapter)
     var verses: [Verse]
     var book: Book?
     
-    init(id: String = UUID().uuidString,
+    init(
+        id: String = UUID().uuidString,
         number: Int,
-        verses: [Verse] = [],
-        book: Book? = nil
+        verses: [Verse] = []
     ) {
         self.id = id
         self.number = number
         self.verses = verses
-        self.book = book
     }
     
     var bookNameAndChapterNumber: String {

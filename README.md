@@ -40,8 +40,8 @@ The application is built using the following:
 * SwiftUI
 * SwiftData
 * MVVM-ish
-* Xcode 15 Beta 8
-* iOS 17 Beta
+* Xcode 15 RC
+* iOS 17
 
 ## Screenshots
 [<img src="/TivBible/Screenshots/1.png" align="center" width ="22%" hspace="0" vspace="10">](/TivBible/Screenshots/1.png)
