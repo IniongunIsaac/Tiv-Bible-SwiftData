@@ -10,9 +10,8 @@ import SwiftData
 
 @Observable
 final class NotesViewModel {
-    //var notes
     
-    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self)
+    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, Hymn.self)
     
     @MainActor
     private var context: ModelContext {

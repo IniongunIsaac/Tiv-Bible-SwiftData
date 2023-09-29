@@ -15,7 +15,7 @@ final class MiscListViewModel {
     var toastMessage: ToastMessage = .empty
     var miscItem: MiscItem = .bookmarks
     
-    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self)
+    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, Hymn.self)
     
     @MainActor
     private var context: ModelContext {

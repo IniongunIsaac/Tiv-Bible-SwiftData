@@ -12,7 +12,7 @@ import SwiftData
 //@Observable
 @MainActor
 final class HymnsViewModel: ObservableObject {
-    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self)
+    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, Hymn.self)
     
     //@MainActor
     private var context: ModelContext {
