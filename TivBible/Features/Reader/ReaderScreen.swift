@@ -141,7 +141,7 @@ struct ReaderScreen: View {
                 StylesView(showStyles: $showStyles)
                     .presentationDetents([.fraction(0.62)])
             }
-            .sheet(isPresented: $showBooks) {
+            .fullScreenCover(isPresented: $showBooks) {
                 BooksScreen()
             }
             .fullScreenCover(isPresented: $showSearch) {
