@@ -45,18 +45,6 @@ final class Verse {
         self.bookmarkDate = bookmarkDate
     }
     
-    init(verse: NoteVerse) {
-        self.id = verse.id
-        self.title = verse.title
-        self.text = verse.text
-        self.number = verse.number
-        self.highlightColor = verse.highlightColor
-        self.highlightDate = verse.highlightDate
-        self.isBookmarked = verse.isBookmarked
-        self.chapter = verse.chapter
-        self.bookmarkDate = verse.bookmarkDate
-    }
-    
     func attrText(fontSize: Double, fontName: String) -> AttributedString {
         var numberDotAttrContainer = AttributeContainer()
         numberDotAttrContainer.baselineOffset = [13, 14, 15].contains(fontSize) ? 3 : 5
@@ -139,10 +127,7 @@ extension Array where Element == Verse {
     }
     
     var shareableText: String {
-        map { "v\($0.number). \($0.text)" }.joined(separator: "\n")
+        sorted { $0.number < $1.number }.map { "v\($0.number). \($0.text)" }.joined(separator: "\n")
     }
     
-    var noteVerses: [NoteVerse] {
-        map(NoteVerse.init)
-    }
 }

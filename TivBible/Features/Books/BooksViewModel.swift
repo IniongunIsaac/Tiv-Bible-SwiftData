@@ -12,7 +12,7 @@ import SwiftUI
 @Observable
 final class BooksViewModel {
     private var preferenceStore = PreferenceStore()
-    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self)
+    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, Hymn.self)
     
     var books = [Book]()
     var searchText: String = ""

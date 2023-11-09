@@ -83,7 +83,7 @@ struct VerseTapActionsView: View {
                     .frame(width: 23, height: 23)
             }
             .tint(.label)
-            .offset(x: -15, y: 15)
+            .offset(x: -15, y: 25)
         }
     }
 }

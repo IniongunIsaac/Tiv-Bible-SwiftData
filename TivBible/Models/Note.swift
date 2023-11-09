@@ -12,12 +12,13 @@ import SwiftData
 final class Note {
     @Attribute(.unique) var id: String
     var takenOn: Date
-    var verses: [NoteVerse]
+    var verses: [Verse]
     var comment: String
     
-    init(id: String = UUID().uuidString,
+    init(
+        id: String = UUID().uuidString,
         takenOn: Date = Date(),
-        verses: [NoteVerse] = [],
+        verses: [Verse] = [],
         comment: String
     ) {
         self.id = id

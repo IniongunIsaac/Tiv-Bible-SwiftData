@@ -27,7 +27,7 @@ final class ReaderViewModel {
     var errorMessage: String = ""
     
     private let preferenceStore = PreferenceStore()
-    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, NoteVerse.self, Hymn.self)
+    private let modelContainer = try! ModelContainer(for: Book.self, Chapter.self, Verse.self, Note.self, Hymn.self)
     
     @MainActor
     private var context: ModelContext {
@@ -144,12 +144,9 @@ final class ReaderViewModel {
     
     @MainActor
     func saveNotes() {
-        let newNote = Note(
-            //verses: selectedVerses.noteVerses.sorted { $0.number < $1.number },
-            comment: versesNotes
-        )
+        let newNote = Note(comment: versesNotes)
         context.insert(newNote)
-        newNote.verses = selectedVerses.noteVerses.sorted { $0.number < $1.number }
+        newNote.verses = selectedVerses.sorted { $0.number < $1.number }
         versesNotes = ""
         notesTokens = []
         toastMessage = "Success!"
