@@ -61,7 +61,6 @@
 		5542302B2A4C36E4001EC310 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542302A2A4C36E4001EC310 /* NotesViewModel.swift */; };
 		5542302D2A4C39DD001EC310 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542302C2A4C39DD001EC310 /* NoteView.swift */; };
 		5542302F2A4D5332001EC310 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542302E2A4D5332001EC310 /* Date+.swift */; };
-		554230312A4D575B001EC310 /* NoteVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554230302A4D575B001EC310 /* NoteVerse.swift */; };
 		55482F022A50B42B009C3370 /* ApostlesCreedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55482F012A50B42B009C3370 /* ApostlesCreedView.swift */; };
 		55482F042A50BD96009C3370 /* CommandmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55482F032A50BD96009C3370 /* CommandmentsView.swift */; };
 		55482F062A50C127009C3370 /* TheLordsPrayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55482F052A50C127009C3370 /* TheLordsPrayerView.swift */; };
@@ -224,7 +223,6 @@
 		5542302A2A4C36E4001EC310 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		5542302C2A4C39DD001EC310 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		5542302E2A4D5332001EC310 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
-		554230302A4D575B001EC310 /* NoteVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVerse.swift; sourceTree = "<group>"; };
 		55482F012A50B42B009C3370 /* ApostlesCreedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApostlesCreedView.swift; sourceTree = "<group>"; };
 		55482F032A50BD96009C3370 /* CommandmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandmentsView.swift; sourceTree = "<group>"; };
 		55482F052A50C127009C3370 /* TheLordsPrayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheLordsPrayerView.swift; sourceTree = "<group>"; };
@@ -424,7 +422,6 @@
 				556D8D732A44A29E00211481 /* BookSortType.swift */,
 				5595A5052A4BEEBA00270A5B /* TabItem.swift */,
 				5595A5072A4C020100270A5B /* ToastMessage.swift */,
-				554230302A4D575B001EC310 /* NoteVerse.swift */,
 				55482F142A518473009C3370 /* HymnData.swift */,
 				55482F162A5185B3009C3370 /* Hymn.swift */,
 			);
@@ -1074,7 +1071,6 @@
 				555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */,
 				55500E572A45D8D60074BC67 /* SearchScreen.swift in Sources */,
 				5595A5082A4C020100270A5B /* ToastMessage.swift in Sources */,
-				554230312A4D575B001EC310 /* NoteVerse.swift in Sources */,
 				552BB2792A41C9C900BB3A86 /* FontStyleButton.swift in Sources */,
 				5503ADC22A37C8F0006E6C79 /* DependencyContainer.swift in Sources */,
 				552BB27B2A41CC1500BB3A86 /* StylesView.swift in Sources */,
