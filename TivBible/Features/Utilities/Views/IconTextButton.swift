@@ -19,11 +19,13 @@ struct IconTextButton: View {
         Button {
             action?()
         } label: {
-            IconTextView(title: title,
-                         icon: icon,
-                         iconPosition: iconPosition,
-                         spacing: spacing,
-                         padding: padding)
+            IconTextView(
+                title: title,
+                icon: icon,
+                iconPosition: iconPosition,
+                spacing: spacing,
+                padding: padding
+            )
         }
         .background(Color.tertiaryLabel .cornerRadius(4))
         .buttonStyle(.bordered)

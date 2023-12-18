@@ -26,10 +26,12 @@ struct MiscListScreen: View {
         ZStack {
             if viewModel.verses.isNotEmpty {
                 List(viewModel.verses) { verse in
-                    NoteView(text: verse.text,
-                             reference: verse.reference,
-                             date: (verse.bookmarkDate ?? Date()).dateString,
-                             barColor: viewModel.fillColor(for: verse))
+                    NoteView(
+                        text: verse.text,
+                        reference: verse.reference,
+                        date: (verse.bookmarkDate ?? Date()).dateString,
+                        barColor: viewModel.fillColor(for: verse)
+                    )
                     .listRowSeparator(.hidden)
                     .padding(.bottom, 15)
                     .onTapGesture {
