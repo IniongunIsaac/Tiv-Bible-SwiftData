@@ -1,0 +1,3 @@
+- Present Books Fullscreen
+- Fix issue with hymn details not showing when initially selected
+- Performance optimizations and UI updates
