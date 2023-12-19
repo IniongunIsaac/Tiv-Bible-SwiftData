@@ -57,7 +57,7 @@ final class SetupViewModel: ObservableObject {
         
         guard bibleData.isNotEmpty else { return }
         
-        Task() {
+        Task {
             let bibleBooks = bibleData.distinctBy { $0.book }.sorted { $0.orderNo < $1.orderNo }
             
             bibleBooks.forEach { book in

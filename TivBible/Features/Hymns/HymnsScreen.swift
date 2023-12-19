@@ -10,7 +10,6 @@ import SwiftUI
 struct HymnsScreen: View {
     @EnvironmentObject private var preferenceStore: PreferenceStore
     @StateObject private var viewModel = HymnsViewModel()
-    @State private var showDetail = false
     @State private var selectedHymn: Hymn?
     
     var body: some View {
@@ -35,9 +34,7 @@ struct HymnsScreen: View {
                             }
                         }
                         .onTapGesture {
-                            //TODO: Weird behavior: it appears the first verse you tap on doesn't select that verse until you tap on another and then come back to it.
                             selectedHymn = hymn
-                            showDetail.toggle()
                         }
                     }
                     .scrollIndicators(.never)
@@ -61,12 +58,8 @@ struct HymnsScreen: View {
             .onChange(of: viewModel.searchText) {
                 viewModel.search()
             }
-            .sheet(isPresented: $showDetail) {
-                if let selectedHymn {
-                    HymnDetailView(hymn: selectedHymn)
-                } else {
-                    EmptyView()
-                }
+            .fullScreenCover(item: $selectedHymn) { hymn in
+                HymnDetailView(hymn: hymn)
             }
         }
     }

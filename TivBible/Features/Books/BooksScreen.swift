@@ -43,7 +43,7 @@ struct BooksScreen: View {
             .navigationBarTitleDisplayMode(.inline)
             .font(preferenceStore.font(size: 15))
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button(role: .cancel) {
                         dismiss()
                     } label: {
@@ -63,11 +63,9 @@ struct BooksScreen: View {
             }
         }
         .onAppear {
-            viewModel.getBooks()
+            runAfter(0.15) {
+                viewModel.getBooks()
+            }
         }
     }
 }
-
-//#Preview("BooksScreen") {
-//    BooksScreen()
-//}

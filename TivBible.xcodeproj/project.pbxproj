@@ -87,6 +87,7 @@
 		555576D02A38DBF900DF230E /* MiscScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576CF2A38DBF900DF230E /* MiscScreen.swift */; };
 		555576D22A38DC2200DF230E /* MainContentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576D12A38DC2200DF230E /* MainContentScreen.swift */; };
 		555576D42A392B6F00DF230E /* ReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555576D32A392B6F00DF230E /* ReaderViewModel.swift */; };
+		5569C0A62B31B5F100A914CF /* WhatToTest.en-US.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5569C0A52B31B5F100A914CF /* WhatToTest.en-US.txt */; };
 		556D8D702A44971300211481 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D6F2A44971300211481 /* BooksViewModel.swift */; };
 		556D8D722A44974600211481 /* BooksScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D712A44974600211481 /* BooksScreen.swift */; };
 		556D8D742A44A29E00211481 /* BookSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556D8D732A44A29E00211481 /* BookSortType.swift */; };
@@ -254,6 +255,7 @@
 		555576CF2A38DBF900DF230E /* MiscScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscScreen.swift; sourceTree = "<group>"; };
 		555576D12A38DC2200DF230E /* MainContentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentScreen.swift; sourceTree = "<group>"; };
 		555576D32A392B6F00DF230E /* ReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewModel.swift; sourceTree = "<group>"; };
+		5569C0A52B31B5F100A914CF /* WhatToTest.en-US.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WhatToTest.en-US.txt"; sourceTree = "<group>"; };
 		556D8D6F2A44971300211481 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		556D8D712A44974600211481 /* BooksScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksScreen.swift; sourceTree = "<group>"; };
 		556D8D732A44A29E00211481 /* BookSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSortType.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		5503AD692A37BF50006E6C79 = {
 			isa = PBXGroup;
 			children = (
+				5569C0A42B31B57300A914CF /* TestFlight */,
 				55482F072A51713D009C3370 /* README.md */,
 				5503AD742A37BF50006E6C79 /* TivBible */,
 				5503AD872A37BF51006E6C79 /* TivBibleTests */,
@@ -702,6 +705,14 @@
 			path = Reader;
 			sourceTree = "<group>";
 		};
+		5569C0A42B31B57300A914CF /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				5569C0A52B31B5F100A914CF /* WhatToTest.en-US.txt */,
+			);
+			path = TestFlight;
+			sourceTree = "<group>";
+		};
 		556D8D6E2A44970100211481 /* Books */ = {
 			isa = PBXGroup;
 			children = (
@@ -939,6 +950,7 @@
 				5503ADD02A37C9F4006E6C79 /* GentiumPlus-Italic.ttf in Resources */,
 				5503ADD12A37C9F4006E6C79 /* GentiumPlus-Regular.ttf in Resources */,
 				55EC20022A43BBF700DCA970 /* Poppins-BlackItalic.ttf in Resources */,
+				5569C0A62B31B5F100A914CF /* WhatToTest.en-US.txt in Resources */,
 				55EC20172A43BC3000DCA970 /* Lato-Italic.ttf in Resources */,
 				55EC1FFE2A43BBF700DCA970 /* Poppins-BoldItalic.ttf in Resources */,
 				55EC20042A43BBF700DCA970 /* Poppins-ExtraLight.ttf in Resources */,
@@ -1253,7 +1265,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iniongungroup.mobile.ios.Tiv-Bible";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1283,7 +1295,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iniongungroup.mobile.ios.Tiv-Bible";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
