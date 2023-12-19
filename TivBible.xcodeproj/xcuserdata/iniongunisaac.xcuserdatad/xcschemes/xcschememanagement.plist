@@ -28,7 +28,25 @@
 		<key>TivBible.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5503AD712A37BF50006E6C79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5503AD832A37BF51006E6C79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5503AD8D2A37BF51006E6C79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

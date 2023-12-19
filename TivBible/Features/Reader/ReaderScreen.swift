@@ -120,20 +120,32 @@ struct ReaderScreen: View {
                     .font(.gentiumPlus(.regular, size: 14))
                 }
             }
-            .toast(isPresenting: $showToast, alert: {
-                AlertToast(displayMode: .alert,
-                           type: .complete(.systemGreen),
-                           subTitle: viewModel.toastMessage)
-            }, completion: {
-                viewModel.toastMessage = ""
-            })
-            .toast(isPresenting: $showErrorToast, alert: {
-                AlertToast(displayMode: .hud,
-                           type: .error(.systemRed),
-                           subTitle: viewModel.errorMessage)
-            }, completion: {
-                viewModel.errorMessage = ""
-            })
+            .toast(
+                isPresenting: $showToast,
+                alert: {
+                    AlertToast(
+                        displayMode: .alert,
+                        type: .complete(.systemGreen),
+                        subTitle: viewModel.toastMessage
+                    )
+                },
+                completion: {
+                    viewModel.toastMessage = ""
+                }
+            )
+            .toast(
+                isPresenting: $showErrorToast,
+                alert: {
+                    AlertToast(
+                        displayMode: .hud,
+                        type: .error(.systemRed),
+                        subTitle: viewModel.errorMessage
+                    )
+                }, 
+                completion: {
+                    viewModel.errorMessage = ""
+                }
+            )
             .sheet(isPresented: $showNotes) {
                 TakeNotesScreen(viewModel: viewModel)
             }
@@ -141,7 +153,7 @@ struct ReaderScreen: View {
                 StylesView(showStyles: $showStyles)
                     .presentationDetents([.fraction(0.62)])
             }
-            .sheet(isPresented: $showBooks) {
+            .fullScreenCover(isPresented: $showBooks) {
                 BooksScreen()
             }
             .fullScreenCover(isPresented: $showSearch) {
@@ -164,7 +176,3 @@ struct ReaderScreen: View {
         
     }
 }
-
-//#Preview("ReaderScreen") {
-//    ReaderScreen()
-//}

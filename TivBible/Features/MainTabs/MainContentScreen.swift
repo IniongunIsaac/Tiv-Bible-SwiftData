@@ -26,20 +26,6 @@ struct MainContentScreen: View {
                 }
                 .tag(TabItem.hymns)
             
-            /*MiscScreen()
-                .tabItem {
-                    Image(systemName: "list.bullet.rectangle")
-                    Text("Misc.")
-                }
-                .tag(TabItem.misc)
-            
-            SettingsScreen()
-                .tabItem {
-                    Image(systemName: "gearshape")
-                    Text("Settings")
-                }
-                .tag(TabItem.settings)*/ //list.dash list.bullet.circle
-            
             MoreScreen()
                 .tabItem {
                     Image(systemName: "list.dash")

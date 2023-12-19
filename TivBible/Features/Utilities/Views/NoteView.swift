@@ -45,12 +45,14 @@ struct NoteView: View {
 }
 
 #Preview("NoteView") {
-    NoteView(text: "Genese 3: v2. Tsô kwase la gema kaa a iyô la er: Atam a ikon i ken sule ne yô, i rumun er se̱ ya, v3. kpa atam a kon u u lu hen atô sule la yô, Aôndo kaa er: De ye nen ga, ave tsô kpaa, de benden nen sha min ga, sha er né kpe ga yô",
-             reference: "Genese 12:22-45",
-             date: "",
-             barColor: Color(uiColor: UIColor.systemBlue))
-        .environmentObject(PreferenceStore())
-        .padding()
-        .previewLayout(.sizeThatFits)
-        .frame(height: 180)
+    NoteView(
+        text: "Genese 3: v2. Tsô kwase la gema kaa a iyô la er: Atam a ikon i ken sule ne yô, i rumun er se̱ ya, v3. kpa atam a kon u u lu hen atô sule la yô, Aôndo kaa er: De ye nen ga, ave tsô kpaa, de benden nen sha min ga, sha er né kpe ga yô",
+        reference: "Genese 12:22-45",
+        date: "",
+        barColor: Color(uiColor: UIColor.systemBlue)
+    )
+    .environmentObject(PreferenceStore())
+    .padding()
+    .previewLayout(.sizeThatFits)
+    .frame(height: 180)
 }

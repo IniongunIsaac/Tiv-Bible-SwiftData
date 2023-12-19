@@ -58,6 +58,21 @@ func runAfter(_ delay: Double = 0.2, block: @escaping VoidAction) {
     }
 }
 
+func runOnMainThread(action: @escaping () -> Void) {
+    DispatchQueue.main.async {
+        action()
+    }
+}
+
+func runOnBackground(
+    qos: DispatchQoS.QoSClass = .userInitiated,
+    action: @escaping () -> Void
+) {
+    DispatchQueue.global(qos: qos).async {
+        action()
+    }
+}
+
 func rateApp() {
     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
     else {
