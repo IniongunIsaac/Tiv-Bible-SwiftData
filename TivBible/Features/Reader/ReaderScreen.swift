@@ -32,7 +32,8 @@ struct ReaderScreen: View {
                             Text(verse.title.uppercased())
                                 .foregroundStyle(.secondary)
                                 //.font(.custom(preferenceStore.appFont.rawValue, size: 14))
-                                .scaledFont(preferenceStore.appFont, size: 14)
+                                //.scaledFont(preferenceStore.appFont, size: 14)
+                                .font(preferenceStore.font(size: 14, viewComponent: .verseTitle))
                                 .fontWeight(.semibold)
                         }
                         
@@ -100,7 +101,8 @@ struct ReaderScreen: View {
                     } label: {
                         Text(viewModel.bookNameAndChapterNumber)
                             .foregroundStyle(Color.label)
-                            .font(preferenceStore.font(size: 14))
+                            //.font(preferenceStore.font(size: 14))
+                            .font(preferenceStore.font(size: 14, viewComponent: .toolbar))
                             .fontWeight(.semibold)
                     }
                     .buttonStyle(.bordered)
@@ -122,7 +124,8 @@ struct ReaderScreen: View {
                         }
                     }
                     .foregroundStyle(Color.label)
-                    .font(.gentiumPlus(.regular, size: 14))
+                    .font(preferenceStore.font(size: 14, viewComponent: .toolbar))
+                    //.font(.gentiumPlus(.regular, size: 14))
                 }
             }
             .toast(

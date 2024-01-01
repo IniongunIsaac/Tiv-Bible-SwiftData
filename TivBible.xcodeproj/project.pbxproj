@@ -41,6 +41,7 @@
 		551D0B1C2A3CF41A00449307 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1B2A3CF41A00449307 /* RoundedCornersShape.swift */; };
 		551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1D2A3CF50E00449307 /* IconTextView.swift */; };
 		551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1F2A3CF54B00449307 /* IconTextButton.swift */; };
+		551FA1762B42F41D00C54DCB /* AppViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FA1752B42F41D00C54DCB /* AppViewComponent.swift */; };
 		552BB2642A409DC800BB3A86 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2632A409DC800BB3A86 /* ColorHex.swift */; };
 		552BB2672A40C24000BB3A86 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 552BB2662A40C24000BB3A86 /* AlertToast */; };
 		552BB2692A40E75200BB3A86 /* TakeNotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2682A40E75200BB3A86 /* TakeNotesScreen.swift */; };
@@ -205,6 +206,7 @@
 		551D0B1B2A3CF41A00449307 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
 		551D0B1D2A3CF50E00449307 /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
 		551D0B1F2A3CF54B00449307 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
+		551FA1752B42F41D00C54DCB /* AppViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewComponent.swift; sourceTree = "<group>"; };
 		552BB2632A409DC800BB3A86 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		552BB2682A40E75200BB3A86 /* TakeNotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeNotesScreen.swift; sourceTree = "<group>"; };
 		552BB26A2A41707500BB3A86 /* NoteToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToken.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				5595A5072A4C020100270A5B /* ToastMessage.swift */,
 				55482F142A518473009C3370 /* HymnData.swift */,
 				55482F162A5185B3009C3370 /* Hymn.swift */,
+				551FA1752B42F41D00C54DCB /* AppViewComponent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1038,6 +1041,7 @@
 				55482F152A518473009C3370 /* HymnData.swift in Sources */,
 				5503ADAE2A37C776006E6C79 /* View+.swift in Sources */,
 				5503ADA72A37C09E006E6C79 /* Book.swift in Sources */,
+				551FA1762B42F41D00C54DCB /* AppViewComponent.swift in Sources */,
 				55500E5A2A45E4850074BC67 /* EmptyStateView.swift in Sources */,
 				55500E552A45B6D40074BC67 /* SearchViewModel.swift in Sources */,
 				5503ADC42A37C914006E6C79 /* DependencyProvider.swift in Sources */,

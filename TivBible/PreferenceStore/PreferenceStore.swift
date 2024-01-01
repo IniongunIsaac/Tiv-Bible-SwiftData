@@ -36,14 +36,27 @@ final class PreferenceStore: ObservableObject {
         lineSpacing = spacing
     }
     
-    func font(size: Double? = nil) -> Font {
+    func font(size: Double? = nil, viewComponent: AppViewComponent? = nil) -> Font {
+        /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font
+        @Environment(\.sizeCategory) var sizeCategory
+        let scaledSize = UIFontMetrics.default.scaledValue(for: size ?? fontSize)
+        var usableSize = scaledSize
+        
+        switch viewComponent {
+        case .toolbar:
+            usableSize = usableSize > 20 ? 20 : usableSize
+        case .verseTitle:
+            usableSize = usableSize > 18 ? size ?? 18 : usableSize
+        case .normalText(let max):
+            break
+        case nil:
+            break
+        }
+        
         if appFont == .system {
-            return .system(size: size ?? fontSize, design: .rounded)
+            return .system(size: usableSize, design: .rounded)
         } else {
-            /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font
-            @Environment(\.sizeCategory) var sizeCategory
-            let scaledSize = UIFontMetrics.default.scaledValue(for: size ?? fontSize)
-            return .custom(appFont.rawValue, size: scaledSize)
+            return .custom(appFont.rawValue, size: usableSize)
         }
     }
 }
