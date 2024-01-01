@@ -14,7 +14,7 @@ final class PreferenceStore: ObservableObject {
     @AppStorage(.fontSize) var fontSize: Double = Constants.FontSize.default
     @AppStorage("lineSpacing") var lineSpacing: LineSpacingType = .normal
     @AppStorage("appTheme") var appTheme: AppTheme = .system
-    @AppStorage("appFont") var appFont: AppFont = .GentiumPlus
+    @AppStorage("appFont") var appFont: AppFont = .gentiumPlus
     @AppStorage("bookSortType") var bookSortType: BookSortType = .traditional
     @AppStorage(.stayAwake) var stayAwake: Bool = false
     @AppStorage("selectedTabItem") var selectedTabItem: TabItem = .read
@@ -37,6 +37,13 @@ final class PreferenceStore: ObservableObject {
     }
     
     func font(size: Double? = nil) -> Font {
-        appFont == .System ? .system(size: size ?? fontSize, design: .rounded) : .custom(appFont.rawValue, size: size ?? fontSize)
+        if appFont == .system {
+            return .system(size: size ?? fontSize, design: .rounded)
+        } else {
+            /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font
+            @Environment(\.sizeCategory) var sizeCategory
+            let scaledSize = UIFontMetrics.default.scaledValue(for: size ?? fontSize)
+            return .custom(appFont.rawValue, size: scaledSize)
+        }
     }
 }

@@ -45,16 +45,16 @@ final class Verse {
         self.bookmarkDate = bookmarkDate
     }
     
-    func attrText(fontSize: Double, fontName: String) -> AttributedString {
+    func attrText(font: AppFont, fontSize: Double) -> AttributedString {
         var numberDotAttrContainer = AttributeContainer()
         numberDotAttrContainer.baselineOffset = [13, 14, 15].contains(fontSize) ? 3 : 5
-        numberDotAttrContainer.font = font(name: fontName, size: 10)
+        numberDotAttrContainer.font = self.font(font, size: 10)
         let numberDotAttr = AttributedString("\(number). ", attributes: numberDotAttrContainer)
         
         var textAttrContainer = AttributeContainer()
         textAttrContainer.underlineStyle = .thick
         textAttrContainer.underlineColor = .red
-        textAttrContainer.font = font(name: fontName, size: fontSize)
+        textAttrContainer.font = self.font(font, size: fontSize)
         
         if highlightColor.isNotEmpty {
             textAttrContainer.backgroundColor = highlightColor.color
@@ -75,8 +75,15 @@ final class Verse {
         return numberDotAttr + textAttr
     }
     
-    private func font(name: String, size: Double) -> Font {
-        name.insensitiveEquals("system") ? .system(size: size, design: .rounded) : .custom(name, size: size)
+    private func font(_ appFont: AppFont, size: Double) -> Font {
+        if appFont == .system {
+            return .system(size: size, design: .rounded)
+        } else {
+            /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font
+            @Environment(\.sizeCategory) var sizeCategory
+            let scaledSize = UIFontMetrics.default.scaledValue(for: size)
+            return .custom(appFont.rawValue, size: scaledSize)
+        }
     }
     
     var reference: String {

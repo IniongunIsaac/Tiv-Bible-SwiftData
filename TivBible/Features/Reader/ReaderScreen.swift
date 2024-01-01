@@ -31,23 +31,28 @@ struct ReaderScreen: View {
                         if verse.title.isNotEmpty {
                             Text(verse.title.uppercased())
                                 .foregroundStyle(.secondary)
-                                .font(.custom(preferenceStore.appFont.rawValue, size: 14))
+                                //.font(.custom(preferenceStore.appFont.rawValue, size: 14))
+                                .scaledFont(preferenceStore.appFont, size: 14)
                                 .fontWeight(.semibold)
                         }
                         
-                        Text(verse.attrText(fontSize: preferenceStore.fontSize,
-                                            fontName: preferenceStore.appFont.rawValue))
-                            .lineSpacing(preferenceStore.lineSpacing.value)
-                            .showUnderline(verse.isSelected)
-                            .listRowSeparator(.hidden)
-                            .onTapGesture {
-                                withAnimation(.spring) {
-                                    verse.isSelected.toggle()
-                                    viewModel.refreshVerses()
-                                }
+                        Text(
+                            verse.attrText(
+                                font: preferenceStore.appFont,
+                                fontSize: preferenceStore.fontSize
+                            )
+                        )
+                        .lineSpacing(preferenceStore.lineSpacing.value)
+                        .showUnderline(verse.isSelected)
+                        .listRowSeparator(.hidden)
+                        .onTapGesture {
+                            withAnimation(.spring) {
+                                verse.isSelected.toggle()
+                                viewModel.refreshVerses()
                             }
-                            .id(verse.number)
-                            .background(verseNumber == verse.number ? Color(hex: "#FFAF02") : Color.clear)
+                        }
+                        .id(verse.number)
+                        .background(verseNumber == verse.number ? Color(hex: "#FFAF02") : Color.clear)
                     }
                     .scrollStatusMonitor($isScrolling, monitorMode: .exclusion)
                     .scrollIndicators(.never)

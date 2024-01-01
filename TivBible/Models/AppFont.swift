@@ -8,35 +8,35 @@
 import Foundation
 
 enum AppFont: String, CaseIterable {
-    case System
-    case GentiumPlus
-    case Poppins = "Poppins-Regular"
-    case NewYork = "NewYorkLarge-Regular"
-    case Lato = "Lato-Regular"
-    case Georgia
-    case Baskerville
-    case AvenirNext = "AvenirNext-Regular"
-    case AvenirBook = "Avenir-Book"
+    case system
+    case gentiumPlus
+    case poppins = "Poppins-Regular"
+    case newYork = "NewYorkLarge-Regular"
+    case lato = "Lato-Regular"
+    case georgia = "Georgia"
+    case baskerville = "Baskerville"
+    case avenirNext = "AvenirNext-Regular"
+    case avenirBook = "Avenir-Book"
     
     var displayName: String {
         switch self {
-        case .System:
+        case .system:
             return "System"
-        case .GentiumPlus:
+        case .gentiumPlus:
             return "Gentium"
-        case .Poppins:
+        case .poppins:
             return "Poppins"
-        case .NewYork:
+        case .newYork:
             return "New York"
-        case .Lato:
+        case .lato:
             return "Lato"
-        case .Georgia:
+        case .georgia:
             return "Georgia"
-        case .Baskerville:
+        case .baskerville:
             return "Baskerville"
-        case .AvenirNext:
+        case .avenirNext:
             return "Avenir Next"
-        case .AvenirBook:
+        case .avenirBook:
             return "Avenir Book"
         }
     }
