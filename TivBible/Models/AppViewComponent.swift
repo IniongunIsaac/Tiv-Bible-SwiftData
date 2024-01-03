@@ -8,5 +8,21 @@
 import Foundation
 
 enum AppViewComponent {
-    case toolbar, verseTitle, normalText(max: Int?)
+    case toolbar, verseTitle, normalText, bookNameNumber
+    case searchBar
+    
+    var maxFontSize: CGFloat {
+        switch self {
+        case .toolbar:
+            return currentDevice.isPhone ? 20 : 24
+        case .verseTitle:
+            return currentDevice.isPhone ? 18 : 22
+        case .normalText:
+            return currentDevice.isPhone ? 16 : 20
+        case .bookNameNumber:
+            return currentDevice.isPhone ? 20 : 24
+        case .searchBar:
+            return currentDevice.isPhone ? 16 : 20
+        }
+    }
 }

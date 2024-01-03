@@ -34,7 +34,7 @@ struct BookRowView: View {
             .padding(.horizontal, 0)
         }
         .tint(.label)
-        .font(preferenceStore.font(size: 16))
+        .font(preferenceStore.font(size: 16, viewComponent: .bookNameNumber))
     }
     
     private var itemWidth: CGFloat {

@@ -40,23 +40,36 @@ final class PreferenceStore: ObservableObject {
         /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font
         @Environment(\.sizeCategory) var sizeCategory
         let scaledSize = UIFontMetrics.default.scaledValue(for: size ?? fontSize)
-        var usableSize = scaledSize
+        //var usableSize = scaledSize
+        let maxFontSize = viewComponent?.maxFontSize ?? 15 //fontSize.cgfloat
+        let usableSize = scaledSize > maxFontSize ? size ?? maxFontSize : scaledSize
         
-        switch viewComponent {
-        case .toolbar:
-            usableSize = usableSize > 20 ? 20 : usableSize
-        case .verseTitle:
-            usableSize = usableSize > 18 ? size ?? 18 : usableSize
-        case .normalText(let max):
-            break
-        case nil:
-            break
-        }
+//        switch viewComponent {
+//        case .toolbar:
+//            usableSize = usableSize > 20 ? 20 : usableSize
+//        case .verseTitle:
+//            usableSize = usableSize > 18 ? size ?? 18 : usableSize
+//        case .normalText(let max):
+//            break
+//        case .bookNameNumber:
+//            usableSize = usableSize > 20 ? 20 : usableSize
+//        case .searchBar:
+//            usableSize = usableSize > 20 ? 20 : usableSize
+//        case nil:
+//            break
+//        }
         
         if appFont == .system {
             return .system(size: usableSize, design: .rounded)
         } else {
             return .custom(appFont.rawValue, size: usableSize)
         }
+    }
+    
+    func updateNavFont() {
+        let fontName = "\(appFont.rawValue)-Bold"
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: UIFont(name: fontName, size: 20) ?? UIFont.boldSystemFont(ofSize: 20)
+        ]
     }
 }
