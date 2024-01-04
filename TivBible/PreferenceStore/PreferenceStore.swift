@@ -36,28 +36,12 @@ final class PreferenceStore: ObservableObject {
         lineSpacing = spacing
     }
     
-    func font(size: Double? = nil, viewComponent: AppViewComponent? = nil) -> Font {
+    func font(size: Double? = nil, viewComponent: AppViewComponent = .normalText) -> Font {
         /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font
         @Environment(\.sizeCategory) var sizeCategory
         let scaledSize = UIFontMetrics.default.scaledValue(for: size ?? fontSize)
-        //var usableSize = scaledSize
-        let maxFontSize = viewComponent?.maxFontSize ?? 15 //fontSize.cgfloat
-        let usableSize = scaledSize > maxFontSize ? size ?? maxFontSize : scaledSize
-        
-//        switch viewComponent {
-//        case .toolbar:
-//            usableSize = usableSize > 20 ? 20 : usableSize
-//        case .verseTitle:
-//            usableSize = usableSize > 18 ? size ?? 18 : usableSize
-//        case .normalText(let max):
-//            break
-//        case .bookNameNumber:
-//            usableSize = usableSize > 20 ? 20 : usableSize
-//        case .searchBar:
-//            usableSize = usableSize > 20 ? 20 : usableSize
-//        case nil:
-//            break
-//        }
+        let maxFontSize = viewComponent.maxFontSize
+        let usableSize = scaledSize > maxFontSize ? (size ?? maxFontSize) : scaledSize
         
         if appFont == .system {
             return .system(size: usableSize, design: .rounded)
@@ -70,6 +54,13 @@ final class PreferenceStore: ObservableObject {
         let fontName = "\(appFont.rawValue)-Bold"
         UINavigationBar.appearance().titleTextAttributes = [
             .font: UIFont(name: fontName, size: 20) ?? UIFont.boldSystemFont(ofSize: 20)
+        ]
+    }
+    
+    func updateLargeNavFont() {
+        let fontName = "\(appFont.rawValue)-Black"
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: UIFont(name: fontName, size: 25) ?? UIFont.boldSystemFont(ofSize: 25)
         ]
     }
 }

@@ -11,29 +11,25 @@ struct FontStyleButton: View {
     @StateObject private var preferenceStore = PreferenceStore()
     
     var body: some View {
-        HStack(spacing: 20) {
-            Text("FONT:")
-                .font(preferenceStore.font(size: 14))
-            
-            Spacer()
-            
-            Picker(selection: $preferenceStore.appFont, label: Text("")) {
-                ForEach(AppFont.allCases.sorted { $0.rawValue < $1.rawValue }, id: \.self) { option in
-                    Text(option.displayName)
-                        .font(.custom(option.rawValue, size: 17))
-                        .tag(option)
+        ScrollView(.horizontal) {
+            HStack(spacing: 20) {
+                Text("FONT:")
+                    .font(preferenceStore.font(size: 14, viewComponent: .labelText))
+                
+                Picker(selection: $preferenceStore.appFont, label: Text("")) {
+                    ForEach(AppFont.allCases.sorted { $0.rawValue < $1.rawValue }, id: \.self) { option in
+                        Text(option.displayName)
+                            .scaledFont(option.rawValue, size: 15, maxSize: 18)
+                            .tag(option)
+                    }
                 }
+                .tint(.label)
+                .pickerStyle(.menu)
+                .padding(8)
+                .background(.ultraThinMaterial)
             }
-            .tint(.label)
-            .pickerStyle(.menu)
-            .padding(.horizontal, -10)
+            .foregroundStyle(.secondary)
         }
-        .padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(lineWidth: 1)
-        )
-        .foregroundStyle(.secondary)
     }
 }
 

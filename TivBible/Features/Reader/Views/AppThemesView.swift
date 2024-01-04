@@ -13,7 +13,7 @@ struct AppThemesView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("THEME:")
-                .font(preferenceStore.font(size: 14))
+                .font(preferenceStore.font(size: 14, viewComponent: .labelText))
                 .foregroundStyle(.secondary)
             
             Picker(selection: $preferenceStore.appTheme, label: Text("")) {

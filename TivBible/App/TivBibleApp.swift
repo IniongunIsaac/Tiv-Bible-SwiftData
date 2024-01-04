@@ -13,6 +13,18 @@ struct TivBibleApp: App {
     
     @StateObject private var preferenceStore = PreferenceStore()
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.colorScheme) private var systemColorScheme
+    
+    private var colorScheme: ColorScheme {
+        switch preferenceStore.appTheme {
+        case .system:
+            return systemColorScheme
+        case .light:
+            return .light
+        case .dark:
+            return .dark
+        }
+    }
     
     init() {
         setupDependencyContainer()
@@ -22,11 +34,11 @@ struct TivBibleApp: App {
         WindowGroup {
             if preferenceStore.hasSetupDB {
                 MainContentScreen()
-                    .preferredColorScheme(preferenceStore.appTheme.colorScheme)
+                    .preferredColorScheme(colorScheme)
                     .environmentObject(PreferenceStore())
             } else {
                 SetupScreen()
-                    .preferredColorScheme(preferenceStore.appTheme.colorScheme)
+                    .preferredColorScheme(colorScheme)
             }
         }
         .modelContainer(for: Constants.dataModels)

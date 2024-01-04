@@ -43,7 +43,7 @@ struct NextButton: View {
                 .padding(.horizontal, Constants.horizontalPadding)
                 .padding(.vertical, Constants.verticalPadding)
         }
-        .tint(.gray)
+        .tint(.darkGray)
     }
 }
 

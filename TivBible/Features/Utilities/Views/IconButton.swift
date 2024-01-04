@@ -12,6 +12,8 @@ struct IconButton: View {
     var iconName: String
     var horizontalPadding: CGFloat = 4
     var verticalPadding: CGFloat = 6
+    var tint: Color = .label
+    var background: Color = .secondarySystemBackground
     var action: VoidAction? = nil
     
     var body: some View {
@@ -23,14 +25,12 @@ struct IconButton: View {
                 .padding(.horizontal, horizontalPadding)
                 .padding(.vertical, verticalPadding)
         }
-        .tint(.label)
-        .buttonBorderShape(.roundedRectangle)
-        .buttonStyle(.bordered)
+        .tint(tint)
+        .background(background)
     }
 }
 
 #Preview {
-    IconButton(iconName: "1.lane")
+    IconButton(iconName: "1.lane", background: .secondarySystemBackground)
         .environmentObject(PreferenceStore())
 }
-//ButtonBorderShape BorderedButtonStyle
