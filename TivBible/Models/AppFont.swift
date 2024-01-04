@@ -9,7 +9,7 @@ import Foundation
 
 enum AppFont: String, CaseIterable {
     case system
-    case gentiumPlus
+    case gentiumPlus = "GentiumPlus"
     case poppins = "Poppins-Regular"
     case newYork = "NewYorkLarge-Regular"
     case lato = "Lato-Regular"
@@ -23,7 +23,7 @@ enum AppFont: String, CaseIterable {
         case .system:
             return "System"
         case .gentiumPlus:
-            return "Gentium"
+            return "Gentium Plus"
         case .poppins:
             return "Poppins"
         case .newYork:

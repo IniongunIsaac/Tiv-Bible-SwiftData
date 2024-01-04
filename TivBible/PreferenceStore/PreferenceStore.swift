@@ -60,7 +60,7 @@ final class PreferenceStore: ObservableObject {
     func updateLargeNavFont() {
         let fontName = "\(appFont.rawValue)-Black"
         UINavigationBar.appearance().largeTitleTextAttributes = [
-            .font: UIFont(name: fontName, size: 25) ?? UIFont.boldSystemFont(ofSize: 25)
+            .font: UIFont(name: fontName, size: 30) ?? UIFont.boldSystemFont(ofSize: 30)
         ]
     }
 }

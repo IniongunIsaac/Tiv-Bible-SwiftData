@@ -69,9 +69,3 @@ struct StylesView: View {
         }
     }
 }
-
-//#Preview("StylesView") {
-//    StylesView(showStyles: .constant(false))
-//        .background(.ultraThinMaterial)
-//        .previewLayout(.sizeThatFits)
-//}

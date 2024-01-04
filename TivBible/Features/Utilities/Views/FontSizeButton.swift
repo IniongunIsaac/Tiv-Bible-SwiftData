@@ -36,14 +36,11 @@ struct FontSizeButton: View {
                 }
                     
             }
-//            .padding()
             .padding(.horizontal, 10)
             .padding(.vertical, 15)
         }
         .tint(.label)
         .background(.ultraThinMaterial)
-        //.buttonBorderShape(.roundedRectangle)
-        //.buttonStyle(.bordered)
     }
 }
 
