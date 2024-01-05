@@ -10,32 +10,49 @@ import SwiftUI
 struct StylesView: View {
     @Binding var showStyles: Bool
     @StateObject private var preferenceStore = PreferenceStore()
+    @Environment(\.colorScheme) private var systemColorScheme
+    
+    private var colorScheme: ColorScheme {
+        switch preferenceStore.appTheme {
+        case .system:
+            return systemColorScheme
+        case .light:
+            return .light
+        case .dark:
+            return .dark
+        }
+    }
     
     var body: some View {
-        VStack(spacing: 30) {
-            Text("STYLES")
-                //.offset(y: -28)
-                .font(preferenceStore.font(size: 16))
-                .padding(.top)
-            
-            FontSizeView()
-            
-            LineSpacingView()
-            
-            FontStyleButton()
-            
-            AppThemesView()
-            
-            Toggle(isOn: $preferenceStore.stayAwake) {
-                Text("STAY AWAKE:")
-                    .font(preferenceStore.font(size: 14))
-                    .foregroundStyle(.secondary)
+        ScrollView(.vertical) {
+            VStack(spacing: 30) {
+                Text("STYLES")
+                    .font(preferenceStore.font(size: 16))
+                    .padding(.top)
+                
+                FontSizeView()
+                
+                LineSpacingView()
+                
+                FontStyleButton()
+                
+                AppThemesView()
+                
+                HStack {
+                    Text("STAY AWAKE:")
+                        .font(preferenceStore.font(size: 14, viewComponent: .labelText))
+                        .foregroundStyle(.secondary)
+                        .overlay(alignment: .trailing) {
+                            Toggle("", isOn: $preferenceStore.stayAwake)
+                                .offset(x: 70)
+                        }
+                    
+                    Spacer()
+                }
+                
             }
-            .padding(.trailing, 2)
-            
-            Spacer()
         }
-        .preferredColorScheme(preferenceStore.appTheme.colorScheme)
+        .preferredColorScheme(colorScheme)
         .padding(.horizontal)
         .overlay(alignment: .topTrailing) {
             Button {
@@ -56,9 +73,3 @@ struct StylesView: View {
         }
     }
 }
-
-//#Preview("StylesView") {
-//    StylesView(showStyles: .constant(false))
-//        .background(.ultraThinMaterial)
-//        .previewLayout(.sizeThatFits)
-//}

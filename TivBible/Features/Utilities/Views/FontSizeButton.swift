@@ -20,7 +20,7 @@ struct FontSizeButton: View {
         Button {
             action?()
         } label: {
-            HStack(spacing: 5) {
+            HStack(spacing: 3) {
                 if type == .increment {
                     Image(systemName: "textformat.size")
                     
@@ -36,12 +36,11 @@ struct FontSizeButton: View {
                 }
                     
             }
-            .padding(.horizontal, 0)
-            .padding(.vertical, 12)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 15)
         }
         .tint(.label)
-        .buttonBorderShape(.roundedRectangle)
-        .buttonStyle(.bordered)
+        .background(.ultraThinMaterial)
     }
 }
 

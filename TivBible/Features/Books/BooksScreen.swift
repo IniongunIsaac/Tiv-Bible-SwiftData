@@ -38,10 +38,9 @@ struct BooksScreen: View {
             }
             .padding(.horizontal)
             .searchable(text: $viewModel.searchText, prompt: "Search")
-            .font(preferenceStore.font(size: 15))
+            .font(preferenceStore.font(size: 15, viewComponent: .searchBar))
             .navigationTitle("Books")
             .navigationBarTitleDisplayMode(.inline)
-            .font(preferenceStore.font(size: 15))
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(role: .cancel) {
@@ -63,6 +62,7 @@ struct BooksScreen: View {
             }
         }
         .onAppear {
+            preferenceStore.updateNavFont()
             runAfter(0.15) {
                 viewModel.getBooks()
             }

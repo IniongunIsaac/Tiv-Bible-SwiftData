@@ -34,8 +34,6 @@ struct MiscItemButton: View {
             .padding(.vertical, 8)
             .foregroundStyle(Color.label)
         }
-        //.buttonBorderShape(.roundedRectangle)
-        //.buttonStyle(.bordered)
     }
 }
 
