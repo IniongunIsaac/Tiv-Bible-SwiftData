@@ -14,7 +14,7 @@ final class PreferenceStore: ObservableObject {
     @AppStorage(.fontSize) var fontSize: Double = Constants.FontSize.default
     @AppStorage("lineSpacing") var lineSpacing: LineSpacingType = .normal
     @AppStorage("appTheme") var appTheme: AppTheme = .system
-    @AppStorage("appFont") var appFont: AppFont = .GentiumPlus
+    @AppStorage("appFont") var appFont: AppFont = .gentiumPlus
     @AppStorage("bookSortType") var bookSortType: BookSortType = .traditional
     @AppStorage(.stayAwake) var stayAwake: Bool = false
     @AppStorage("selectedTabItem") var selectedTabItem: TabItem = .read
@@ -36,7 +36,31 @@ final class PreferenceStore: ObservableObject {
         lineSpacing = spacing
     }
     
-    func font(size: Double? = nil) -> Font {
-        appFont == .System ? .system(size: size ?? fontSize, design: .rounded) : .custom(appFont.rawValue, size: size ?? fontSize)
+    func font(size: Double? = nil, viewComponent: AppViewComponent = .normalText) -> Font {
+        /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font
+        @Environment(\.sizeCategory) var sizeCategory
+        let scaledSize = UIFontMetrics.default.scaledValue(for: size ?? fontSize)
+        let maxFontSize = viewComponent.maxFontSize
+        let usableSize = scaledSize > maxFontSize ? (size ?? maxFontSize) : scaledSize
+        
+        if appFont == .system {
+            return .system(size: usableSize, design: .rounded)
+        } else {
+            return .custom(appFont.rawValue, size: usableSize)
+        }
+    }
+    
+    func updateNavFont() {
+        let fontName = "\(appFont.rawValue)-Bold"
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: UIFont(name: fontName, size: 20) ?? UIFont.boldSystemFont(ofSize: 20)
+        ]
+    }
+    
+    func updateLargeNavFont() {
+        let fontName = "\(appFont.rawValue)-Black"
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: UIFont(name: fontName, size: 30) ?? UIFont.boldSystemFont(ofSize: 30)
+        ]
     }
 }

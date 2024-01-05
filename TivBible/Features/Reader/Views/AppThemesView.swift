@@ -11,18 +11,23 @@ struct AppThemesView: View {
     @StateObject private var preferenceStore = PreferenceStore()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("THEME:")
-                .font(preferenceStore.font(size: 14))
-                .foregroundStyle(.secondary)
-            
-            Picker(selection: $preferenceStore.appTheme, label: Text("")) {
-                ForEach(AppTheme.allCases, id: \.self) { option in
-                    Text(option.rawValue.uppercased())
-                        .tag(option)
+        ScrollView(.horizontal) {
+            HStack(alignment: .center, spacing: 20) {
+                Text("THEME:")
+                    .font(preferenceStore.font(size: 14, viewComponent: .labelText))
+                    .foregroundStyle(.secondary)
+                
+                Picker(selection: $preferenceStore.appTheme, label: Text("")) {
+                    ForEach(AppTheme.allCases, id: \.self) { option in
+                        Text(option.rawValue.capitalized)
+                            .tag(option)
+                    }
                 }
+                .tint(.label)
+                .pickerStyle(.menu)
+                .padding(7)
+                .background(.ultraThinMaterial)
             }
-            .pickerStyle(.segmented)
         }
     }
 }

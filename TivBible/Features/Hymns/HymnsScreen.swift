@@ -44,14 +44,15 @@ struct HymnsScreen: View {
                 }
             }
             .onAppear {
+                preferenceStore.updateNavFont()
                 viewModel.getHymns()
             }
             .navigationTitle("Atsam a Ikyenge")
             .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $viewModel.searchText, prompt: "Search")
+            .font(preferenceStore.font(size: 15, viewComponent: .searchBar))
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
-            .font(preferenceStore.font(size: 15))
             .onSubmit(of: .search) {
                 viewModel.search()
             }

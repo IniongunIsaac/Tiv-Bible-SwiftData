@@ -31,23 +31,27 @@ struct ReaderScreen: View {
                         if verse.title.isNotEmpty {
                             Text(verse.title.uppercased())
                                 .foregroundStyle(.secondary)
-                                .font(.custom(preferenceStore.appFont.rawValue, size: 14))
+                                .font(preferenceStore.font(size: 14, viewComponent: .verseTitle))
                                 .fontWeight(.semibold)
                         }
                         
-                        Text(verse.attrText(fontSize: preferenceStore.fontSize,
-                                            fontName: preferenceStore.appFont.rawValue))
-                            .lineSpacing(preferenceStore.lineSpacing.value)
-                            .showUnderline(verse.isSelected)
-                            .listRowSeparator(.hidden)
-                            .onTapGesture {
-                                withAnimation(.spring) {
-                                    verse.isSelected.toggle()
-                                    viewModel.refreshVerses()
-                                }
+                        Text(
+                            verse.attrText(
+                                font: preferenceStore.appFont,
+                                fontSize: preferenceStore.fontSize
+                            )
+                        )
+                        .lineSpacing(preferenceStore.lineSpacing.value)
+                        .showUnderline(verse.isSelected)
+                        .listRowSeparator(.hidden)
+                        .onTapGesture {
+                            withAnimation(.spring) {
+                                verse.isSelected.toggle()
+                                viewModel.refreshVerses()
                             }
-                            .id(verse.number)
-                            .background(verseNumber == verse.number ? Color(hex: "#FFAF02") : Color.clear)
+                        }
+                        .id(verse.number)
+                        .background(verseNumber == verse.number ? Color(hex: "#FFAF02") : Color.clear)
                     }
                     .scrollStatusMonitor($isScrolling, monitorMode: .exclusion)
                     .scrollIndicators(.never)
@@ -95,7 +99,7 @@ struct ReaderScreen: View {
                     } label: {
                         Text(viewModel.bookNameAndChapterNumber)
                             .foregroundStyle(Color.label)
-                            .font(preferenceStore.font(size: 14))
+                            .font(preferenceStore.font(size: 14, viewComponent: .toolbar))
                             .fontWeight(.semibold)
                     }
                     .buttonStyle(.bordered)
@@ -117,7 +121,7 @@ struct ReaderScreen: View {
                         }
                     }
                     .foregroundStyle(Color.label)
-                    .font(.gentiumPlus(.regular, size: 14))
+                    .font(preferenceStore.font(size: 14, viewComponent: .toolbar))
                 }
             }
             .toast(
@@ -151,7 +155,7 @@ struct ReaderScreen: View {
             }
             .sheet(isPresented: $showStyles) {
                 StylesView(showStyles: $showStyles)
-                    .presentationDetents([.fraction(0.62)])
+                    .presentationDetents([.fraction(0.5)])
             }
             .fullScreenCover(isPresented: $showBooks) {
                 BooksScreen()
