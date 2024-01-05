@@ -12,6 +12,7 @@ import IsScrolling
 
 struct ReaderScreen: View {
     
+    @StateObject var notificationManager = NotificationManager()
     @Provided private var viewModel: ReaderViewModel
     @StateObject private var preferenceStore = PreferenceStore()
     @State private var showToast = false
@@ -91,6 +92,9 @@ struct ReaderScreen: View {
             .padding(.bottom, -20)
             .onAppear {
                 viewModel.getVerses()
+            }
+            .task {
+                await notificationManager.request()
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

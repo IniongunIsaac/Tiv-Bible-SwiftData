@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct TivBibleApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var preferenceStore = PreferenceStore()
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) private var systemColorScheme

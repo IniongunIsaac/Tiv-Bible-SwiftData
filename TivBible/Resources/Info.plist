@@ -54,6 +54,12 @@
 		<string>NewYorkLarge-Semibold.ttf</string>
 		<string>NewYorkLarge-SemiboldItalic.ttf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>

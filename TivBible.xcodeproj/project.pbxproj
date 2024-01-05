@@ -42,6 +42,15 @@
 		551D0B1E2A3CF50E00449307 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1D2A3CF50E00449307 /* IconTextView.swift */; };
 		551D0B202A3CF54B00449307 /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D0B1F2A3CF54B00449307 /* IconTextButton.swift */; };
 		551FA1762B42F41D00C54DCB /* AppViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551FA1752B42F41D00C54DCB /* AppViewComponent.swift */; };
+		5529CDB72B48895900B9B216 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5529CDB62B48895900B9B216 /* GoogleService-Info.plist */; };
+		5529CDBA2B488B7300B9B216 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5529CDB92B488B7300B9B216 /* FirebaseAnalytics */; };
+		5529CDBC2B488B7300B9B216 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5529CDBB2B488B7300B9B216 /* FirebaseAnalyticsSwift */; };
+		5529CDBE2B488B7300B9B216 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5529CDBD2B488B7300B9B216 /* FirebaseCrashlytics */; };
+		5529CDC02B488B7300B9B216 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5529CDBF2B488B7300B9B216 /* FirebaseMessaging */; };
+		5529CDC22B488B7300B9B216 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 5529CDC12B488B7300B9B216 /* FirebaseRemoteConfig */; };
+		5529CDC42B488B7300B9B216 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5529CDC32B488B7300B9B216 /* FirebaseRemoteConfigSwift */; };
+		5529CDC62B488CAF00B9B216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529CDC52B488CAF00B9B216 /* AppDelegate.swift */; };
+		5529CDC82B488FAF00B9B216 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529CDC72B488FAF00B9B216 /* NotificationManager.swift */; };
 		552BB2642A409DC800BB3A86 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2632A409DC800BB3A86 /* ColorHex.swift */; };
 		552BB2672A40C24000BB3A86 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 552BB2662A40C24000BB3A86 /* AlertToast */; };
 		552BB2692A40E75200BB3A86 /* TakeNotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552BB2682A40E75200BB3A86 /* TakeNotesScreen.swift */; };
@@ -207,6 +216,10 @@
 		551D0B1D2A3CF50E00449307 /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
 		551D0B1F2A3CF54B00449307 /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
 		551FA1752B42F41D00C54DCB /* AppViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewComponent.swift; sourceTree = "<group>"; };
+		5529CDB52B48883800B9B216 /* TivBible.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TivBible.entitlements; sourceTree = "<group>"; };
+		5529CDB62B48895900B9B216 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5529CDC52B488CAF00B9B216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5529CDC72B488FAF00B9B216 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		552BB2632A409DC800BB3A86 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
 		552BB2682A40E75200BB3A86 /* TakeNotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeNotesScreen.swift; sourceTree = "<group>"; };
 		552BB26A2A41707500BB3A86 /* NoteToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToken.swift; sourceTree = "<group>"; };
@@ -325,7 +338,13 @@
 			files = (
 				552BB2672A40C24000BB3A86 /* AlertToast in Frameworks */,
 				55500E522A45ACB70074BC67 /* IsScrolling in Frameworks */,
+				5529CDC02B488B7300B9B216 /* FirebaseMessaging in Frameworks */,
+				5529CDC42B488B7300B9B216 /* FirebaseRemoteConfigSwift in Frameworks */,
+				5529CDBA2B488B7300B9B216 /* FirebaseAnalytics in Frameworks */,
+				5529CDBE2B488B7300B9B216 /* FirebaseCrashlytics in Frameworks */,
 				55EC1FDE2A438BBB00DCA970 /* DeviceKit in Frameworks */,
+				5529CDBC2B488B7300B9B216 /* FirebaseAnalyticsSwift in Frameworks */,
+				5529CDC22B488B7300B9B216 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +390,8 @@
 		5503AD742A37BF50006E6C79 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
+				5529CDB62B48895900B9B216 /* GoogleService-Info.plist */,
+				5529CDB52B48883800B9B216 /* TivBible.entitlements */,
 				55482F092A5171DF009C3370 /* Screenshots */,
 				5503ADC52A37C975006E6C79 /* App */,
 				5503ADD42A37CA8A006E6C79 /* Features */,
@@ -474,6 +495,8 @@
 			isa = PBXGroup;
 			children = (
 				5503AD752A37BF50006E6C79 /* TivBibleApp.swift */,
+				5529CDC52B488CAF00B9B216 /* AppDelegate.swift */,
+				5529CDC72B488FAF00B9B216 /* NotificationManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -840,6 +863,12 @@
 				552BB2662A40C24000BB3A86 /* AlertToast */,
 				55EC1FDD2A438BBB00DCA970 /* DeviceKit */,
 				55500E512A45ACB70074BC67 /* IsScrolling */,
+				5529CDB92B488B7300B9B216 /* FirebaseAnalytics */,
+				5529CDBB2B488B7300B9B216 /* FirebaseAnalyticsSwift */,
+				5529CDBD2B488B7300B9B216 /* FirebaseCrashlytics */,
+				5529CDBF2B488B7300B9B216 /* FirebaseMessaging */,
+				5529CDC12B488B7300B9B216 /* FirebaseRemoteConfig */,
+				5529CDC32B488B7300B9B216 /* FirebaseRemoteConfigSwift */,
 			);
 			productName = TivBible;
 			productReference = 5503AD722A37BF50006E6C79 /* TivBible.app */;
@@ -917,6 +946,7 @@
 				552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */,
 				55EC1FDC2A438BBB00DCA970 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 				55500E502A45ACB70074BC67 /* XCRemoteSwiftPackageReference "IsScrolling" */,
+				5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5503AD732A37BF50006E6C79 /* Products */;
 			projectDirPath = "";
@@ -945,6 +975,7 @@
 				55EC201E2A43BC3000DCA970 /* Lato-Bold.ttf in Resources */,
 				55EC1FFD2A43BBF700DCA970 /* Poppins-Medium.ttf in Resources */,
 				55EC1FFF2A43BBF700DCA970 /* Poppins-LightItalic.ttf in Resources */,
+				5529CDB72B48895900B9B216 /* GoogleService-Info.plist in Resources */,
 				55EC20182A43BC3000DCA970 /* Lato-Thin.ttf in Resources */,
 				55482F082A51713D009C3370 /* README.md in Resources */,
 				55EC1FF52A43BBF700DCA970 /* Poppins-Italic.ttf in Resources */,
@@ -1062,6 +1093,7 @@
 				5542302B2A4C36E4001EC310 /* NotesViewModel.swift in Sources */,
 				556D8D772A44B7F400211481 /* BookRowView.swift in Sources */,
 				5595A5042A4B70BF00270A5B /* MiscItemButton.swift in Sources */,
+				5529CDC82B488FAF00B9B216 /* NotificationManager.swift in Sources */,
 				55482F042A50BD96009C3370 /* CommandmentsView.swift in Sources */,
 				554230242A4C1F6B001EC310 /* MiscListScreen.swift in Sources */,
 				55500E5C2A4664DF0074BC67 /* SearchBooksView.swift in Sources */,
@@ -1070,6 +1102,7 @@
 				55482F172A5185B3009C3370 /* Hymn.swift in Sources */,
 				5503ADC02A37C8DD006E6C79 /* DependencyType.swift in Sources */,
 				5542302D2A4C39DD001EC310 /* NoteView.swift in Sources */,
+				5529CDC62B488CAF00B9B216 /* AppDelegate.swift in Sources */,
 				55482F1B2A518713009C3370 /* HymnsScreen.swift in Sources */,
 				556D8D702A44971300211481 /* BooksViewModel.swift in Sources */,
 				55482F1D2A51889E009C3370 /* HymnsViewModel.swift in Sources */,
@@ -1253,6 +1286,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TivBible/TivBible.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TivBible/Preview Content\"";
@@ -1284,6 +1318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TivBible/TivBible.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TivBible/Preview Content\"";
@@ -1428,6 +1463,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
 		552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast.git";
@@ -1455,6 +1498,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5529CDB92B488B7300B9B216 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5529CDBB2B488B7300B9B216 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		5529CDBD2B488B7300B9B216 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		5529CDBF2B488B7300B9B216 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		5529CDC12B488B7300B9B216 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		5529CDC32B488B7300B9B216 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5529CDB82B488B7300B9B216 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
 		552BB2662A40C24000BB3A86 /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 552BB2652A40C24000BB3A86 /* XCRemoteSwiftPackageReference "AlertToast" */;
