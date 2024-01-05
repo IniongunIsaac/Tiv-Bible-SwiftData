@@ -25,7 +25,7 @@ struct FontStyleButton: View {
                 }
                 .tint(.label)
                 .pickerStyle(.menu)
-                .padding(8)
+                .padding(7)
                 .background(.ultraThinMaterial)
             }
             .foregroundStyle(.secondary)

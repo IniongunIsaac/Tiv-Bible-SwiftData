@@ -75,11 +75,7 @@ struct MoreScreen: View {
             }
             .sheet(isPresented: $showSettings) {
                 StylesView(showStyles: $showSettings)
-                    .presentationDetents([.fraction(0.62)])
-            }
-            .onAppear {
-                //preferenceStore.updateLargeNavFont()
-                //preferenceStore.updateNavFont()
+                    .presentationDetents([.fraction(0.5)])
             }
         }
     }

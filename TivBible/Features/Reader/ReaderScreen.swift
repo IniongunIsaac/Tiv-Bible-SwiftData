@@ -155,7 +155,7 @@ struct ReaderScreen: View {
             }
             .sheet(isPresented: $showStyles) {
                 StylesView(showStyles: $showStyles)
-                    .presentationDetents([.fraction(0.62)])
+                    .presentationDetents([.fraction(0.5)])
             }
             .fullScreenCover(isPresented: $showBooks) {
                 BooksScreen()

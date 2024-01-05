@@ -38,14 +38,18 @@ struct StylesView: View {
                 
                 AppThemesView()
                 
-                Toggle(isOn: $preferenceStore.stayAwake) {
+                HStack {
                     Text("STAY AWAKE:")
                         .font(preferenceStore.font(size: 14, viewComponent: .labelText))
                         .foregroundStyle(.secondary)
+                        .overlay(alignment: .trailing) {
+                            Toggle("", isOn: $preferenceStore.stayAwake)
+                                .offset(x: 70)
+                        }
+                    
+                    Spacer()
                 }
-                .padding(.trailing, 2)
                 
-                Spacer()
             }
         }
         .preferredColorScheme(colorScheme)
